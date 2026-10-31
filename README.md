@@ -1,4 +1,6 @@
-# Transfer-ladder audit of counterfactual synthetic supervision for pavement crack false alarms
+# Rendered silence does not transfer
+
+**A transfer-ladder audit of counterfactual supervision for pavement crack false alarms**
 
 <p align="center">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg">
@@ -13,7 +15,7 @@
   <sub>The transfer ladder for joints (<a href="docs/media/transfer_ladder.mp4">MP4</a>). Red: false-alarm components at each model's own operating point; dashed: the distractor. Bars: joint-specific false alarms of CF-Paired relative to Real-only over all samples of each rung.</sub>
 </p>
 
-Code, configuration and analysis reports for the paper *A transfer-ladder audit of counterfactual synthetic supervision for pavement crack false alarms*.
+Code, configuration and analysis reports for the paper *Rendered silence does not transfer: a transfer-ladder audit of counterfactual supervision for pavement crack false alarms*.
 
 Counterfactual synthetic data render the same pavement background with and without a distractor (joint, patch boundary, shadow) and a crack. They promise to stop crack segmenters from firing on crack-like structures, but are usually validated on images from the same renderer. This study audits whether that suppression reaches real pavement.
 

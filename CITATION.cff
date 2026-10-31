@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or the analysis reports, please cite the accompanying paper."
+title: "Rendered silence does not transfer: a transfer-ladder audit of counterfactual supervision for pavement crack false alarms (code and analysis reports)"
+type: software
+authors:
+  - given-names: Wei
+    family-names: Zhou
+    email: weizhou@njust.edu.cn
+    orcid: "https://orcid.org/0000-0003-3225-0576"
+    affiliation: Nanjing University of Science and Technology
+  - given-names: Jian
+    family-names: Chang
+    affiliation: Nanjing University of Science and Technology
+  - given-names: Yiming
+    family-names: Chen
+    orcid: "https://orcid.org/0009-0000-9285-7252"
+    affiliation: Nanjing University of Science and Technology
+  - given-names: Wangta
+    family-names: Ma
+    orcid: "https://orcid.org/0009-0004-4520-0353"
+    affiliation: Nanjing University of Science and Technology
+  - given-names: Li
+    family-names: Yang
+    orcid: "https://orcid.org/0000-0002-8152-7642"
+    affiliation: Nanjing University of Science and Technology
+repository-code: "https://github.com/WeiZhou96/crack-transfer-ladder"
+license: MIT

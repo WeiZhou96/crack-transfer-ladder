@@ -1,13 +1,45 @@
 # Transfer-ladder audit of counterfactual synthetic supervision for pavement crack false alarms
 
+<p align="center">
+  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg">
+  <img alt="Python 3.11" src="https://img.shields.io/badge/python-3.11-3776AB.svg">
+  <img alt="PyTorch 2.5" src="https://img.shields.io/badge/PyTorch-2.5-EE4C2C.svg">
+  <img alt="Pre-registered" src="https://img.shields.io/badge/study-pre--registered-2E3A46.svg">
+</p>
+
+<p align="center">
+  <img src="docs/media/transfer_ladder.gif" width="880" alt="Animated transfer ladder for joints: Real-only and CF-Paired false alarms on four rungs, with the joint-specific ratio of CF-Paired to Real-only falling to 0.07, 0.12 and 0.29 on rendered joints and rising to 1.11 on real joints">
+  <br>
+  <sub>The transfer ladder for joints (<a href="docs/media/transfer_ladder.mp4">MP4</a>). Red: false-alarm components at each model's own operating point; dashed: the distractor. Bars: joint-specific false alarms of CF-Paired relative to Real-only over all samples of each rung.</sub>
+</p>
+
 Code, configuration and analysis reports for the paper *A transfer-ladder audit of counterfactual synthetic supervision for pavement crack false alarms*.
 
-The study asks whether counterfactual synthetic data suppress the false alarms of crack segmentation models on real pavement. It does so with four elements:
+Counterfactual synthetic data render the same pavement background with and without a distractor (joint, patch boundary, shadow) and a crack. They promise to stop crack segmenters from firing on crack-like structures, but are usually validated on images from the same renderer. This study audits whether that suppression reaches real pavement.
+
+## Key findings
+
+- **Silence on rendered distractors does not transfer to real ones.** Joint-specific false alarms of the counterfactual model were 0.07, 0.12 and 0.29 of the Real-only level on training, resampled and unseen-scene probes, and 1.11 on real bridge joints.
+- **Counterfactual supervision raised real false alarms.** Relative to training on real positives only, false alarms rose on all five real crack-free legs (for example +18.6% on BCL and +79.1% on UAV-1388), on two backbones and at matched recall.
+- **The rise comes with the rendered images.** Renderings without any distractor raised real false alarms on BCL as much as distractor negatives did (+15.4% against +15.6%).
+- **What does help.** Real crack-free crops removed in-domain false alarms almost entirely (−99.9%) but transferred unpredictably to other sensors. Strong photometric augmentation lowered cross-domain false alarms at matched recall.
+
+## Method at a glance
+
+<p align="center"><img src="docs/figures/framework.png" width="900" alt="Framework: training interventions, the transfer ladder of four probe rungs plus real crack-free images, and one shared false-alarm account"></p>
+
+The study has four elements:
 
 - **Account.** False alarms are counted as filtered connected components per megapixel on real crack-free images, at a per-model operating point (95% component recall on the model's own validation set) and at matched recall.
-- **Transfer ladder.** The ladder moves from training quadruplets, to resampled quadruplets, to rendered distractors on unseen real backgrounds, to real distractors.
-- **Distractor-specific counts.** Each rung counts the false alarms caused by the distractor itself.
+- **Transfer ladder.** The ladder moves from training quadruplets, to resampled quadruplets, to rendered distractors on unseen real backgrounds, to real distractors; each step removes one way of passing a synthetic test without learning the distractor.
+- **Distractor-specific counts.** Each rung counts the false alarms caused by the distractor itself (on the distractor image minus on the same scene without it, or, on real images, on the distractor minus on the surrounding background).
 - **Interventions.** Counterfactual training is compared with real positives only, strong augmentation, random and mined real negatives, and a decomposition of the synthetic design.
+
+## Results at a glance
+
+<p align="center"><img src="docs/figures/ladder.png" width="900" alt="Transfer ladder: CF-Paired to Real-only ratios of distractor-specific false alarms per rung, operator and backbone, and rung 3 against rung 4 for every arm"></p>
+
+<p align="center"><img src="docs/figures/what_works.png" width="900" alt="What reduces real false alarms: matched-recall comparison of every intervention and real negatives in and across domains"></p>
 
 The scripts are the ones used for the study. They are released for transparency and reproduction, not as a packaged library. Paths are configurable, but the stages expect the data layout produced by the earlier stages.
 
@@ -90,7 +122,7 @@ Run the stages in this order:
 
 Confidence intervals are paired cluster-bootstrap intervals (10,000 replicates, seed 0) over route blocks or image groups. All analyses after the confirmatory test are exploratory; the experiment programme and its addenda in `configs/` state which predictions were written before which results.
 
-## Results
+## Result reports
 
 `results/` holds the reports the paper draws on. Server paths in them are replaced by `${CRACKCF_DATA}` and `${CRACKCF_CODE}`.
 
@@ -108,6 +140,10 @@ Confidence intervals are paired cluster-bootstrap intervals (10,000 replicates, 
 
 - Comments, docstrings, messages and free-text configuration fields were translated into English for this release; code and the configuration values that programs read are unchanged from the versions that were run. Several stages record SHA-256 hashes of configuration files (e.g. `FREEZE.json` from `poc/s03_freeze_splits.py`, threshold seals). Because the translated files differ in bytes from the originals, the hashes recorded during the study refer to the untranslated files; a fresh run records and checks the hashes of the files in this repository.
 - The StrongAug trainer verifies the hashes of its sealed protocol files at start-up and therefore runs only with the original protocol inputs; it is included so that the augmentation and training procedure can be inspected and reimplemented.
+
+## Citation
+
+The citation will be added when the paper is published.
 
 ## Licence
 

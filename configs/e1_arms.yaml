@@ -1,0 +1,39 @@
+# E1 six-arm training configuration (appendix 0.5-5; loss and recipe follow v6 §3.4). Not covered by the FREEZE.v3 hash; frozen with FREEZE.v4 before training.
+# source: v6 = stated explicitly in v6 §3.4 / 0.5-5; poc_default = POC value, to be re-checked before the E4 decision.
+version: "e1-0.1"
+
+recipe:
+  backbone: upernet_convnext_tiny     # poc_default: single main backbone, distinct from the teacher ensemble (U-Net-R34 / DeepLabv3+-R50 / SegFormer-B2) (0.5-5)
+  encoder_weights: imagenet
+  crop: 256                           # v6: 256 for datasets whose original images are < 1024
+  batch: 32                           # v6
+  iters: 80000                        # v6
+  lr: 6.0e-5                          # v6: AdamW 6e-5 + poly
+  poly_power: 1.0                     # poc_default
+  weight_decay: 0.01                  # poc_default
+  seeds: [0, 1, 2]                    # 0.5-5: × 3 seeds
+  mix_real_to_other: 1.0              # 0.5-5: synthetic:real = 1:1 to start (16 real positives + 16 others per batch)
+  checkpoint_every: 10000
+  val_every: 5000                     # logged only (F1@0.5 on the train_positive val fold), not used for checkpoint selection: the final step is used
+
+loss:
+  positive: "Dice + BCE, pixel weight 0 on ignore and on padding"                       # v6 Eq. 5
+  negative_skip_dice: true            # v6 Eq. 5: Dice is skipped for samples with empty GT (preregistered)
+  kappa_s: 4.0                        # v6: BCE weight inside Ω_Z
+  freemask_alpha: null                # v6 Eq. 5 FreeMask gate (α_f=1.25) zeroes pixels judged noisy; v6 does not state its criterion, so the POC disables it by default and discloses this
+  alpha_pair: 0.05                    # v6 grid {0.02,0.05,0.1,0.2}; POC starts with 0.05
+  beta_marg: 0.05                     # v6
+  margin_m: 0.5                       # v6 Eq. 7
+
+preprocess:
+  r18_invert_sources: [pavedistress, pavedistress_anchor, pavedistress_hard_proxy]   # R18 applied uniformly to all models (public + teacher + student)
+  r18_invert_synthetic_domains: [laser_gray]                                        # the laser layer of the quadruplets is inverted on read as well
+
+arms:
+  B0:  {real_pos: true}
+  B1:  {real_pos: true, strong_aug: true}
+  B2:  {real_pos: true, real_neg: negpool_accept}             # random draw from the E3 three-state accept pool
+  B3_auto: {real_pos: true, real_neg: b3auto_mined}           # E2 mining output
+  B10: {real_pos: true, synth: {paired: false}}                # same number of quadruplets, pairs broken, standard loss
+  B11: {real_pos: true, synth: {paired: true}}                 # complete quadruplets + L_pair + L_marg
+  B12_auto: {real_pos: true, real_neg: b3auto_mined, synth: {paired: true}, conditional: "only if B11 vs B3-auto not significant"}

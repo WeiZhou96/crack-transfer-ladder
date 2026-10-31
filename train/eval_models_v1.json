@@ -1,0 +1,191 @@
+{
+ "B0_s0": {
+  "arm": "B0",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B0_s0/final.pt",
+  "trainer": "student_v1"
+ },
+ "B1_s0": {
+  "arm": "B1",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed0/B1_completed_matched_final.pt",
+  "trainer": "strong_baseline_recovery_v1 (v6-complete strong augmentation)"
+ },
+ "B2_s0": {
+  "arm": "B2",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s0/final.pt",
+  "trainer": "student_v1"
+ },
+ "B3_auto_s0": {
+  "arm": "B3_auto",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s0/final.pt",
+  "trainer": "student_v1"
+ },
+ "B10_s0": {
+  "arm": "B10",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B10_s0/final.pt",
+  "trainer": "student_v4"
+ },
+ "B11_s0": {
+  "arm": "B11",
+  "seed": 0,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B11_s0/final.pt",
+  "trainer": "student_v4"
+ },
+ "B0_s1": {
+  "arm": "B0",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B0_s1/final.pt",
+  "trainer": "student_v1"
+ },
+ "B1_s1": {
+  "arm": "B1",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed1/B1_completed_matched_final.pt",
+  "trainer": "strong_baseline_recovery_v1 (v6-complete strong augmentation)"
+ },
+ "B2_s1": {
+  "arm": "B2",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s1/final.pt",
+  "trainer": "student_v1"
+ },
+ "B3_auto_s1": {
+  "arm": "B3_auto",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s1/final.pt",
+  "trainer": "student_v1"
+ },
+ "B10_s1": {
+  "arm": "B10",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B10_s1/final.pt",
+  "trainer": "student_v4"
+ },
+ "B11_s1": {
+  "arm": "B11",
+  "seed": 1,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B11_s1/final.pt",
+  "trainer": "student_v4"
+ },
+ "B0_s2": {
+  "arm": "B0",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B0_s2/final.pt",
+  "trainer": "student_v1"
+ },
+ "B1_s2": {
+  "arm": "B1",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed2/B1_completed_matched_final.pt",
+  "trainer": "strong_baseline_recovery_v1 (v6-complete strong augmentation)"
+ },
+ "B2_s2": {
+  "arm": "B2",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s2/final.pt",
+  "trainer": "student_v1"
+ },
+ "B3_auto_s2": {
+  "arm": "B3_auto",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s2/final.pt",
+  "trainer": "student_v1"
+ },
+ "B10_s2": {
+  "arm": "B10",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B10_s2/final.pt",
+  "trainer": "student_v4"
+ },
+ "B11_s2": {
+  "arm": "B11",
+  "seed": 2,
+  "role": "primary",
+  "ckpt": "${CRACKCF_DATA}/students_v4/B11_s2/final.pt",
+  "trainer": "student_v4"
+ },
+ "B1legacy_s0": {
+  "arm": "B1_legacy",
+  "seed": 0,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B1_s0/final.pt",
+  "trainer": "student_v1 (5 strong augmentations missing)"
+ },
+ "B2matched_s0": {
+  "arm": "B2_matched",
+  "seed": 0,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed0/B2_random_matched_final.pt",
+  "trainer": "E17 paired"
+ },
+ "B3matched_s0": {
+  "arm": "B3_matched",
+  "seed": 0,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed0/B3_mined_matched_final.pt",
+  "trainer": "E17 paired"
+ },
+ "B1legacy_s1": {
+  "arm": "B1_legacy",
+  "seed": 1,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B1_s1/final.pt",
+  "trainer": "student_v1 (5 strong augmentations missing)"
+ },
+ "B2matched_s1": {
+  "arm": "B2_matched",
+  "seed": 1,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed1/B2_random_matched_final.pt",
+  "trainer": "E17 paired"
+ },
+ "B3matched_s1": {
+  "arm": "B3_matched",
+  "seed": 1,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed1/B3_mined_matched_final.pt",
+  "trainer": "E17 paired"
+ },
+ "B1legacy_s2": {
+  "arm": "B1_legacy",
+  "seed": 2,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/students_v1/B1_s2/final.pt",
+  "trainer": "student_v1 (5 strong augmentations missing)"
+ },
+ "B2matched_s2": {
+  "arm": "B2_matched",
+  "seed": 2,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed2/B2_random_matched_final.pt",
+  "trainer": "E17 paired"
+ },
+ "B3matched_s2": {
+  "arm": "B3_matched",
+  "seed": 2,
+  "role": "secondary",
+  "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed2/B3_mined_matched_final.pt",
+  "trainer": "E17 paired"
+ }
+}

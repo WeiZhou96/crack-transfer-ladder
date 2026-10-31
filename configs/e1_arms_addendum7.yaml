@@ -1,0 +1,7 @@
+# experiment_program_v1 addendum 7 (2026-10-30): control arms requested by independent review, student_v5.
+# Recipe and loss constants are read from configs/e1_arms.yaml unchanged; only the fields below differ.
+# Registered before any of these arms is trained.
+version: "e1-addendum7-0.1"
+arms:
+  A_x00only:  {real_pos: true, synth: {paired: false, layers: [x00]}}          # rendered background layers only (no distractor, no crack); same renderer and acquisition operator as CF-NegOnly
+  B2_B1:      {real_pos: true, strong_aug: true, real_neg: negpool_accept}     # RandNeg + StrongAug (strong augmentation on positives, as in B1_v5)

@@ -1,0 +1,98 @@
+{
+ "B0_v6_s0": {
+  "arm": "B0_v6",
+  "seed": 0,
+  "role": "addendum3",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/B0_v6_s0/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B0_s0": {
+  "arm": "R50_B0",
+  "seed": 0,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B0_s0/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B11_s0": {
+  "arm": "R50_B11",
+  "seed": 0,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B11_s0/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B2_s0": {
+  "arm": "R50_B2",
+  "seed": 0,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B2_s0/final.pt",
+  "trainer": "student_v6"
+ },
+ "B0_v6_s1": {
+  "arm": "B0_v6",
+  "seed": 1,
+  "role": "addendum3",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/B0_v6_s1/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B0_s1": {
+  "arm": "R50_B0",
+  "seed": 1,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B0_s1/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B11_s1": {
+  "arm": "R50_B11",
+  "seed": 1,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B11_s1/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B2_s1": {
+  "arm": "R50_B2",
+  "seed": 1,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B2_s1/final.pt",
+  "trainer": "student_v6"
+ },
+ "B0_v6_s2": {
+  "arm": "B0_v6",
+  "seed": 2,
+  "role": "addendum3",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/B0_v6_s2/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B0_s2": {
+  "arm": "R50_B0",
+  "seed": 2,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B0_s2/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B11_s2": {
+  "arm": "R50_B11",
+  "seed": 2,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B11_s2/final.pt",
+  "trainer": "student_v6"
+ },
+ "R50_B2_s2": {
+  "arm": "R50_B2",
+  "seed": 2,
+  "role": "addendum3",
+  "arch": "upernet_resnet50",
+  "ckpt": "${CRACKCF_DATA}/students_v6_add3/R50_B2_s2/final.pt",
+  "trainer": "student_v6"
+ }
+}

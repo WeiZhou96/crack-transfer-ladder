@@ -1,0 +1,279 @@
+{
+ "method": "Addendum 5 part B (descriptive, post hoc): recall-matched false alarms over the common recall interval.\n\nInput: sweep_report.json from analyze_sweep_v1.py (per-model curves; native_r95 excluded here).\nArm curve = seed-mean recall and seed-mean A3 at each grid threshold. For arm X vs B0 the common recall interval of the\ntwo arm curves is sampled at 21 points; A3(r) is interpolated linearly in log(A3+0.01) against recall. Reported per leg:\ninterval, mean log ratio log((A3_X+0.01)/(A3_B0+0.01)) and its exp; per-seed-pair dominance over the 9 seed pairs\n(fraction with mean log ratio > 0 among pairs with a common interval). No prediction, no bootstrap.\nusage: python analyze_sweep_overlap_v1.py <sweep_report.json> <models.json>[,<models.json>...] <out.json>\n",
+ "thresholds": [
+  "t0.02",
+  "t0.05",
+  "t0.1",
+  "t0.2",
+  "t0.3",
+  "t0.5",
+  "t0.7",
+  "t0.85",
+  "t0.95"
+ ],
+ "vs_B0": {
+  "A_x00only": {
+   "arm_curve": {
+    "interval": [
+     0.7977797779777976,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.06370140540871712,
+     "ratio": 1.0657741168584194
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": 0.07773738320679238,
+     "ratio": 1.0808387749823425
+    },
+    "uav1388_background": {
+     "mean_log_ratio": -0.2784311750941648,
+     "ratio": 0.7569703643711608
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 4,
+    "without": 5,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 1.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.25
+    }
+   }
+  },
+  "A_x01only_B1": {
+   "arm_curve": null,
+   "seed_pairs": {
+    "with_common_interval": 1,
+    "without": 8,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.0
+    }
+   }
+  },
+  "B1": {
+   "arm_curve": {
+    "interval": [
+     0.7839783978397841,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": -0.04153058920826917,
+     "ratio": 0.9593199900536775
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": -0.8486373575595323,
+     "ratio": 0.4279977426658186
+    },
+    "uav1388_background": {
+     "mean_log_ratio": -0.9178066424333453,
+     "ratio": 0.3993940951411406
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 6,
+    "without": 3,
+    "bcl_noise": {
+     "frac_X_above_B0": 0.16666666666666666
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.0
+    }
+   }
+  },
+  "B10": {
+   "arm_curve": {
+    "interval": [
+     0.7698769876987699,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.12973353311504257,
+     "ratio": 1.1385249637002526
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": 0.24013192612719825,
+     "ratio": 1.271416872361727
+    },
+    "uav1388_background": {
+     "mean_log_ratio": 0.25571512857717105,
+     "ratio": 1.2913847969111587
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 7,
+    "without": 2,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.5714285714285714
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.8571428571428571
+    }
+   }
+  },
+  "B11": {
+   "arm_curve": {
+    "interval": [
+     0.7413741374137414,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.1311022471180348,
+     "ratio": 1.1400843456913663
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": 0.33571095653121547,
+     "ratio": 1.3989346134542398
+    },
+    "uav1388_background": {
+     "mean_log_ratio": 0.5586583567272962,
+     "ratio": 1.7483252972200614
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 9,
+    "without": 0,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 1.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 1.0
+    }
+   }
+  },
+  "B1_v5": {
+   "arm_curve": {
+    "interval": [
+     0.7647764776477648,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.01713545616655219,
+     "ratio": 1.0172831102633317
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": -0.6664752276478351,
+     "ratio": 0.5135154165107971
+    },
+    "uav1388_background": {
+     "mean_log_ratio": -1.4303980147123567,
+     "ratio": 0.2392136927245353
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 7,
+    "without": 2,
+    "bcl_noise": {
+     "frac_X_above_B0": 0.5714285714285714
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.0
+    }
+   }
+  },
+  "B2": {
+   "arm_curve": {
+    "interval": [
+     0.7275727572757275,
+     0.7995799579957996
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.02998530791053636,
+     "ratio": 1.030439394534531
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": -5.4029171343103775,
+     "ratio": 0.004503424668019014
+    },
+    "uav1388_background": {
+     "mean_log_ratio": 0.022336612673450548,
+     "ratio": 1.0225879426043922
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 9,
+    "without": 0,
+    "bcl_noise": {
+     "frac_X_above_B0": 0.7777777777777778
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.5555555555555556
+    }
+   }
+  },
+  "B2_B1": {
+   "arm_curve": null,
+   "seed_pairs": {
+    "with_common_interval": 3,
+    "without": 6,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.0
+    }
+   }
+  },
+  "B3_auto": {
+   "arm_curve": {
+    "interval": [
+     0.7275727572757275,
+     0.762076207620762
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": 0.04483770554602326,
+     "ratio": 1.0458581091635235
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": -3.9558927580596484,
+     "ratio": 0.019141572126503945
+    },
+    "uav1388_background": {
+     "mean_log_ratio": 0.3502609660270175,
+     "ratio": 1.419437925339255
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 6,
+    "without": 3,
+    "bcl_noise": {
+     "frac_X_above_B0": 0.5
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 0.16666666666666666
+    }
+   }
+  }
+ }
+}

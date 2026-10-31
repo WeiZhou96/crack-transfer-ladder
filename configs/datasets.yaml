@@ -1,0 +1,458 @@
+# Phase 0.5 dataset manifest (machine-readable version of appendix 0.5-3)
+# Access points verified on 2026-08-31, each first-hand (GitHub API / Dataverse API / figshare API / official page)
+# (low-confidence items are flagged in each entry's note).
+# access: direct | repo | form | email | manual | pending-verification
+# layout depends on the actual structure after extraction: fill it in after download following the commented template; s01 skips datasets without a configured layout.
+# group_rule is a regex on the file stem (named group g is the group id); the same group never crosses splits (enforced by s03).
+
+datasets:
+
+  # ---------------- Train-positive (also the mask library) ----------------
+  crack500:
+    name: Crack500 (500 original images / 1896+348+1124 patches)
+    status: unavailable_fallback_active   # 2026-09-24: not obtained (Google Drive quota exhausted); per the external-dependency fallback table, train positives = DeepCrack+CrackTree260+CFD. If obtained later it is an upgrade only and requires a new s03 frozen version; frozen criteria are not revised retroactively
+    role: train_positive
+    material: asphalt
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/fyangneil/pavement-crack-detection
+    license: unstated (README has no license terms; contact the authors listed on the repository page)
+    license_page: https://github.com/fyangneil/pavement-crack-detection
+    manual_note: >-
+      Download the packaged zip from either drive linked in the README (it contains five sets: CRACK500/GAPs384/CFD/AEL/cracktree200):
+      Google Drive https://drive.google.com/file/d/13_vDYl54Mrd34dddX9w4ppAEiuWv4MlD/view ;
+      Baidu Netdisk https://pan.baidu.com/s/1JwJO96BOtJ50MykBcYKknQ .
+    # patch names start with the original image's timestamp (e.g. 20160222_081011_*); grouped by original image so that crops never cross splits (spot-check after extraction)
+    group_rule: '^(?P<g>\d{8}_\d{6})'
+    expected: {original_images: 500, patches_train: 1896, patches_val: 348, patches_test: 1124}
+
+  deepcrack:
+    name: DeepCrack (Liu et al.) (paper count 537 = 300 train + 237 test; the README gives no count, counted after extraction)
+    role: train_positive
+    # 2026-09-24 freeze dry run: the official train_img/test_img contain crops of the same original photo (e.g. 11142, 11289, IMG_6536 across train/test),
+    # i.e. the same group_rule group crosses splits, a firewall violation. This project uses DeepCrack only as a training-positive source (never for evaluation), so it is split locally by original-photo group.
+    local_split: {train: 0.8, val: 0.2, seed: 20260831}
+    material: mixed
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/yhlleo/DeepCrack
+    license: 'non-commercial (README: "RESTRICTED to non-commercial research and educational purposes")'
+    license_page: https://raw.githubusercontent.com/yhlleo/DeepCrack/master/README.md
+    manual_note: The data are in the repository at dataset/DeepCrack.zip (about 67.7 MB); clone and extract.
+    group_rule: '^(?P<g>[^-]+)'
+    expected_registry: {total: 537, masks: 537, splits: {train: 300, test: 237}}
+    layout:
+      root: raw/deepcrack/extracted
+      entries:
+        - {split: train, images_glob: "train_img/*.jpg", mask_map: {from: "train_img", to: "train_lab", ext: ".png"}}
+        - {split: test,  images_glob: "test_img/*.jpg",  mask_map: {from: "test_img",  to: "test_lab",  ext: ".png"}}
+
+  cracktree260:
+    name: CrackTree260 (260 area-scan images; the same page also hosts CrackLS315/CRKWH100/Stone331)
+    role: train_positive
+    material: asphalt
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/qinnzou/DeepCrack
+    license: unstated (only the sentence "collected for academic research")
+    license_page: https://raw.githubusercontent.com/qinnzou/DeepCrack/master/README.md
+    manual_note: >-
+      The README drive links are OneDrive (1drv.ms, not Google Drive):
+      CrackTree260+GT https://1drv.ms/f/s!AittnGm6vRKLyiQUk3ViLu8L9Wzb ;
+      Baidu Netdisk mirror https://pan.baidu.com/s/1PWiBzoJlc8qC8ffZu2Vb8w extraction code zfoo.
+    local_split: {train: 0.8, val: 0.2, seed: 20260831}
+    expected: {images: 260}
+    expected_registry: {total: 260, masks: 260, splits: {all: 260}}
+    layout:
+      root: raw/cracktree260/extracted/CrackTree260
+      entries:
+        - {split: all, images_glob: "image/*.jpg", mask_map: {from: "image", to: "gt", ext: ".bmp"}}
+        - {split: all, images_glob: "image/*.JPG", mask_map: {from: "image", to: "gt", ext: ".bmp"}}
+
+  cfd:
+    name: CrackForest (CFD) (118 images; annotations are MATLAB .mat)
+    role: train_positive
+    material: asphalt
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/cuilimeng/CrackForest-dataset
+    license: non-commercial ("available for non-commercial research purposes only")
+    license_page: https://github.com/cuilimeng/CrackForest-dataset
+    manual_note: Images and groundTruth(.mat) are all in the repository; masks must be converted from .mat to PNG (conversion script to be added), then fill in layout.
+    local_split: {train: 0.7, val: 0.3, seed: 20260831}
+    expected: {images: 118}
+    expected_registry: {total: 118, masks: 118, splits: {all: 118}}
+    layout:
+      root: raw/cfd
+      entries:
+        # The official image/ also contains 37 extra images (201–208, 301–329) without .mat; only 001–118, which have GT, are registered.
+        - {split: all, images_glob: "repo/image/0*.jpg", mask_map: {from: "repo/image", to: "masks_png", ext: ".png"}}
+        - {split: all, images_glob: "repo/image/1*.jpg", mask_map: {from: "repo/image", to: "masks_png", ext: ".png"}}
+
+  crackls315:
+    name: CrackLS315 (optional; laser-illuminated line scan, for illumination generalisation)
+    role: train_positive_optional
+    material: asphalt
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/qinnzou/DeepCrack
+    license: unstated
+    manual_note: Same README as CrackTree260; images https://1drv.ms/f/s!AittnGm6vRKLtylBkxVXw5arGn6R , GT https://1drv.ms/u/s!AittnGm6vRKLg0HrFfJNhP2Ne1L5?e=WYbPvF
+
+  # ---------------- Train-negative (also the B3-auto mining source, train side only) ----------------
+  sdnet2018:
+    name: SDNET2018 (56k+ 256×256; only the two non-crack subfolders P/UP and D/UD are used, walls W excluded)
+    status: unavailable_fallback_active   # 2026-09-24: all three official direct links returned 403 for over a week; per prereg R08 / b3_auto_mining.sdnet_fallback, seam-free crops outside dilate(GT,30px) of train-positive images are used instead and are not presented as an independent test source. If obtained later it is an upgrade only and requires a new s03 frozen version
+    role: train_negative
+    material: concrete
+    crack_annotation: image-level
+    access: direct
+    url: https://digitalcommons.usu.edu/all_datasets/48
+    license: CC BY 4.0
+    license_page: https://digitalcommons.usu.edu/all_datasets/48
+    downloads:
+      - filename: SDNET2018.zip
+        urls:
+          - "https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1047&context=all_datasets&filename=2&type=additional"
+        referer: "https://digitalcommons.usu.edu/all_datasets/48/"
+        md5: "677411e784f194422c90f52d9ed0d7c6"
+    # the part of the file name before the dash is the specimen ID; grouped by specimen (check the naming after extraction)
+    group_rule: '^(?P<g>[^-]+)-'
+    local_split: {train: 0.8, test: 0.2, seed: 20260831}
+    # layout:
+    #   root: raw/sdnet2018
+    #   entries:
+    #     - {split: all, images_glob: "P/UP/*.jpg"}
+    #     - {split: all, images_glob: "D/UD/*.jpg"}
+
+  pavedistress:
+    name: PaveDistress (background class; train side used as training negatives, test side as an independent negative test)
+    role: train_negative
+    material: asphalt
+    crack_annotation: image-level
+    gsd_note: "about 3.9×2.1 m per image (3854×2065, Basler raL2048-80km); fill in gsd_mm_per_pixel after checking the GSD against the package metadata"
+    access: direct
+    url: https://data.mendeley.com/datasets/f46zt2g83x/1
+    license: CC BY 4.0 (data page; the companion Data in Brief paper is CC BY-NC, the two differ)
+    license_page: https://data.mendeley.com/datasets/f46zt2g83x/1
+    downloads:
+      - filename: PaveDistress.rar
+        urls:
+          - "https://data.mendeley.com/public-files/datasets/f46zt2g83x/files/1604eb65-ecdb-404e-84fe-c847d46e96e4/file_downloaded"
+    manual_note: >-
+      Public download from the Mendeley V1 page, no application needed; on 2026-08-31 the dynamic page was verified to serve a single file, PaveDistress.rar (9.75 GB).
+      It extracts to class folders (Background/Crack/Patch/Pothole/Other); all images are 3854×2065 grayscale;
+      PNG and JPG files are both images, not masks. Background has 2,784 images (2,322 JPG + 462 PNG) with no stem overlap between the two extensions.
+      Other classes contain the same timestamp across classes/extensions, so only Background is attached as image-level negatives.
+    local_split: {train: 0.6, test: 0.4, seed: 20260831}
+    # The numeric file stem is interpreted, following the paper's "one image every 2 m", as chainage (km), not as a timestamp.
+    # Adjacent frames are first clustered into 100 m chainage blocks; the main continuous section is split 60/40 using 4–6 interleaved blocks of about 2 km;
+    # whole groups intersecting ±100 m of each block boundary go to development_buffer; short sections with fewer than 4 blocks go to train only.
+    group_rule: '^(?P<g>\d+(?:\.\d+)?)'
+    group_numeric_bucket: 0.1
+    group_numeric_bucket_label: distance_bucket
+    local_split_mode: interleaved_numeric
+    local_split_numeric_unit: km
+    local_split_sequence_gap: 1.0
+    local_split_block_width: 2.0
+    local_split_min_blocks: 4
+    local_split_max_blocks: 6
+    local_split_buffer: 0.1
+    development_exposure_numeric_radius: 0.1
+    expected: {images_total: 4436, background: 2784}
+    expected_registry: {total: 2784, masks: 0, splits: {all: 2784}}
+    layout:
+      root: raw/pavedistress/extracted/PaveDistress
+      entries:
+        - {split: all, images_glob: "Background/*.jpg"}
+        - {split: all, images_glob: "Background/*.png"}
+
+  pavedistress_hard_proxy:
+    name: PaveDistress Patch/Pothole image-level hard-negative proxy (extensions and multiple labels merged by stem)
+    role: proxy_bench
+    material: asphalt
+    crack_annotation: image_level_hard_confuser
+    access: derived_from_pavedistress
+    license: CC BY 4.0 (inherited from PaveDistress V1)
+    license_page: https://data.mendeley.com/datasets/f46zt2g83x/1
+    manual_note: >-
+      Used only as N_hard-proxy; not described as native pixel masks. JPG/PNG files with the same stem and cross-class entries are merged into one row,
+      and semantic_labels keeps all classes; in the 2026-09-04 package, Patch and Pothole share no stem, but same-class extension duplicates are substantial.
+    deduplicate_by_stem: true
+    group_rule: '^(?P<g>\d+(?:\.\d+)?)'
+    group_numeric_bucket: 0.1
+    group_numeric_bucket_label: distance_bucket
+    expected: {files_before_stem_dedup: 1468, images_after_stem_dedup: 742, patch_stems: 604, pothole_stems: 138}
+    expected_registry: {total: 742, masks: 0, splits: {test: 742}, semantic_labels: {patch: 604, pothole: 138}}
+    manifest: derived/pavedistress_r7/hard_proxy_manifest.csv
+    layout:
+      root: raw/pavedistress/extracted/PaveDistress
+      entries:
+        - {split: test, images_glob: "Patch/*.jpg", label: patch}
+        - {split: test, images_glob: "Patch/*.png", label: patch}
+        - {split: test, images_glob: "Pothole/*.jpg", label: pothole}
+        - {split: test, images_glob: "Pothole/*.png", label: pothole}
+
+  pavedistress_anchor:
+    name: PaveDistress Crack sparse-centerline t^proxy calibration anchor
+    role: proxy_bench
+    material: asphalt
+    crack_annotation: sparse_centerline
+    access: derived_from_pavedistress
+    license: CC BY 4.0 (inherited from PaveDistress V1)
+    status: annotation_accepted
+    manifest: derived/pavedistress_r7/anchor_manifest.csv
+    double_annotation_manifest: derived/pavedistress_r7/double_annotation_manifest.csv
+    annotation_protocol: derived/pavedistress_r7/annotation_protocol.md
+    acceptance_evidence:
+      path: derived/pavedistress_r7/accepted_20260924/acceptance_receipt.json
+      sha256: 0afce12509e3b51447c5f4cf71de707189f6583b036e5321cb0b4951b51fea48
+    manual_note: >-
+      Fixed sample of 150 images from an independent Crack section at 13.184–14.748 km; this section does not intersect any R5 train/test
+      section. Used only to set the per-model t^proxy_R95 threshold and enters no evaluation layer; 20% (30 images) are double-annotated for spot checks.
+      Accepted on 2026-09-24 (reviewer.kind=ai_authorized): 147 accepted_visible_segments registered;
+      080/133/143 recorded as geometry_unresolved under prereg-3 R16 and not registered; 10 long straight texture-boundary lines in 110–114 removed under R17.
+      images/ are symbolic links to the original Crack images (hashes match the per-image review copies); masks/ are generated by the production centerline_mask.
+    expected: {anchor_images: 150, double_annotated: 30}
+    expected_registry: {total: 147, masks: 147, splits: {val: 147}}
+    group_rule: "^\\d{3}__(?P<g>\\d+(?:\\.\\d+)?)$"
+    group_numeric_bucket: 0.1
+    group_numeric_bucket_label: distance_bucket
+    layout:
+      root: derived/pavedistress_r7/accepted_20260924
+      entries:
+        - {split: val, images_glob: "images/*.jpg", mask_map: {from: "images/", to: "masks/", ext: ".png"}}
+
+  # ---------------- Proxy val/test (main POC benchmark) ----------------
+  pavementscapes:
+    name: Pavementscapes (4,000 images 1024×2048, six-class pixel annotation, official split 2500/500/1000)
+    role: proxy_bench
+    material: asphalt
+    crack_annotation: pixel
+    access: email
+    url: https://github.com/tongzheng1992/Pavementscapes
+    license: repository Apache-2.0; data license not separately stated (contact the authors listed on the repository page)
+    license_page: https://github.com/tongzheng1992/Pavementscapes
+    manual_note: >-
+      The official README still points to the Google Drive folder
+      https://drive.google.com/drive/folders/1h9Mis8s93TrRfzWQ4tThi8D_Ze0qS25U ,
+      but on 2026-08-31 it returned 404 when checked via gdown, a local browser and a remote server; repository issue #1 (2025-04) also reports that no new link was obtained.
+      Request the current distribution point from the dataset authors (contact on the repository page); unauthorised mirrors must not be used as a substitute in the meantime.
+    proxy:
+      class_map:      # fill in after checking the class ids one by one after download; s04 refuses to run while this is unconfigured
+        crack: []     # longitudinal / transverse / alligator cracks
+        hard: []      # repair / rut / pothole
+        distress: []  # all distress classes
+
+  gaps10m:
+    name: GAPs 10m (20 images 5030×11505, 22-class pixel annotation; if access is not approved, use the contingency in appendix 0.5-3 note d)
+    role: proxy_bench
+    material: asphalt
+    crack_annotation: pixel
+    access: form
+    url: https://www.tu-ilmenau.de/en/university/departments/department-of-computer-science-and-automation/profile/institutes-and-groups/institute-of-computer-and-systems-engineering/group-for-neuroinformatics-and-cognitive-robotics/data-sets-code/german-asphalt-pavement-distress-dataset-gaps
+    license: academic use only
+    license_page: https://www.tu-ilmenau.de/en/university/departments/department-of-computer-science-and-automation/profile/institutes-and-groups/institute-of-computer-and-systems-engineering/group-for-neuroinformatics-and-cognitive-robotics/data-sets-code/german-asphalt-pavement-distress-dataset-gaps
+    manual_note: >-
+      Fill in the request form https://www.tu-ilmenau.de/fileadmin/Bereiche/IA/neurob/Datasets/Request-Gaps3.pdf
+      and send it to nikr-datasets-request@tu-ilmenau.de; after receiving credentials, fetch the data with pip install gaps-dataset.
+      Registered as an upgrade layer on 2026-09-24: the official 10m segmentation subset, 20 pairs of native grayscale images/masks (A6 technical check),
+      not rescaled; the package has no section/chainage information, so the 20 images are conservatively merged into a single correlation group, all proxy_test, not used for t^proxy thresholding and not replacing the PaveDistress anchor.
+      The class mapping uses native codes only: crack=Crack(4); hard=Inlaid/Applied patch(1,2), Sealed crack(3), Open joint(5), Pothole(6),
+      Expansion joint(13), Joint(19) (v6 distractor classes: repair/sealing/joint/pothole); distress=all pavement-distress codes; VOID(0) is unknown,
+      and tiles containing VOID enter no negative layer. Academic-use license; cite Stricker et al., CASE 2021.
+    layout:
+      root: raw/gaps10m/10m/segmentation
+      entries:
+        - {split: test, images_glob: "images/*.jpg", mask_map: {from: "images/", to: "val_p/", ext: ".png", stem_suffix: ".mask"}}
+    group_map_csv: derived/gaps10m/group_map.csv
+    expected_registry: {total: 20, masks: 20, splits: {test: 20}}
+    proxy:
+      class_map:
+        crack: [4]
+        hard: [1, 2, 3, 5, 6, 13, 19]
+        distress: [1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 19]
+        void: [0]
+
+  # ---------------- Hard positive test (eval-only) ----------------
+  cracksc:
+    name: CrackSC (197 images in the paper; a 2026-08-31 clone at fixed commit 7f5f3505 shows about 197 complete pairs, to be confirmed quantitatively by s01)
+    role: eval_hard_positive
+    material: asphalt
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/jonguo111/Transformer-Crack
+    license: repository contains a LICENSE file; data license unstated
+    license_page: https://github.com/jonguo111/Transformer-Crack
+    manual_note: >-
+      image/ and label/ are in the repository; clone to obtain them. An earlier check misreported 122 pairs; at fixed commit
+      7f5f35050adcaaa9f17fe909be9b8299557bc7ea the files actually cover IDs 119–315; the count follows the s01 inventory.
+    expected: {images_now: 197, images_paper: 197}
+    expected_registry: {total: 197, masks: 197, splits: {test: 197}}
+    layout:
+      root: raw/cracksc/repo
+      entries:
+        - {split: test, images_glob: "image/*.jpg", mask_map: {from: "image", to: "label", ext: ".png"}}
+
+  nha12d:
+    name: NHA12D (80 = 40 concrete + 40 asphalt, 1920×1080, includes Masks/)
+    role: eval_hard_positive
+    material: mixed
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/ZheningHuang/NHA12D-Crack-Detection-Dataset-and-Comparison-Study
+    license: unstated (images provided by National Highways, UK)
+    license_page: https://github.com/ZheningHuang/NHA12D-Crack-Detection-Dataset-and-Comparison-Study
+    manual_note: Note the owner capitalisation ZheningHuang; the data are in four subfolders of NHA12D_dataset/, each containing Raw_images/ and Masks/.
+    expected: {images: 80}
+    expected_registry: {total: 80, masks: 80, splits: {test: 80}}
+    layout:
+      root: raw/nha12d/repo/NHA12D_dataset
+      entries:
+        - {split: test, images_glob: "Concrete_pavement_VD/Raw_images/*.jpg", mask_map: {from: "Raw_images", to: "Masks", ext: ".png"}}
+        - {split: test, images_glob: "Concrete_pavement_FD/Raw_images/*.jpg", mask_map: {from: "Raw_images", to: "Masks", ext: ".png"}}
+        - {split: test, images_glob: "Asphalt_pavement_VD/Raw_images/*.jpg", mask_map: {from: "Raw_images", to: "Masks", ext: ".png"}}
+        - {split: test, images_glob: "Asphalt_pavement_FD/Raw_images/*.jpg", mask_map: {from: "Raw_images", to: "Masks", ext: ".png"}}
+
+  camcrack789:
+    name: "CamCrack789 - no public distribution point (checked 2026-08-31: neither the paper nor the code repository gives a download link)"
+    role: eval_hard_positive_optional
+    material: asphalt
+    crack_annotation: pixel
+    access: email
+    url: https://arxiv.org/abs/2207.14166
+    license: n/a
+    manual_note: >-
+      The original version is available only by emailing the authors (Zhun Fan's group, Shantou University; RHA-Net / CACAIE 2024 mice.13103).
+      CHCrack5K (github.com/hanshenchen/CHCrack5K) contains a repackaged version, but it is uniformly resampled to 480×480;
+      it is not the original CamCrack789 and must not be substituted for it. Main text §4.1 depends on its test fold.
+
+  # ---------------- Independent negative test ----------------
+  bcl:
+    name: Bridge Crack Library (11,000 images 256×256 with pixel annotation, from 1,180 inspection images; the noise class is used as crack-free negatives)
+    role: eval_negative
+    material: concrete
+    crack_annotation: pixel
+    access: direct
+    url: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH"
+    license: CC0 1.0
+    license_page: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/RURXSH"
+    downloads:
+      - filename: bcl_dataverse.zip
+        urls:
+          - "https://dataverse.harvard.edu/api/access/datafile/4367253"
+        md5: "08eecb40b955acffbcfa5c8ed2ecfee7"
+    manual_note: >-
+      Use DOI RURXSH (the widely cited DNUEF5 returns 404 on the Dataverse API; do not use it). The commonly cited three-way split 5769/2036/3195
+      comes from the associated paper and is not listed in the Dataverse description (unverified); the actual noise-class count follows the post-extraction inventory,
+      which is also entered in the main text's OmniCrack/BCL negative-sample table.
+    expected: {images: 11000, raw_source_images: 1180}
+    expected_registry: {total: 3195, masks: 0, splits: {test: 3195}}
+    # Original source ids were not released with the 256x256 crops; before the freeze, connected components of the current pHash/DINO candidates serve as observable correlation groups.
+    # This cannot recover the full assignment to the 1,180 inspection images, so BCL CIs must still be declared as possibly too narrow.
+    group_map_csv: group_maps/bcl_near_duplicate_groups.csv
+    layout:
+      root: raw/bcl/extracted/Bridge Crack Library
+      entries:
+        # Native mode-1 labels use black = crack, white = background; Noise labels are all white. Negative evaluation does not read masks, which avoids polarity misreads.
+        - {split: test, images_glob: "Noise images/Image/*.jpg"}
+
+  # ---------------- External confusers (native masks, no new annotation) ----------------
+  uav75:
+    name: UAV75 (75 images 512×512; linear crack + areal planking annotations, planking being the false-positive-prevention class)
+    role: eval_confuser
+    material: concrete
+    crack_annotation: pixel
+    access: repo
+    url: https://github.com/ben-z-original/uav75
+    license: GPL-3.0
+    license_page: https://github.com/ben-z-original/uav75
+    manual_note: The img and lab subfolders of train/val/test (six in total) are all in the repository; clone to obtain them.
+    expected: {images: 75}
+    expected_registry: {total: 75, masks: 75, splits: {train: 50, val: 10, test: 15}}
+    group_rule: '^(?P<g>DSC\d+)'
+    layout:
+      root: raw/uav75/repo
+      entries:
+        - {split: train, images_glob: "train_img/*.jpg", mask_map: {from: "train_img", to: "train_lab", ext: ".png"}}
+        - {split: val, images_glob: "val_img/*.jpg", mask_map: {from: "val_img", to: "val_lab", ext: ".png"}}
+        - {split: test, images_glob: "test_img/*.jpg", mask_map: {from: "test_img", to: "test_lab", ext: ".png"}}
+
+  dacl10k:
+    name: dacl10k (9,920 images, 19 classes; Crack/ACrack/EJoint/JTape are used)
+    role: eval_confuser
+    material: concrete
+    crack_annotation: pixel
+    access: direct
+    url: https://github.com/phiyodr/dacl10k-toolkit
+    license: CC BY-NC 4.0
+    license_page: https://raw.githubusercontent.com/phiyodr/dacl10k-toolkit/master/README.md
+    downloads:
+      - filename: dacl10k_v2_devphase.zip
+        url: "https://dacl10k.s3.eu-central-1.amazonaws.com/dacl10k-challenge/dacl10k_v2_devphase.zip"
+        sha256: "dcbcd5fb82699076a2c7f3a72492a9ef798870e0ca1f0c9399360f273ea95260"
+      - filename: dacl10k_v2_testchallenge.zip
+        url: "https://dacl10k.s3.eu-central-1.amazonaws.com/dacl10k-challenge/dacl10k_v2_testchallenge.zip"
+        sha256: "8fecd89e0c2316ac48f49867deabb0cf5629a68579eff2dd52e800f91147e8da"
+    manual_note: After download, verify against the SHA256 values listed in the toolkit README; do not point to dacl.ai (commercial site, no data page).
+    expected: {train: 6935, val: 975, test_dev: 1012, test_challenge: 998}
+    expected_registry: {total: 7910, masks: 7910, splits: {train: 6935, val: 975}}
+    layout:
+      root: raw/dacl10k/extracted/dev/dacl10k_v2_devphase
+      entries:
+        - {split: train, images_glob: "images/train/*.jpg", mask_map: {from: "images", to: "derived/crack_binary", ext: ".png"}}
+        - {split: val, images_glob: "images/validation/*.jpg", mask_map: {from: "images", to: "derived/crack_binary", ext: ".png"}}
+
+  # ---------------- Unseen-sensor ----------------
+  uav1388:
+    name: UAV-1388 (Figshare metadata states 1,388; the actual package has 1,389, see note)
+    role: eval_unseen_sensor_auxiliary
+    material: asphalt
+    crack_annotation: bbox_yolo
+    access: direct
+    url: https://figshare.com/articles/dataset/Pavement_cracks_from_UAV_imagery-1388/25103138
+    license: CC BY 4.0
+    license_page: https://api.figshare.com/v2/articles/25103138
+    downloads:
+      - filename: uav1388.rar
+        urls:
+          - "https://figshare.com/ndownloader/files/44293022"
+          - "https://ndownloader.figshare.com/files/44293022"
+        referer: "https://figshare.com/articles/dataset/Pavement_cracks_from_UAV_imagery-1388/25103138"
+        md5: "fef6d89dca45c85d81cd1bb794c7cdb9"
+    manual_note: >-
+      The official API gives 109,229,404 B and MD5 fef6d89dca45c85d81cd1bb794c7cdb9; the compute server received 403, so the file was downloaded on a local machine from the same official
+      ndownloader object, verified by MD5 and transferred. The package contains 640×640 images + five-column YOLO bboxes, not pixel masks;
+      actual counts are AC=368, LC=302, OC=313, TC=303, background=103, total 1,389, which is inconsistent with the Figshare description
+      LC=304, background=100, total 1,388. Used only as auxiliary unseen-sensor / negative samples; must not be presented as segmentation GT.
+    expected: {images_metadata: 1388, images_actual: 1389, no_crack_metadata: 100, no_crack_actual: 103}
+    expected_registry: {total: 1389, masks: 0, splits: {train: 1111, val: 149, test: 129}}
+    negative_leg:
+      id: uav1388_background
+      selector_original_image_id_regex: '^background\s*\('
+      expected_images: 103
+      independence: dataset_level_unseen_sensor
+      manifest: derived/pavedistress_r7/uav1388_background_manifest.csv
+    layout:
+      root: raw/uav1388/extracted/Pavement cracks from UAV imagery-1000
+      entries:
+        - {split: train, images_glob: "train/images/*.jpg"}
+        - {split: val, images_glob: "val/images/*.jpg"}
+        - {split: test, images_glob: "test/images/*.jpg"}
+
+  pavecrack1300:
+    name: "PaveCrack1300 - existence not verified (2026-08-31: zero hits online for the exact name, Zenodo API total=0; possibly confused with UAV-1388)"
+    role: quarantine_unverified   # enters no pool until verified; re-check once the original source (DOI/authors/institution) is obtained
+    access: pending-verification
+
+  # ---------------- Access requested in parallel (not used for POC training; to be inventoried for the main text) ----------------
+  omnicrack30k:
+    name: OmniCrack30k (about 30k images aggregated from 20+ subsets; not publicly distributed for licensing reasons)
+    role: application_parallel
+    access: email
+    url: https://github.com/ben-z-original/omnicrack30k
+    license: non-commercial only, and each subset's license must be respected
+    license_page: https://github.com/ben-z-original/omnicrack30k
+    manual_note: >-
+      Email the dataset maintainer (address on the repository page) with the subject "Access OmniCrack30k Dataset"; the body states compliance with all subset licenses and
+      non-commercial use only, and gives name/position/institution/research homepage. Once approved, count the negative samples per subset for the main text.

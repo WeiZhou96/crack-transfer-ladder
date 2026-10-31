@@ -1,0 +1,122 @@
+{
+  "schema": "B1_completion_matched_development_training_v1",
+  "sealed_utc": "2026-10-17T14:09:23.953791+00:00",
+  "registration_scope": "prospective execution protocol for a posthoc code-specification repair after historical baseline outcomes; not FREEZE.v4 or formal preregistration",
+  "purpose": "isolate omitted augmentation bundle in retained B1 implementation; no operator/brush/visibility acceptance claim",
+  "arms": [
+    "B1_legacy_matched",
+    "B1_completed_matched"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 80000,
+  "batch": 32,
+  "crop": 256,
+  "recipe": {
+    "architecture": "smp.UPerNet(tu-convnext_tiny,classes=1)",
+    "initialization": "preflight sealed ImageNet-initialized state per seed, identical across pair",
+    "optimizer": "AdamW",
+    "lr": 6e-05,
+    "weight_decay": 0.01,
+    "poly_power": 1.0,
+    "amp": false,
+    "tf32": false,
+    "loss": "retained student_v1.seg_loss AST; native targets, ignore0, valid crop, omega0"
+  },
+  "augmentation": {
+    "gamma": {
+      "p": 0.5,
+      "range": [
+        0.7,
+        1.5
+      ]
+    },
+    "clahe": {
+      "p": 0.25,
+      "clip_limit": 2.0,
+      "tile_grid": [
+        8,
+        8
+      ]
+    },
+    "motion": {
+      "p": 0.25,
+      "sizes": [
+        3,
+        5,
+        7
+      ],
+      "directions": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "shadow": {
+      "p": 0.5,
+      "factor": [
+        0.55,
+        0.85
+      ],
+      "vertices": [
+        3,
+        6
+      ],
+      "radius_fraction": [
+        0.2,
+        0.65
+      ],
+      "blur_kernel": 5
+    },
+    "cutmix": {
+      "p_batch": 0.5,
+      "beta_alpha": 1.0,
+      "donor": "cyclic nonzero shift of original batch; no in-place donor contamination"
+    }
+  },
+  "shared_input": "same32native source/crop/geometric choices and same legacy photometry per step; completed branch then adds five operations; CutMix target/ignore/valid/omega copied with RGB",
+  "randomness": "SHA256 namespace/seed/step counter streams; shared dropout seed per step; original CUDA adaptive-pooling backward retained, not bitwise deterministic",
+  "comparison_limit": "new legacy-matched run changes sampling RNG organization relative to historical B1; do not label it a bitwise historical reproduction",
+  "evaluation": {
+    "native_val": 260,
+    "threshold": 0.5,
+    "frequency_steps": 5000,
+    "selection": "fixed80000 endpoint only; log all checkpoints, do not tune on results",
+    "formal_test": false,
+    "proxy_recalibration": false
+  },
+  "inputs_scope": "only642 existing frozen train_positive/train and260 already exposed native val; no new source admission, no scientific synthetic images",
+  "code_sha256": {
+    "source/augment.py": "eb3b8ec965c2d7c4ac8465b57a973a3eb9b405723ec386918f52f933d27111de",
+    "source/experiment.py": "e72632f961a6e60f44dba740b885bbad093c7525fd7e4960ba450173bd52ca5a",
+    "source/legacy_student_v1.py": "51c34667e694cfbca3d9ac75ed49e487055284c49fb06c8cfb5ad890c9712ccc",
+    "source/queue_jobs.py": "31f5555b678ecd5b4273a832c81f135d119da6689360a91fb75efacf3b635a68",
+    "source/test_augment.py": "1fa2f4bc85c0f107597db06d3ea5d125c09fe417db7585fc9681e35e9cd0f9b4",
+    "source/test_queue.py": "b16afb4e379adb7d1c30fa1f0317014469bc0e8b7c1d9653291eb4c8d95b3530",
+    "source/test_state.py": "52bdc2f758fd5aab2d2d422267a07b831bd1dcf325a7dc5e5b710a1c57435ef1",
+    "source/train_pair.py": "de1387bc74dfb1e5f7d5eeea9fe678dd77f0fb3d66998ced9379f45d44232690"
+  },
+  "bindings_sha256": "40688bbd555db58b4dca17bd6e9b31d71d5066893628e1f5eeb60b0d51ede4bb",
+  "preflight_sha256": "ace4e215dc0984a38e0cbef81e1623fdc90cc09dfeb17a9a872bff454a72ab8f",
+  "output_directory": "${CRACKCF_DATA}/baseline_completion_20261017/runs",
+  "queue": {
+    "host": "gpu-server",
+    "requires_empty_gpu": true,
+    "memory_below_mib": 512,
+    "util_below_percent": 5,
+    "no_compute_process": true,
+    "recheck_seconds": 15,
+    "poll_seconds": 60,
+    "max_wait_hours": 48,
+    "automatic_failure_retry": false
+  },
+  "not_main_missing_six_runs": true,
+  "primary_historical_completed_runs": 12,
+  "B10_B11_scientific_gate_unchanged": true,
+  "H1_H2_decision": false,
+  "new_human_task": false
+}

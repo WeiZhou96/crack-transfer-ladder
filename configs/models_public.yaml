@@ -1,0 +1,306 @@
+schema_version: 2
+updated: "2026-09-26"
+
+prediction_contract: "<pred_root>/<model>/<image_id with '/' replaced by '__'>.png; uint16 probability_png_u16_v1"
+selection_policy:
+  minimum_models: 6
+  target_models: 8
+  verified_committee:
+    - crackmer_deepcrack
+    - scsegamba_tut
+    - hrsegnet_b16
+    - crackformer2_crack537
+    - ct_crackseg_deepcrack
+    - deepcrack_cracktree260
+    - crackmamba_crackseg9k
+    - deepcrackliu_deepcrack537
+    - cracksam_adapter_khanhha
+    - cdln_liu_fcn_csn_usc
+  planned_unified_committee:   # = prereg-5 ed1.sensor_polarity_preprocessing.main_models (R19, FREEZE.v3)
+    - deepcrack_cracktree260
+    - crackformer2_crack537
+    - ct_crackseg_deepcrack
+    - scsegamba_tut
+    - crackmamba_crackseg9k
+    - deepcrackliu_deepcrack537
+    - cracksam_adapter_khanhha
+    - cdln_liu_fcn_csn_usc
+  archived_threshold_degenerate: [crackmer_deepcrack, hrsegnet_b16]   # prereg-4 R18
+  require_published_work: true
+  require_official_code_or_author_checkpoint: true
+  prohibit_unverified_mirrors: true
+  reporting_policy: >-
+    Tables and figures report only this project's unified CrackSC+NHA12D protocol at each model's
+    frozen t^proxy_R95. Published self-reported scores are not imported. Fixed threshold 0.5 is a
+    within-model sensitivity result and must not be interpreted across models.
+  architecture_families:   # covers exactly planned_unified_committee
+    cnn_encoder_decoder: [deepcrack_cracktree260, crackformer2_crack537, deepcrackliu_deepcrack537, cdln_liu_fcn_csn_usc]
+    cnn_transformer_hybrid: [ct_crackseg_deepcrack]
+    state_space_segmentation: [scsegamba_tut, crackmamba_crackseg9k]
+    foundation_model_adapter: [cracksam_adapter_khanhha]
+  note: >-
+    A missing repository license is recorded as not_declared. Such artifacts may be used for
+    internal academic reproducibility checks with citation, but are not redistributed by this project.
+
+runtime_assets:
+  scsegamba_mamba_ssm_torch25:
+    source: "https://github.com/state-spaces/mamba/releases/download/v2.2.4/mamba_ssm-2.2.4+cu12torch2.5cxx11abiFALSE-cp311-cp311-linux_x86_64.whl"
+    role: "SCSegamba selective-scan runtime for server torch 2.5.1+cu12, Python 3.11, CXX11 ABI false"
+    license: Apache-2.0
+    sha256: "a46c3589df20dfa90759eaf7da83e91342d110a633f3192a33d0973dbc995e57"
+
+models:
+  - id: crackmer_deepcrack
+    architecture_family: cnn_transformer_unet
+    paper: "Dual-path network combining CNN and transformer for pavement crack segmentation"
+    venue_year: "Automation in Construction 2024"
+    doi: "10.1016/j.autcon.2023.105217"
+    repository: "https://github.com/zZhiG/crackmer"
+    commit: "6702fd2c73f3c156165d780e6037996c03387306"
+    code_license: not_declared
+    weight_source: "repository:weights/example001.pth"
+    weight_training_set: DeepCrack
+    weight_status: verified_repository_example_not_paper_checkpoint
+    weight_role: official_repository_example_weight
+    weight_sha256: "c7175cf5d9992a910ad2b491d032d14d18825c145d6b3520781de85de4bf9262"
+    adapter: "poc/adapters/crackmer_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "upstream demo uses Resize(640)+CenterCrop(512); adapter directly resizes the full image to 512x512"
+      - "all project adapters use anisotropic square resize; this is disclosed and unified-protocol results only"
+    notes: >-
+      Strict state-dict load passed on server GPU. Official examples respond to cracks; CFD shows
+      cross-domain misses; consensus-screened PaveDistress backgrounds show strong lane/edge responses.
+
+  - id: scsegamba_tut
+    architecture_family: state_space_segmentation
+    paper: "SCSegamba: Lightweight Structure-Aware Vision Mamba for Crack Segmentation in Structures"
+    venue_year: "CVPR 2025"
+    repository: "https://github.com/Karl1109/SCSegamba"
+    commit: "cc74c4606f03bc308b1ef1c07ef6229f9123c519"
+    code_license: Apache-2.0
+    weight_source: "https://drive.google.com/file/d/1aK7DgtZlyij88zbdBVf8XahfHdKbMQwK/view"
+    weight_training_set: TUT
+    weight_status: verified
+    weight_sha256: "75b9724ce96f6e0bafcdd920924b9b84687402f85b21ce8236f0943b7c80ab33"
+    weight_parameter_count: 3055151
+    adapter: "poc/adapters/scsegamba_export.py"
+    status: smoke_verified_isolated_mamba_runtime
+    adapter_deviations:
+      - "upstream score reporting applies per-image max normalization to raw logits; adapter exports sigmoid probabilities without per-image renormalization"
+      - "all project adapters use anisotropic square resize; fixed threshold 0.5 is not cross-model comparable"
+    notes: >-
+      Strict load and CFD alignment passed in an isolated Torch 2.5.1/CUDA 12.1 runtime with
+      mamba-ssm 2.2.4 and mmcv 1.7.2. A compatibility alias maps the original mamba 1.2.0
+      layernorm import to layer_norm without changing network computation. Pave/BCL edges trigger
+      high-confidence responses.
+
+  - id: hrsegnet_b16
+    architecture_family: cnn_high_resolution
+    paper: "Real-time high-resolution neural network with semantic guidance for crack segmentation"
+    venue_year: "Automation in Construction 2023"
+    repository: "https://github.com/CHDyshli/HrSegNet4CrackSegmentation"
+    commit: "1e4dd172e250de5cb951414c317059b3cd89c702"
+    code_license: Apache-2.0
+    weight_source: "https://chdeducn-my.sharepoint.com/:u:/g/personal/2018024008_chd_edu_cn/EZWMNQXFtTpPl-SnUyoKpS0B2EDCDZIn2SX00C0AI_U-Jg?e=o0gqxN"
+    weight_training_set: CrackSeg9k
+    weight_status: verified
+    weight_sha256: "79b364559272de3099e2e3c3c973a9bb2210a7f4c74602ffb738ba6df675719c"
+    weight_archive_sha256: "9a08f027aaa8531c554376bc68039ae8c4ad2429ee004250bf0d91ea4f13e8a0"
+    adapter: "poc/adapters/hrsegnet_export.py"
+    status: smoke_verified_isolated_paddle_cpu
+    adapter_deviations:
+      - "released training uses OHEM threshold 0.7 and observed logits compress probabilities to a narrow interval; fixed threshold 0.5 is not cross-model comparable"
+      - "all project adapters use anisotropic square resize"
+    notes: >-
+      Official SharePoint archive and best_model/model.pdparams verified. Strict state-dict load and
+      CFD alignment passed in an isolated PaddlePaddle 2.6.2 runtime. BCL Noise thin marks and object
+      edges trigger responses. Full PaveDistress resize smoke is not performance evidence.
+
+  - id: crackformer2_crack537
+    architecture_family: cnn_multiscale_encoder_decoder
+    paper: "CrackFormer Network for Pavement Crack Segmentation"
+    venue_year: "IEEE T-ITS 2023"
+    repository: "https://github.com/LouisNUST/CrackFormer-II"
+    commit: "1d701aea7b09e85b106a74894cf4779f59fe9af6"
+    code_license: not_declared
+    weight_source: "https://drive.google.com/file/d/1A5m_rsFcwONii1fi_39jZ-HcTeLw7Rvb/view"
+    weight_training_set: crack537
+    weight_status: verified
+    weight_sha256: "5574787c4d2592ff32186907b1f32c9ad98852f90f777080176417310edd770c"
+    weight_parameter_count: 4961691
+    adapter: "poc/adapters/crackformer2_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "adapter follows repository Validator BGR-[0,1] path rather than Crackloader normalized RGB"
+      - "all project adapters use anisotropic square resize"
+    notes: >-
+      Strict load and CFD alignment passed on server GPU. The repository Validator uses BGR [0,1]
+      despite Crackloader using normalized RGB; the adapter follows Validator. PaveDistress lane
+      markings and multiple BCL Noise object edges receive strong high-confidence responses.
+
+  - id: ct_crackseg_deepcrack
+    architecture_family: cnn_transformer_unet
+    paper: "A Convolutional-Transformer Network for Crack Segmentation with Boundary Awareness"
+    venue_year: "ICIP 2023"
+    repository: "https://github.com/HqiTao/CT-crackseg"
+    commit: "cae03437fb8a44157c1f2a4543e95522e0fd2a08"
+    code_license: MIT
+    weight_source: "https://drive.google.com/drive/folders/1QACf6O9TmtEVfqQeNldZJoG5UTAg27uQ"
+    weight_training_set: DeepCrack
+    weight_status: verified
+    weight_sha256: "60618136c1bda8cfcbfdac760103095935b4250b8d0a1a3a6e40ae67d99a41d2"
+    weight_parameter_count: 22902257
+    adapter: "poc/adapters/ct_crackseg_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "adapter omits upstream sliding-window ensemble, whole-image fusion, and diamond-kernel morphological closing"
+      - "all project adapters use anisotropic square resize"
+    notes: >-
+      Strict load and CFD alignment passed on server GPU. The custom deformable convolution creates
+      temporary tensors on the current CUDA device, so the adapter explicitly sets it. Native 256x256
+      BCL Noise samples show strong responses to dark marks and object boundaries. Full-resolution
+      PaveDistress resize smoke is not treated as performance evidence; formal inference uses proxy tiles.
+
+  - id: crackmamba_crackseg9k
+    architecture_family: state_space_segmentation
+    paper: "Topology-aware Mamba for crack segmentation in structures"
+    venue_year: "Automation in Construction 2024"
+    doi: "10.1016/j.autcon.2024.105845"
+    repository: "https://github.com/shengyu27/CrackMamba"
+    commit: "e85bc0137e57aba8730a2d48535413f5241fc2de"
+    code_license: not_declared
+    weight_source: "https://drive.google.com/drive/folders/1D3i-x9mJsgQDucp-zS2hQjHZIeTnBZn6 (CrackMamba/CrackSeg9k_checkpoint_best.pth)"
+    weight_training_set: CrackSeg9k
+    weight_status: verified
+    weight_sha256: "b505e714666b1333232d50cdf161c8981f8038db1390fb18058a75d2b27795d1"
+    adapter: "poc/adapters/crackmamba_export.py"
+    status: smoke_verified_isolated_mamba_runtime
+    adapter_deviations:
+      - "anisotropic square resize to the 448 training patch instead of nnU-Net sliding window with Gaussian weighting"
+      - "network rebuilt from official CrackMamba.py with the nnU-Net plans handler stubbed (type hints only)"
+      - "selective scan uses the upstream fallback to mamba-ssm selective_scan_cuda (VMamba oflex/core kernels not compiled)"
+    notes: >-
+      Added under prereg-5 R19. Strict load of network_weights; CFD train-side smoke aligned. CFD is part of CrackSeg9k
+      training data, so the smoke shows alignment only. Leak check: training list prefixes contain no E-D1 evaluation set;
+      the non-crack wall subset is shared with Khanhha and passed an image-level pHash check.
+
+  - id: deepcrack_cracktree260
+    architecture_family: cnn_multiscale_encoder_decoder
+    paper: "DeepCrack: Learning Hierarchical Convolutional Features for Crack Detection"
+    venue_year: "IEEE TIP 2019"
+    repository: "https://github.com/qinnzou/DeepCrack"
+    commit: "f3988031dd2adc3d19b32d1c48a2bf90d12871ac"
+    code_license: not_declared
+    weight_source: "https://drive.google.com/file/d/1OO3OAzR4yxYh_UBR9Nu7hV3XayfKVyO-/view"
+    weight_training_set: CrackTree260
+    weight_status: verified
+    weight_sha256: "945239375c2b3de45abccc2dbdc374e3259b55d16298b298fb9e0cd13be5ad63"
+    weight_parameter_count: 30905011
+    adapter: "poc/adapters/deepcrack_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "adapter uses the repository's default primary-logit path with BGR [0,1]; no paper score is imported"
+      - "all project adapters use anisotropic square resize"
+    notes: >-
+      Strict state-dict load passed on server GPU. CFD crack traces align visually. On the sampled
+      PaveDistress Background images, lane-marking texture and edges trigger responses up to 0.94;
+      BCL Noise is mostly suppressed with a residual response to a thin dark mark.
+
+  - id: deepcrackliu_deepcrack537
+    architecture_family: cnn_encoder_decoder
+    paper: "DeepCrack: A deep hierarchical feature learning architecture for crack segmentation"
+    venue_year: "Neurocomputing 2019"
+    doi: "10.1016/j.neucom.2019.01.036"
+    repository: "https://github.com/yhlleo/DeepSegmentor"
+    commit: "57164e6808019d1ec27100cc69e1b71ea2de8368"
+    code_license: BSD-2-Clause
+    weight_source: "https://drive.google.com/file/d/1MAwIlWw27feU8EEkP8pgbia7kcuxBwEG (deepcrack.zip -> deepcrack/pretrained_net_G.pth)"
+    weight_training_set: DeepCrack-537
+    weight_status: verified
+    weight_sha256: "b50786e07e87c836513016ee9af6423e048e6a84c29dc8605f697d8d485f24ba"
+    adapter: "poc/adapters/deepcrack_liu_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "anisotropic square resize to 512 (official default is native size)"
+      - "sigmoid of the fused logit exported as probability"
+    notes: "Added under prereg-5 R19. Distinct from Zou et al. DeepCrack. Strict load; CFD smoke aligned (weak magnitude)."
+
+  - id: cracksam_adapter_khanhha
+    architecture_family: foundation_model_adapter
+    paper: "Fine-tuning vision foundation model for crack segmentation in civil infrastructures"
+    venue_year: "Construction and Building Materials 2024"
+    doi: "10.1016/j.conbuildmat.2024.136573"
+    repository: "https://github.com/KG-TSI-Civil/CrackSAM"
+    commit: "155026b08c64bde1c68d1c37f3b588ddb33454a7"
+    code_license: MIT
+    weight_source: "repository:CrackSAM/checkpoints/CrackSAM_adapter_d32.pth + Meta sam_vit_h_4b8939.pth (md5 4b8939a88964f0f4ff5f5b2642c598a6)"
+    weight_training_set: "Khanhha crack_segmentation (repository default; not stated per checkpoint)"
+    weight_status: verified
+    weight_sha256: "acd3260b01515db5b24734e358aded9363003ed7e76f440cda61d857f1da6268"
+    adapter: "poc/adapters/cracksam_export.py"
+    status: smoke_verified
+    adapter_deviations:
+      - "PIL bicubic resize instead of scipy zoom(order=3); softmax probability instead of argmax mask"
+      - "torch 2.5.1 instead of repository-pinned 1.13"
+    notes: >-
+      Added under prereg-5 R19 (vit_h, adapter middle_dim 32, scaling 0.2 per README). All delta-checkpoint keys consumed.
+      CFD smoke aligned but peak probability 0.27-0.49. Khanhha images pHash-checked against all E-D1 evaluation images: no leak.
+
+  - id: cdln_liu_fcn_csn_usc
+    architecture_family: cnn_encoder_decoder
+    paper: "CrackDenseLinkNet: a deep convolutional neural network for semantic segmentation of cracks on concrete surface images"
+    venue_year: "Structural Health Monitoring 2023"
+    doi: "10.1177/14759217231173305"
+    repository: "https://github.com/preethamam/CrackDenseLinkNet-DeepLearning-CrackSegmentation"
+    commit: "fa7ed6a543a44d87eae51a55f06a84337340f86e"
+    code_license: MIT
+    weight_source: "https://1drv.ms/f/s!AqjW7B7BO7JJgchWkY4-oWga_t1uFw (CDLN/best_model_iou.pth; downloaded manually in a browser)"
+    weight_training_set: "Liu DeepCrack-537 + FCN (Yang 2018) + CrackSegNet + USC CDLN concrete"
+    weight_status: verified
+    weight_sha256: "a2e869ae3f04c0d1e37c8fb606f8862b0412a69cdb45cc774483153643e03a98"
+    adapter: "poc/adapters/cdln_export.py"
+    status: smoke_verified_isolated_smp_runtime
+    adapter_deviations:
+      - "sigmoid probability exported instead of rounded mask; BGR input kept as in the official loader"
+      - "timm 0.6.13 instead of pinned 0.6.12 (0.6.12 fails on Python 3.11; densenet169 encoder does not use timm)"
+    notes: "Added under prereg-5 R19. Strict load of model_state_dict (epoch 197). Training data provenance checked from README only."
+
+  - id: umit_csf50k
+    paper: "Controllable flow matching synthesis for generalizable crack segmentation with a 50K image-mask benchmark"
+    venue_year: "Automation in Construction 2026"
+    doi: "10.1016/j.autcon.2026.106938"
+    repository: "https://github.com/BabakAsadi94/CrackSegFlow"
+    commit: "403ee76e365a0b42d00763acc4318dbf9e0e3e46"
+    code_license: not_declared
+    architecture_family: cnn_transformer_unet
+    weight_source: "https://drive.google.com/file/d/1Y7u69lrWaXDdC9A8BNGzcjoHnyeiW__G/view"
+    weight_training_set: CSF-50K
+    weight_status: official_checkpoint_available_adapter_pending
+    adapter: null
+    status: candidate
+    notes: >-
+      Official CrackSegFlow repository exposes the U-MiT checkpoint but currently no runnable model
+      code. It is a planned eighth unified-protocol member and a synthesis baseline; it must not enter
+      tables or figures until architecture code, strict loading, and the same adapter contract pass.
+
+related_synthesis_baselines:
+  - id: cracksegflow_umit_csf50k
+    paper: "Controllable flow matching synthesis for generalizable crack segmentation with a 50K image-mask benchmark"
+    venue_year: "Automation in Construction 2026"
+    doi: "10.1016/j.autcon.2026.106938"
+    repository: "https://github.com/BabakAsadi94/CrackSegFlow"
+    data_policy: academic_use_only_no_redistribution
+    checkpoint_status: available_not_downloaded
+    role: >-
+      Direct novelty-threat baseline for hard-confounder background injection. It does not replace
+      the six public segmentation architectures because the released repository currently centers on
+      CSF-50K and its U-MiT checkpoint rather than renderer training code.
+
+excluded_candidates:   # prereg-5 R19 selection (2026-09-26)
+  - {model: "OmniCrack30k nnU-Net (CVPRW 2024)", reason: "training set includes the BCL negative samples used by the E-D1 BCL leg"}
+  - {model: "FPHBN", reason: "legacy Caffe runtime"}
+  - {model: "CSBSR/CSSR", reason: "low-resolution input with super-resolution output"}
+  - {model: "CrackNex", reason: "few-shot; needs support images"}
+  - {model: "UP-CrackNet", reason: "unsupervised with Otsu post-processing; Baidu-only weights"}
+  - {model: "MixerCSeg, Hybrid-Segmentor, SegFormer-B0", reason: "not needed: stop rule reached after four added models"}

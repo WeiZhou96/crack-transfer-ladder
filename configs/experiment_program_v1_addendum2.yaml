@@ -1,0 +1,28 @@
+# experiment_program_v1 addendum 2 — POST HOC (written 2026-10-28 ~19:30, after the E2/E3 strata report was seen;
+# before any SDNET, E4-ablation or addendum-1 result was seen). Exploratory; labelled post hoc in any report.
+version: "program-1-addendum-2"
+seen_before_writing: [P5 report (H1-public fail), strata_report.json (E2/E3, H2-public)]
+not_seen: [SDNET confirmation leg, E4 ablations, addendum-1 arms]
+trigger: "B10/B11 cut x01 false alarms on the v4 quadruplets ~15x (joint 37.7 -> 2.4 FP/Mpx vs B0) while real
+  dacl10k joint-associated false alarms rose (lambda 40.9 -> 47 per class-Mpx). The v4 quadruplets are the training
+  set of B10/B11, so this contrast cannot separate memorisation of the 3000 training draws from operator-level
+  learning that fails to transfer to real confusers."
+heldout_synthetic_probe:
+  dir: quadruplets/v4_heldout_s20261029
+  tool: "render/tools/render_quadruplets_v1.py render, --seed 20261029 --n 300 (per operator, 900 groups)"
+  same_as_v4: [operators.yaml, background pool csv (background_pool_v3_screened), watermark csv, renderer]
+  differs: "fresh master seed -> new crack instances, placements, operator parameters and background draws.
+    Backgrounds come from the same screened pools (rgb pools have 352/286 crops), so background overlap with the
+    training draws is expected and is disclosed; the probe tests generalisation over operator draws, not over scenes.
+    No alpha re-solve (R20 only changes contrast_alpha of the crack layer; x00/x01 carry no crack)."
+  evaluation: "train/eval_strata_v3.py quads --quad-dir <dir>, sealed thresholds, every primary and ablation model;
+    native_r95 and fixed_0.5; per-operator x01 and x00 FP per Mpx, arm mean of 3 seeds"
+predictions:
+  P7_operator_generalisation: "on the held-out probe at native_r95, B11 x01 FP/Mpx <= 0.5 x B0 x01 FP/Mpx for each of
+    shadow, joint and repair_boundary (operator-level suppression generalises beyond the training draws)"
+reporting_rules:
+  H2_repair: "H2-public passed by its registered rule (sign agreement of arm-pooled means). For the repair class the
+    pooled beta_syn is 0.003 (laser_asphalt x00/x01 FP are almost always 0) and the pooled beta_real is carried by
+    B2/B3_auto, whose PaveDistress-background negatives suppress the background-test denominator; B0 beta_real is
+    -0.09 with a CI spanning 0. The repair sign agreement is reported as formally met but uninformative; the joint
+    class (beta_syn 0.61 [0.58, 0.64], beta_real 1.69 [1.61, 1.76], every arm positive) carries H2."

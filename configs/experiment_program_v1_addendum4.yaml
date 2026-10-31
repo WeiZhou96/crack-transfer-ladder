@@ -1,0 +1,16 @@
+# experiment_program_v1 addendum 4 — POST HOC (written 2026-10-28 evening; seen: P5 and strata reports only;
+# not seen: SDNET, E4, addendum-1/2/3 outputs). Exploratory, descriptive; labelled post hoc.
+version: "program-1-addendum-4"
+motivation: "B10/B11 raise positive-axis recall and false alarms together, and the native-val R95 thresholds differ
+  widely between seeds (e.g. 0.0025 to 0.59). The higher false-alarm rate could be a position on a shared
+  recall/false-alarm curve rather than a worse curve. The threshold sweep compares arms at matched recall."
+evaluator: "train/eval_sweep_v1.py sweep (= eval_students_v2 test path; thresholds: sealed native_r95 and grid
+  0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 0.85, 0.95); legs bcl_noise, pavedistress_background_test, uav1388_background
+  and the positive axis; outputs <eval_dir>/sweep/<model>/"
+models: "primary B0/B1/B2/B3_auto/B10/B11 (18); ablation/post-hoc A_x1only, A_x01only, A_paired_noaux,
+  B12_auto_posthoc, B2_g7 (15); addendum-3 B0_v6, R50_B0, R50_B2, R50_B11 (12)"
+analysis: "train/analyze_sweep_v1.py: matched recall r* in {0.70, 0.75, 0.80}; A3 interpolated linearly in
+  log(A3 + 0.01) between the bracketing grid points; arm = seed mean; not evaluable if a curve does not bracket r*"
+predictions:
+  P12_matched_recall_B11: "at matched positive-axis recall 0.75 and 0.80, B11 A3 > B0 A3 on all three legs"
+  P13_matched_recall_B10: "at matched positive-axis recall 0.75 and 0.80, B10 A3 > B0 A3 on all three legs"

@@ -1,0 +1,32 @@
+# experiment_program_v1 addendum 3 — POST HOC (written 2026-10-28 evening, after the P5 and strata reports were seen;
+# before any SDNET, E4-ablation, addendum-1/2 result was seen). Exploratory; labelled post hoc in any report.
+version: "program-1-addendum-3"
+seen_before_writing: [P5 report (H1-public fail), strata_report.json (H2-public), held-out probe render summary only]
+not_seen: [SDNET confirmation leg, E4 ablations, addendum-1 arms, held-out probe model outputs]
+motivation:
+  trainer_control: "The primary arms come from three trainers: B0/B2/B3_auto from student_v1, B10/B11 from student_v4
+    (v1 plus per-stratum tau and a uint8 cache), B1 from strong_baseline_recovery_v1; all E4/addendum-1 arms from
+    student_v5. The H1 failure (B10/B11 above B0) and every ablation-vs-B0 contrast therefore cross a trainer
+    boundary. B0 retrained with the current trainer bounds that confound."
+  second_backbone: "prereg_v6 unlocks a heterogeneous second backbone only after an H1 pass. The paper now rests on the
+    direction of the synthetic-supervision effect and on the locality of real negatives, so both are re-tested on a
+    second backbone as an exploratory generality check (not a confirmation in the prereg sense)."
+trainer: "train/student_v6.py = student_v5 + --backbone; with the default backbone identical to v5"
+new_arms:                      # 80k iters, recipe/loss/data/arms unchanged, seeds 0-2
+  B0_v6:   {arm: B0, backbone: upernet_convnext_tiny}
+  R50_B0:  {arm: B0, backbone: upernet_resnet50}
+  R50_B2:  {arm: B2, backbone: upernet_resnet50, neg_list: negpool_r20/admitted.csv (same pool as primary B2)}
+  R50_B11: {arm: B11, backbone: upernet_resnet50, quad_dir: quadruplets/v4, tau: prereg_v6 point}
+backbone_note: "upernet_resnet50 = smp.UPerNet with a ResNet-50 encoder initialised from the cached torchvision
+  ImageNet checkpoint resnet50-11ad3fa6.pth (no network on the server; timm/HF weights for other families are not
+  cached). Same decoder family as the primary; CNN encoder of a different generation. A ResNet-50 encoder also sits in
+  the DeepLabv3+ teacher; disclosed."
+evaluation: "separate eval dir students_eval_add3_v1; eval_students_v2 dev (native-val R95) -> seal -> test legs;
+  eval_strata_v4 quads, quads(held-out), hardproxy, dacl10k; eval_sdnet_v2. Same metrics and bootstrap as P5."
+predictions:
+  P8_trainer_equivalence: "B0_v6 arm-mean A3 is within +-15% of B0 (student_v1) on bcl_noise, pavedistress and uav1388,
+    and positive-axis recall within +-2 pp (native_r95)"
+  P9_backbone_direction: "R50_B11 A3 > R50_B0 A3 on bcl_noise, pavedistress and uav1388 (native_r95)"
+  P10_backbone_locality: "R50_B2 pavedistress A3 <= 0.1 x R50_B0, while R50_B2 bcl_noise and uav1388 A3 are within
+    +-15% of R50_B0"
+  P11_backbone_recall: "R50_B11 positive-axis recall >= R50_B0 (native_r95)"

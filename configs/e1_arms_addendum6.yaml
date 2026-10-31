@@ -1,0 +1,6 @@
+# experiment_program_v1 addendum 6 (2026-10-29): stacking arms for student_v5. Recipe and loss constants are read
+# from configs/e1_arms.yaml unchanged; only the fields below differ. Registered before any of these arms is trained.
+version: "e1-addendum6-0.1"
+arms:
+  B1_v5:          {real_pos: true, strong_aug: true}                                            # B1 inside student_v5
+  A_x01only_B1:   {real_pos: true, strong_aug: true, synth: {paired: false, layers: [x01]}}     # x01 negatives + B1

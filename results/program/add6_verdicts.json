@@ -1,0 +1,139 @@
+{
+ "predictions": {
+  "P15_stack_false_alarms": {
+   "values": {
+    "bcl_noise": [
+     18.456279576068173,
+     17.908184000778874
+    ],
+    "pavedistress_background_test": [
+     1.0983061679765533,
+     1.7388260090354966
+    ],
+    "uav1388_background": [
+     0.8059010922330098,
+     0.995524878640777
+    ]
+   },
+   "verdict": false
+  },
+  "P16_stack_recall": {
+   "values": [
+    0.8421842184218421,
+    0.8418841884188418
+   ],
+   "diff_pp": 0.030003000300027338,
+   "verdict": true
+  },
+  "P17_B1_trainer_equivalence": {
+   "values": {
+    "bcl_noise": [
+     17.908184000778874,
+     16.788023655945647
+    ],
+    "pavedistress_background_test": [
+     1.7388260090354966,
+     1.2079771697012756
+    ],
+    "uav1388_background": [
+     0.995524878640777,
+     1.667109122168285
+    ]
+   },
+   "recall": [
+    0.8418841884188418,
+    0.8292829282928292
+   ],
+   "verdict": false
+  }
+ },
+ "descriptive": {
+  "A_x01only_B1": {
+   "bcl_noise": {
+    "A3": 18.456279576068173,
+    "vs_B0": 0.10568638713383138,
+    "vs_B1_v5": 0.030605871330418477
+   },
+   "pavedistress_background_test": {
+    "A3": 1.0983061679765533,
+    "vs_B0": -0.5345625136373553,
+    "vs_B1_v5": -0.3683633887062864
+   },
+   "uav1388_background": {
+    "A3": 0.8059010922330098,
+    "vs_B0": -0.6822429906542056,
+    "vs_B1_v5": -0.1904761904761907
+   },
+   "sdnet_staged_negative": {
+    "A3": 0.20845340249316938,
+    "vs_B0": -0.4999999999999999,
+    "vs_B1_v5": -0.3749999999999999
+   },
+   "sdnet_UP_all": {
+    "A3": 6.211627392606592,
+    "vs_B0": -0.10554881337648336,
+    "vs_B1_v5": 0.015189776553412804
+   },
+   "dacl10k_all": {
+    "A3": 5.011377070758132,
+    "vs_B0": -0.5404937180504363,
+    "vs_B1_v5": 0.13291899320300593
+   },
+   "dacl10k_joint": {
+    "A3": 20.08733704044892,
+    "vs_B0": -0.5092542918454935,
+    "vs_B1_v5": 0.11114485271788666
+   },
+   "hardproxy_patch": {
+    "A3": 1.2602876767267082,
+    "vs_B0": -0.4150614182021216,
+    "vs_B1_v5": -0.19814389590508996
+   },
+   "recall_pp_vs_B0": 6.420642064206428
+  },
+  "B1_v5": {
+   "bcl_noise": {
+    "A3": 17.908184000778874,
+    "vs_B0": 0.07285085200076602,
+    "vs_B1_v5": 0.0
+   },
+   "pavedistress_background_test": {
+    "A3": 1.7388260090354966,
+    "vs_B0": -0.2631245908793367,
+    "vs_B1_v5": 0.0
+   },
+   "uav1388_background": {
+    "A3": 0.995524878640777,
+    "vs_B0": -0.6074766355140186,
+    "vs_B1_v5": 0.0
+   },
+   "sdnet_staged_negative": {
+    "A3": 0.33352544398907097,
+    "vs_B0": -0.19999999999999996,
+    "vs_B1_v5": 0.0
+   },
+   "sdnet_UP_all": {
+    "A3": 6.118685920671084,
+    "vs_B0": -0.11893203883495151,
+    "vs_B1_v5": 0.0
+   },
+   "dacl10k_all": {
+    "A3": 4.423420474741879,
+    "vs_B0": -0.5944049974390133,
+    "vs_B1_v5": 0.0
+   },
+   "dacl10k_joint": {
+    "A3": 18.078054352062935,
+    "vs_B0": -0.5583422746781117,
+    "vs_B1_v5": 0.0
+   },
+   "hardproxy_patch": {
+    "A3": 1.5717130171993263,
+    "vs_B0": -0.27051926298157447,
+    "vs_B1_v5": 0.0
+   },
+   "recall_pp_vs_B0": 6.3906390639064
+  }
+ },
+ "method": "Addendum 6: scoring of P15-P17 exactly as worded, from an analyze_program_v2 report (program_report.json) computed\nover the primary eval dir (B1) and the addendum-6 eval dir (A_x01only_B1, B1_v5). native_r95, arm mean of 3 seeds.\nAlso lists the relative change of each addendum-6 arm vs B0 and vs B1_v5 on every A3 leg (point values; descriptive).\nusage: python analyze_add6_v1.py <program_report.json> <out.json>\n"
+}

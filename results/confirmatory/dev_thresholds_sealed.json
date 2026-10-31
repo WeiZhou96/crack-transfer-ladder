@@ -1,0 +1,196 @@
+{
+ "sealed_at": "2026-10-28T15:46:00+08:00",
+ "models": {
+  "B0_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B0_s0/final.pt",
+   "ckpt_sha256": "d06e238dcc8c18ffb8483f251057a94b9f817475a0d160fd1e71063c2cdd0031",
+   "native_r95": 0.13729389011859894,
+   "native_r95_float32_bits": 1041012421,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1_s0": {
+   "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed0/B1_completed_matched_final.pt",
+   "ckpt_sha256": "c23165de6c942a76b59cc3c2eb18b0b19135facaaedfb3335d4b20a20798afa7",
+   "native_r95": 0.9503234028816223,
+   "native_r95_float32_bits": 1064519781,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s0/final.pt",
+   "ckpt_sha256": "172f2f507b741ba8ab8010acb11a18161c96dc6a620205cfde02efa0d8f68756",
+   "native_r95": 0.32706189155578613,
+   "native_r95_float32_bits": 1051161768,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3_auto_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s0/final.pt",
+   "ckpt_sha256": "185fe2f2a6cfb5e0835b090e26920c472160eda9bd653bb90cf82cdeff378a10",
+   "native_r95": 0.00250525726005435,
+   "native_r95_float32_bits": 992227134,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B10_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B10_s0/final.pt",
+   "ckpt_sha256": "06cb3bb13fdee83b4f4187bd94814d386be88cb8253ecd0225dad286475f01f5",
+   "native_r95": 0.6945005655288696,
+   "native_r95_float32_bits": 1060227786,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B11_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B11_s0/final.pt",
+   "ckpt_sha256": "6ce9ecbe99507575cd54f703dc6f5a47062f1b6c63f3504decba94112a33c186",
+   "native_r95": 0.21164797246456146,
+   "native_r95_float32_bits": 1046002239,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B0_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B0_s1/final.pt",
+   "ckpt_sha256": "9886aefeb61bace1ea4bd9a488f8c56cf4e565a104f2f6c9acf14f8289a311e8",
+   "native_r95": 0.11481599509716034,
+   "native_r95_float32_bits": 1038820518,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1_s1": {
+   "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed1/B1_completed_matched_final.pt",
+   "ckpt_sha256": "9057e601db8310e9c9433a3860f61b2bb3791045fb577a92d041b3a9a050cced",
+   "native_r95": 0.5525779724121094,
+   "native_r95_float32_bits": 1057846720,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s1/final.pt",
+   "ckpt_sha256": "17b4284301fec39e00c8dc9274947da6675606535e9602311757cc60c4ac6392",
+   "native_r95": 0.0485747791826725,
+   "native_r95_float32_bits": 1028060761,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3_auto_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s1/final.pt",
+   "ckpt_sha256": "f38f325bb9c928f85eca3fee93e7055513c550f2d82884f76c71f8447d9ac169",
+   "native_r95": 0.5025815963745117,
+   "native_r95_float32_bits": 1057007920,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B10_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B10_s1/final.pt",
+   "ckpt_sha256": "f722cda90cfa3bd54d2d141d32049a495a557e15f5906232547fc4e3ba202275",
+   "native_r95": 0.35730597376823425,
+   "native_r95_float32_bits": 1052176591,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B11_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B11_s1/final.pt",
+   "ckpt_sha256": "95ce91e961067825b888515d96da5e44178a83cb6ed15c13b19b7285595562dd",
+   "native_r95": 0.4568314552307129,
+   "native_r95_float32_bits": 1055516112,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B0_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B0_s2/final.pt",
+   "ckpt_sha256": "4348a9b64c9f597b170475269db05dce3b0ebc7c2205affcd40eaa4ba438cb70",
+   "native_r95": 0.6242942214012146,
+   "native_r95_float32_bits": 1059049919,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1_s2": {
+   "ckpt": "${CRACKCF_DATA}/baseline_completion_20261017/recovery_20261018/runs/seed2/B1_completed_matched_final.pt",
+   "ckpt_sha256": "a82c803292b328c86fc66efd0da91055e7e1d6d544c1f837bbe9401af46315fe",
+   "native_r95": 0.6701135635375977,
+   "native_r95_float32_bits": 1059818640,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B2_r20_s2/final.pt",
+   "ckpt_sha256": "fffe8568f87ac593195f8b35082ab4722a785a2b23f95250bbcac6f76058bf2a",
+   "native_r95": 0.22755368053913116,
+   "native_r95_float32_bits": 1047069653,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3_auto_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B3_auto_r20_s2/final.pt",
+   "ckpt_sha256": "cd42d2dd169b50bdd04ce981f74785559aa5c835d630a6637f00d73166782382",
+   "native_r95": 0.5923761129379272,
+   "native_r95_float32_bits": 1058514422,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B10_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B10_s2/final.pt",
+   "ckpt_sha256": "c4c05285b1145d9717e73da4f16782113e6ff5fe46a066ad1a3ae82c889a25cb",
+   "native_r95": 0.12745694816112518,
+   "native_r95_float32_bits": 1040352275,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B11_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v4/B11_s2/final.pt",
+   "ckpt_sha256": "8f2af1af453c93f27cbbcb75cc68737b631f8aa7787f5e9915aa72ac1d932802",
+   "native_r95": 0.8182579874992371,
+   "native_r95_float32_bits": 1062304091,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1legacy_s0": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B1_s0/final.pt",
+   "ckpt_sha256": "fa17d1c7cfdf2748af28fa0e763b72a971ba92b95bd9289a9449a251b736d4ed",
+   "native_r95": 0.9294171929359436,
+   "native_r95_float32_bits": 1064169033,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2matched_s0": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed0/B2_random_matched_final.pt",
+   "ckpt_sha256": "b02d225336a535831e4badec455fd3a5ed47621c9f71efda870ec244bc7c51a4",
+   "native_r95": 0.2779463529586792,
+   "native_r95_float32_bits": 1049513724,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3matched_s0": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed0/B3_mined_matched_final.pt",
+   "ckpt_sha256": "395f66b5d1140a3aee69a768464a6ae468dab732de0875d727003f7c5f543e51",
+   "native_r95": 0.739229142665863,
+   "native_r95_float32_bits": 1060978207,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1legacy_s1": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B1_s1/final.pt",
+   "ckpt_sha256": "9ea0604f09205898ee7b0bea271d03482aefeced37e3d841e601bf5ed9c5a52c",
+   "native_r95": 0.7521669864654541,
+   "native_r95_float32_bits": 1061195268,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2matched_s1": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed1/B2_random_matched_final.pt",
+   "ckpt_sha256": "89070ea746c830df50dfe59db8e3559e6d48c6cbae9a1e6fe8b80ef55b4143e3",
+   "native_r95": 0.011635856702923775,
+   "native_r95_float32_bits": 1010738258,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3matched_s1": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed1/B3_mined_matched_final.pt",
+   "ckpt_sha256": "c2fed4642fd3c2801a8bff0b38ae29b9a3a5cef9a15c1a8ba13b2134f973cd0c",
+   "native_r95": 0.13072624802589417,
+   "native_r95_float32_bits": 1040571674,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B1legacy_s2": {
+   "ckpt": "${CRACKCF_DATA}/students_v1/B1_s2/final.pt",
+   "ckpt_sha256": "7f4ea0ffbeadd5b4bbaedc04b84fae2bb995e2a18a8b0d84afa8343aea7402e4",
+   "native_r95": 0.9393684267997742,
+   "native_r95_float32_bits": 1064335987,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B2matched_s2": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed2/B2_random_matched_final.pt",
+   "ckpt_sha256": "ce616af782e25f0dea7cdc958dab15264b59f27c35bd4f69826636bdf899e479",
+   "native_r95": 0.042017094790935516,
+   "native_r95_float32_bits": 1026300446,
+   "native_val_component_recall": 0.9502762430939227
+  },
+  "B3matched_s2": {
+   "ckpt": "${CRACKCF_DATA}/real_negative_matched_20261021/runs/seed2/B3_mined_matched_final.pt",
+   "ckpt_sha256": "dee2607a639038a7a984ecacbbe2e40bf67caae3c972eb328a7f57918ea13303",
+   "native_r95": 0.6551936864852905,
+   "native_r95_float32_bits": 1059568326,
+   "native_val_component_recall": 0.9502762430939227
+  }
+ },
+ "program_sha256": "65948618224eb05779bb3d544b1c7904b3ffba25f9e4b5527242fdb809b0160a",
+ "test_outputs_present": false
+}

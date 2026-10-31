@@ -1,0 +1,29 @@
+# B3-auto crack-exclusion committee (E2; appendix 0.5-6② pool-separation rule). Frozen with FREEZE.v4 before training.
+# Pool separation: members are 100% disjoint from the admission committee (configs/committee.yaml: unet_r34 / deeplabv3p_r50 / segformer_b2 / third_party_public=deepcrack_cracktree260)
+#       (the rule requires at least half to differ), and this committee spans three architecture families.
+# All members are frozen public weights with frozen adapters smoke-verified in E-D1 (configs/models_public.yaml); threshold is a uniform committee value of 0.5 (same as s05).
+# Paths are relative to the code root; adapters run with the same invocation as in E-D1 (no --limit, so no development-exposure list is written).
+version: "b3auto-committee-0.1"
+members:
+  - name: crackformer2_crack537
+    arch_family: cnn_multiscale_encoder_decoder
+    adapter: adapters/crackformer2_export.py
+    repo: vendor_models/crackformer2_src
+    weights: vendor_models/crackformer2/weights/crack537.pth
+    threshold: 0.5
+    batch_size: 4
+  - name: ct_crackseg_deepcrack
+    arch_family: cnn_transformer_hybrid
+    adapter: adapters/ct_crackseg_export.py
+    repo: vendor_models/ct_crackseg_src
+    weights: vendor_models/ct_crackseg/weights/weights_deepcrack.model
+    threshold: 0.5
+    batch_size: 8
+  - name: scsegamba_tut
+    arch_family: state_space_segmentation
+    adapter: adapters/scsegamba_export.py
+    repo: vendor_models/scsegamba_src
+    weights: vendor_models/scsegamba/checkpoints/checkpoint_TUT.pth
+    python: ../.venvs/scsegamba/bin/python   # SCSegamba's mamba_ssm runtime lives in a separate venv (same invocation as in E-D1)
+    threshold: 0.5
+    batch_size: 1

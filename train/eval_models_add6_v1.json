@@ -1,0 +1,50 @@
+{
+ "A_x01only_B1_s0": {
+  "arm": "A_x01only_B1",
+  "seed": 0,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/A_x01only_B1_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B1_v5_s0": {
+  "arm": "B1_v5",
+  "seed": 0,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/B1_v5_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x01only_B1_s1": {
+  "arm": "A_x01only_B1",
+  "seed": 1,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/A_x01only_B1_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "B1_v5_s1": {
+  "arm": "B1_v5",
+  "seed": 1,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/B1_v5_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x01only_B1_s2": {
+  "arm": "A_x01only_B1",
+  "seed": 2,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/A_x01only_B1_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "B1_v5_s2": {
+  "arm": "B1_v5",
+  "seed": 2,
+  "role": "addendum6",
+  "arch": "upernet_convnext_tiny",
+  "ckpt": "${CRACKCF_DATA}/students_v5_add6/B1_v5_s2/final.pt",
+  "trainer": "student_v5"
+ }
+}

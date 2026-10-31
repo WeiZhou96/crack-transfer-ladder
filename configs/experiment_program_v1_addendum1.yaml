@@ -1,0 +1,24 @@
+# experiment_program_v1 addendum 1 — POST HOC (written after the P5 / H1-public result was seen, 2026-10-28).
+# Everything here is exploratory and is labelled post hoc in any report. It does not alter prereg_v6 or the
+# H1-public verdict (fail). Written before any strata (E2/E3), ablation (E4) or SDNET result was seen.
+version: "program-1-addendum-1"
+trigger: "H1-public failed: B10/B11 raised false alarms on every real negative leg (+17% to +89%, 3/3 seeds) while
+  raising positive-axis component recall (+1.8 to +4.9 pp); real negatives (PaveDistress-only pools) removed
+  in-domain false alarms but left BCL/UAV unchanged; mined ~ random."
+new_arms:                       # student_v5, recipe unchanged, 3 seeds each
+  B12_auto_posthoc: {arm: B12_auto, arms_config: configs/e1_arms_ablation_v1.yaml, neg_list: b3auto_r20/b3auto_crops.csv,
+                     note: "prereg condition (B11 vs B3 not significant) is NOT met; run as post-hoc exploratory arm"}
+  B2_g2:  {arm: B2, neg_list: "negpool_r20/admitted.csv restricted to 2 of 69 PaveDistress 100 m groups (seeded draw 20261028)"}
+  B2_g7:  {arm: B2, neg_list: "negpool_r20/admitted.csv restricted to 7 of 69 groups (seeded draw 20261028)"}
+confirmation_leg:               # never used by any student model before this file; one pass, sealed thresholds
+  sdnet_staged_negative: "122 SDNET pavement UP images that both independent raters (P01-P03 locked analysis) judged clear and crack-free; 65 overlap groups"
+  sdnet_UP_all: "all 21,726 SDNET pavement UP images (image-level labels, known noisy; secondary)"
+  sdnet_CP: "2,608 SDNET pavement CP images: image-level detection rate (any filtered component) as recall proxy"
+  scope: "all primary, ablation and post-hoc models; native_r95 and fixed_0.5"
+predictions:                    # written before the corresponding results; scored as stated, no re-wording afterwards
+  P1_mechanism: "A_x1only (crack-bearing synthetic layers only) has A3 >= 1.10 x B0 on bcl_noise and uav1388; A_x01only (confuser-only synthetic negatives) has A3 <= B0 on both"
+  P2_tau: "B11 tau ci_high has lower A3 than B11 tau ci_low on bcl_noise and uav1388"
+  P3_complementarity: "B12_auto_posthoc: pavedistress A3 <= 2 x B3_auto AND positive-axis recall >= B3_auto + 2 pp"
+  P4_data_efficiency: "B2_g7 keeps >= 90% of B2's in-domain (pavedistress) A3 reduction relative to B0; B2_g2 keeps >= 50%"
+  P5_locality: "no real-negative arm (B2, B3_auto, B2_g2, B2_g7) changes bcl_noise or uav1388 A3 by more than 15% relative to B0, and none of them changes sdnet_staged_negative A3 by more than 15%"
+  P6_confirmation: "on sdnet_staged_negative B11 A3 > B0 A3 (direction of the H1 failure replicates on an untouched leg)"

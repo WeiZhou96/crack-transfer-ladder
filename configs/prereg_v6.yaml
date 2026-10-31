@@ -1,0 +1,201 @@
+# Phase 0.5 pre-registration criteria snapshot (machine-readable version of v6 Appendix 0.5-5 / 0.5-6)
+# s03_freeze_splits.py writes the sha256 of this file into FREEZE.json; changing a criterion after freezing requires a new version, never an in-place edit.
+version: "0.5-prereg-6"   # 2026-10-28 post-freeze revisions R20-R22 (see end of file); saved as prereg_v6.yaml; prereg.yaml (0.5-prereg-5) and FREEZE.v1-v3 kept unchanged
+supersedes: "configs/prereg.yaml (0.5-prereg-5, sha256 8d3fa0bab317b334756a81ce8cff771dea1e7eb887535f4a02d520c11142dafe)"
+frozen_from: "v6 study design, Appendix Phase 0.5 (v6.2, 2026-08-31)"
+
+operators: [shadow, joint, repair_boundary]   # 'sealed' deferred (conservative-bias statement 0.5-6(3) on record)
+quadruplets_per_operator: 1000
+
+arms: [B0, B1, B2, B3_auto, B10, B11]
+conditional_arm: B12_auto     # run only if B11 vs B3_auto is not significant
+backbones_stage1: 1
+seeds_stage1: 3
+second_backbone_confirm: true # after H1-public passes, the field study is unlocked only if a second heterogeneous backbone agrees in direction
+
+metrics:
+  primary: fp_components_per_mpx_at_t_native_val_r95          # R21; former primary metric fp_components_per_mpx_at_t_proxy_r95 downgraded to a diagnostic
+  operating_point: "R21: per model, component-recall R95 calibrated on the native validation set (pool=train_positive, split=val in split_assignments.v3; 260 images); fixed 0.5 reported alongside; the original PaveDistress anchor t^proxy_R95 is still computed and reported but is not a decision criterion"
+  operating_point_secondary: fixed_0.5
+  operating_point_diagnostic: t_proxy_r95_pavedistress_anchor
+  component_filter_px: {min_area: 64, min_skel: 20, large_area: 900}
+  detected_criterion: {dilate_px: 4, skeleton_cover: 0.5}
+  physical_scale_only_on: [gaps10m, pavedistress, uav1388]
+  prediction_contract: probability_png_u16_v1
+  bootstrap:
+    iters: 10000
+    primary_group: bootstrap_group_1km
+    sensitivity_groups: {100m: bootstrap_group_100m, 1km: bootstrap_group_1km}
+
+evaluation_negative_legs:
+  - {id: bcl_noise, level: dataset_level_independent, role: primary_real_negative}
+  - {id: pavedistress_background_test, level: same_dataset_route_segment_holdout, role: primary_real_negative}
+  - {id: uav1388_background, level: dataset_level_unseen_sensor, role: independent_auxiliary_negative, expected_images: 103}
+
+hard_proxy:
+  pavedistress_patch_pothole:
+    layer: N_hard_proxy
+    labels: [patch, pothole]
+    unit: image_level
+    deduplicate: "merge all files/categories sharing one stem and retain semantic_labels"
+
+proxy_anchor:
+  dataset: pavedistress_anchor
+  source_category: Crack
+  sample_size: 150
+  seed: 20260831
+  source_block_km: [13.1842368, 14.7475932]
+  isolation: "outside every R5 train/test route block; anchor images calibrate thresholds only"
+  annotation: sparse_centerline_linestrip
+  double_annotation_fraction: 0.20
+  target_recall: 0.95
+  geometry_unresolved:          # R16: anchors on which no thin centreline can be located reliably even after per-image review
+    allowed: true
+    max_images: 3               # 080, 133, 143; per-image reasons in the R7 acceptance record
+    semantics: "reviewed, not registered, zero positives, not counted in the negative/false-alarm accounts; never equivalent to no_visible_crack; number of anchors actually used for thresholding = sample_size - number unresolved"
+  joint_like_interface_policy: "R17: long straight lines along pavement texture boundaries (suspected longitudinal construction joints / paving boundaries) are not counted as anchor positive centrelines; they are recorded as unknown, not as negatives"
+
+b3_auto_mining:
+  sources:
+    - consensus_screened_train_negative
+    - "training-positive images cropped outside dilate(GT,30px)"
+  positive_gt_exclusion_radius_px: 30
+  no_crack_crop_requirement: "crop support must not intersect dilate(GT,30px)"
+  sdnet_fallback: "activate the positive-image outside-GT source when SDNET2018 remains unavailable"
+
+ed1:
+  sensor_polarity_preprocessing:      # R18 (deviation decided after freezing and after viewing the calibration set; must be disclosed in the paper)
+    sources: [pavedistress, pavedistress_anchor]   # laser line-scan grayscale frames: cracks appear as bright lines
+    operation: "invert 8-bit intensities (255 - x) before public-model inference"
+    applies_to: [calibration anchor tiles, pavedistress_background_test tiles]
+    not_applied_to: [bcl, uav1388, cracksc, nha12d]   # conventional RGB polarity
+    rationale: "anchor-only diagnostic (FREEZE v1): median probability on GT centrelines 0-0.001 for 5/6 models; after inversion recall@0.5 rose to 42-89% for 4/6"
+    degenerate_models_policy: "models whose anchor threshold stays degenerate (no GT/background separation) are reported as threshold_degenerate and excluded from rank correlations"
+    threshold_degenerate_models: [crackmer_deepcrack, hrsegnet_b16]   # inverted-anchor diagnostic: Crackmer recall@0.5 = 0%; HrSegNet outputs confined to 0.29-0.30. The main s06 run contains only the other 4 models; these two are run once separately and their accounts archived
+    main_models: [deepcrack_cracktree260, crackformer2_crack537, ct_crackseg_deepcrack, scsegamba_tut, crackmamba_crackseg9k, deepcrackliu_deepcrack537, cracksam_adapter_khanhha, cdln_liu_fcn_csn_usc]   # R19: rank correlations are computed only on the single s06 run over this list
+    added_models_policy: "models added under R19 enter the main run regardless of anchor-threshold behaviour (no degeneracy exemption); diagnostics are reported only"
+  positive_axis:
+    required: true
+    sources: [cracksc, nha12d]
+    metrics: [cldice, cliou_at_4px]
+    cliou_tolerance_px: 4
+    threshold: t_proxy_r95_from_pavedistress_anchor
+    external_paper_scores: forbidden_in_tables_and_figures
+    reporting: "overall plus per-source results under one frozen protocol"
+  rank_correlation:
+    positive_metric: cldice
+    negative_metric: fp_components_per_mpx_at_t_proxy_r95
+    bootstrap_iters: 10000
+
+go_no_go:
+  H1_public:
+    require: "FA(B11) < FA(B3_auto) on ≥2 independent real negative sources"
+    min_relative_drop: 0.15
+    recall_floor_pp: -2         # lower bound on the drop in proxy component recall
+    semantics: "necessary but not sufficient: passing only unlocks investment in the field study and does not presuppose H1"
+  pairing_value:
+    compare: [B11, B10]
+  H2_public:
+    require: "sign(beta_syn) == sign(beta_real) within ≥2 confuser classes"
+    criteria_enabled: [intra_class_direction, standardized_effect_correlation]
+    criteria_disabled: [cross_class_rank_correlation]   # v6.1: not enabled with fewer than 5 operator classes
+  necessity_check:
+    condition: "B3_auto ≈ B11 (≈ B12_auto)"
+    consequence: "the training-gain claim is dropped; the field study continues only if the P-1b pipeline narrative holds"
+  borderline_band_relative: 0.05   # criterion within the ±5% borderline band -> the 0.5-7 human review slot must be opened before the decision
+
+dedup:
+  phash_hamming_max: 2
+  phash_index: complete_9band_hamming_le_8
+  dino_cosine_min: 0.95
+  dino_retrieval:
+    cross_pool: mutual_top5
+    same_pool: mutual_top1
+  dino_preprocess: square_resize_224_no_center_crop
+  auto_exclusion: "only identical sha256, or pHash distance 0 across train and test (the training-side copy is removed); all other cases are adjudicated manually and the decisions published"
+  sha256_exact_keep_rule: "across training/non-training pools keep the non-training copy; within pools of the same kind keep the lexicographically smallest normalised image_id; file-name length must not be used"
+  audit_status: "2026-09-03 exhaustive check of 16,545 images: Hamming 0/2/4/6/8 = 82/244/650/1069/1435; cumulative <=2 is 326, <=8 is 3480; the 9-band index agrees exactly with the 326 exhaustive pairs at <=2"
+  production_recompute_2026_09_04: "rerun after the R7 hard-proxy images entered the registry: registry=17287, pHash=346, DINO=935, auto=13, same-group protected=282, todo=950, preserved decisions=0"
+  dino_topk_sensitivity_2026_09_03: "square224, cos>=0.95, same-pool top1 fixed: cross-pool top1/top3/top5 total candidates = 883/889/889, of which cross-pool = 2/8/8; top5 adopted, results stable from top3 to top5"
+
+proxy_tiles:
+  tile: 512
+  stride: 256
+  p_min_crack_px: 64
+  p_min_skel_px: 20
+  hard_min_frac: 0.02
+  easy_max_frac: 0.005
+
+negpool_three_state:
+  consensus_rule: "drop when ≥2 screening members from different architecture families detect a long component at the same location (dilated IoU ≥ 0.3)"
+  principle: "committee firing ≠ deletion; only consistent same-location detection escalates to suspected real crack (Q/H separation)"
+  committee_discipline: "the admission committee and the B3-auto crack-exclusion committee draw on separate member pools (at least half different, spanning architecture families); the negative-pool flip rate when rerun with half of the members replaced is reported in the paper"
+
+terminology_downgrade:   # 0.5-2; wording rules for POC outputs
+  certified_negative: consensus-screened negative
+  field_benchmark: public-data proxy benchmark
+  attribution: native-mask association / AI-pseudo association
+  matched_recall: proxy-matched recall
+  workload: normalized false-alert burden
+
+prefreeze_revisions:
+  - id: R01_phash_threshold
+    change: "pHash threshold 8 -> 2; threshold 2 retained, candidate structure recomputed with a complete 9-band audit"
+  - id: R02_dino_retrieval
+    change: "DINO all-pairs / global top-1 -> cross-pool mutual top-5 + same-pool mutual top-1; cluster blindness disclosed and k-sensitivity analysed"
+  - id: R03_pave_grouping
+    change: "PaveDistress 10 s buckets were a misreading -> 100 m chainage groups; based on one image every 2 m, consistent with the pixel scale"
+  - id: R04_pave_split
+    change: "single 60/40 cut -> 4-6 interleaved blocks of about 2 km with ±100 m buffers between blocks and a pre-registered seed"
+  - id: R05_pave_independence
+    change: "PaveDistress-test downgraded to a same-dataset route-segment holdout; not described as a dataset-level independent negative source"
+  - id: R06_uav1388
+    change: "the actual UAV-1388 package contains YOLO bboxes and 1,389 images; downgraded to auxiliary; background used only as an independent negative leg"
+  - id: R07_proxy_anchor
+    change: "Pavementscapes unavailable; the in-domain t^proxy anchor changed to about 150 images from an independent PaveDistress Crack block with sparse coarse centreline annotations; GAPs used only as an upgrade layer"
+  - id: R08_sdnet_fallback
+    change: "while SDNET is unavailable, the training negative source is supplemented with seamless crops of training-positive images outside dilate(GT,30px); not presented as an independent test source"
+  - id: R09_cracksc_count
+    change: "CrackSC count corrected from 122 to 197; the previous value came from a truncated download"
+  - id: R10_pavecrack1300
+    change: "PaveCrack1300 unverified; isolated and not admitted to any pool"
+  - id: R11_exposure_carveout
+    change: "dedup adjudication that looks only at source images and only decides duplicate or not does not count as development exposure; observations of model outputs recorded separately"
+  - id: R12_ed1_positive_axis
+    change: "E-D1 positive axis changed to own evaluation on CrackSC ∪ NHA12D under one protocol; scores self-reported in the original papers are not used in tables or figures"
+  - id: R13_component_filter
+    change: "component filter adds a skeleton exemption for large_area=900px; A1/A2 use raw binary predictions, only A3 is filtered"
+  - id: R14_prediction_contract
+    change: "prediction maps upgraded from 8-bit to 16-bit probability PNGs; t^proxy_R95 searched over continuous values; models for which it is unreachable fail explicitly"
+  - id: R15_model_observations
+    change: "pre-freeze model-level QA observations registered separately, recording adapter deviations and that a fixed threshold is not interpretable across models"
+  - id: R16_anchor_geometry_unresolved
+    change: "after per-image R7 review, 3 images (080/133/143) have no thin centreline that can be located reliably: recorded as geometry_unresolved, not registered, zero positives, not counted as negatives; not relabelled as no_visible_crack and not replaced by other samples; 147 anchors used for thresholding"
+  - id: R17_joint_like_interfaces
+    change: "uniform treatment of joints in the anchors: long straight lines at texture boundaries are not crack positives (v6 lists joints as a distractor class); 10 reviewed shapes in 110/111/112/113/114 removed from the accepted labels; 128/134/136 were never drawn"
+  - id: R18_sensor_polarity
+    change: "Revision after freezing (FREEZE v1 -> v2): in PaveDistress laser grayscale frames cracks appear as bright lines; public models barely respond on the anchors and t^proxy_R95 degenerates to 1e-5 to 1e-3. A diagnostic on the calibration anchors only (test set not touched) confirmed that 4/6 models recover after inversion. E-D1 inverts all PaveDistress-sourced images (anchors and background-test) before inference; the Crackmer/HrSegNet anchor thresholds remain degenerate, are marked threshold_degenerate and excluded from rank correlations. All results under v1 are kept archived, not deleted"
+  - id: R19_ed1_model_panel_extension
+    change: "Revision after freezing (FREEZE v2 -> v3): under FREEZE.v2 the E-D1 main run had only 4 models with a usable threshold, and a rank correlation with n=4 has no statistical power; public models were added after the 4-model results had been seen. The selection rules were fixed before any output of a new model was produced (new_models_selection_plan_20260926.md): peer-reviewed + official code + official weights loaded in strict mode + per-image pixel probabilities + training set free of E-D1 evaluation images + training-side smoke test; candidates tried in a fixed order, stopping once 4 had been added. Outcome: CrackMamba, DeepCrack-Liu, CrackSAM and CrackDenseLinkNet passed; OmniCrack30k was excluded because its training set contains BCL negatives (execution record: new_models_selection_outcome_20260926.md). Main run = the 8 models in ed1.sensor_polarity_preprocessing.main_models; added models get no threshold-degeneracy exemption; Crackmer/HrSegNet remain under R18. Splits unchanged; v1/v2 results retained"
+  - id: R20_visibility_threshold_and_contrast_strata
+    date: "2026-10-28"
+    change: "Revision after freezing (before B10/B11 training; no B10/B11 training or student test results had been seen): τ_Δ takes the 50%-detection point estimates of the completed three-observer psychophysical fit (as defined in v6 §3.1), per stratum: laser_asphalt 0.1505, rgb_asphalt 0.4680203280072264 (supplementary round), rgb_concrete 0.28746; the endpoints of the fit intervals are used only for sensitivity analysis. Gate-human κ, Brier intervals and pointwise transfer are downgraded to limitations reported in the paper and are not preconditions for training. Quadruplets v4: all v3 specs and seeds reused; only the attenuated groups with contrast_alpha ≠ 1 in v3 have α re-solved for a target ΔC (target median ΔC over x11 skeleton points drawn from U[τ,2τ] for 70% and from U[0.5τ,τ) for 30%; bisection on log α, α ≤ 1; when the target is unreachable α = 1 and the case is recorded as capped). This implements the operators.yaml comment 'stratify around τ_Δ once τ_Δ is finalised' and the v6 requirement that the hard-but-visible band be fully represented. Q1 teacher-unreadable instances (644/1205) are kept and recorded as undetermined, following v6 Step 7 'H is recorded only, no samples are deleted'. Basis: poc/qa/threshold_readiness_20261011/scenarios.json and analysis_v2/summary.json (under the point-estimate τ, x11 is empty in 1157/3000 v3 quadruplets)"
+  - id: R21_operating_point
+    date: "2026-10-28"
+    change: "Revision after freezing (before any formal test inference of student models): student-model R95 thresholds on the PaveDistress laser anchors degenerate to 9.3e-15 to 7.8e-7 (at fixed 0.5, anchor component recall is 18.95%-52.02% versus 91.57%-95.99% on native validation; see the calibration-anchor source-effect and detection-condition diagnostic of 2026-10-17). The primary operating point becomes the per-model native-validation R95; fixed 0.5 is reported alongside; the original anchor R95 is still computed and reported as a diagnostic. The H1-public recall floor remains a change of ≥ -2 pp in positive-axis (CrackSC ∪ NHA12D) component recall at the same threshold. All three negative legs use the same threshold rule; for the PaveDistress-test leg it is stated that the detection condition is not field-matched recall"
+  - id: R22_negative_leg_wording
+    date: "2026-10-28"
+    change: "H1-public uses the two primary negative legs exactly as listed under evaluation_negative_legs in this file: bcl_noise (dataset-level independent) + pavedistress_background_test (same-dataset route-segment holdout, R05); uav1388_background is auxiliary. Reported as 'one dataset-level independent negative source plus one same-dataset route-segment-isolated negative source'. Acquiring new negative sources is not a precondition for go/no-go"
+v6_execution_decisions:          # 2026-10-28 decisions D1-D9 adopted as recommended; option A selected for D2
+  tau_delta_by_stratum: {laser_asphalt: 0.1505, rgb_asphalt: 0.4680203280072264, rgb_concrete: 0.28746}
+  tau_delta_sensitivity:
+    laser_asphalt: [0.0707, 0.24027]
+    rgb_asphalt: [0.36484148566254326, 0.5582346601908953]
+    rgb_concrete: [0.16009, 0.57879]
+  tau_source: "poc/qa/threshold_readiness_20261011/scenarios.json (point and ci of legacy_diagnostic_laser_asphalt / rgb_supplement_diagnostic / legacy_diagnostic_rgb_concrete)"
+  quadruplets: quadruplets/v4
+  trainer: train/student_v4.py   # = student_v1 training maths + per-stratum τ; split_assignments.v3.csv
+  seeds: [0, 1, 2]               # D9: no seeds added afterwards because of ambiguous results
+  human_review_slot: "opened only when a criterion falls within borderline_band_relative (0.5-7)"
+  formal_test_inference: "run once, without iteration, after all 18 models have been trained and the run manifest has been fixed"
+  freeze_note: "FREEZE.v3 remains the active freeze; the hashes of this file, the v4 quadruplets, the trainer and the τ table are written into the run manifest. FREEZE.v4 is deferred and generated before formal test inference if needed"

@@ -1,0 +1,163 @@
+{
+ "A_x01only_s0": {
+  "arm": "A_x01only",
+  "seed": 0,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x01only_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x01only_s1": {
+  "arm": "A_x01only",
+  "seed": 1,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x01only_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x01only_s2": {
+  "arm": "A_x01only",
+  "seed": 2,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x01only_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x1only_s0": {
+  "arm": "A_x1only",
+  "seed": 0,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x1only_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x1only_s1": {
+  "arm": "A_x1only",
+  "seed": 1,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x1only_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_x1only_s2": {
+  "arm": "A_x1only",
+  "seed": 2,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_x1only_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_paired_noaux_s0": {
+  "arm": "A_paired_noaux",
+  "seed": 0,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_paired_noaux_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_paired_noaux_s1": {
+  "arm": "A_paired_noaux",
+  "seed": 1,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_paired_noaux_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_paired_noaux_s2": {
+  "arm": "A_paired_noaux",
+  "seed": 2,
+  "role": "ablation",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_paired_noaux_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_paired_pair_s0": {
+  "arm": "A_paired_pair",
+  "seed": 0,
+  "role": "ablation_1seed",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_paired_pair_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "A_paired_marg_s0": {
+  "arm": "A_paired_marg",
+  "seed": 0,
+  "role": "ablation_1seed",
+  "ckpt": "${CRACKCF_DATA}/students_v5/A_paired_marg_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B11_taulow_s0": {
+  "arm": "B11_taulow",
+  "seed": 0,
+  "role": "ablation_1seed",
+  "ckpt": "${CRACKCF_DATA}/students_v5/B11_taulow_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B11_tauhigh_s0": {
+  "arm": "B11_tauhigh",
+  "seed": 0,
+  "role": "ablation_1seed",
+  "ckpt": "${CRACKCF_DATA}/students_v5/B11_tauhigh_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B11_v3quads_s0": {
+  "arm": "B11_v3quads",
+  "seed": 0,
+  "role": "ablation_1seed",
+  "ckpt": "${CRACKCF_DATA}/students_v5/B11_v3quads_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B12_auto_posthoc_s0": {
+  "arm": "B12_auto_posthoc",
+  "seed": 0,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B12_auto_posthoc_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B12_auto_posthoc_s1": {
+  "arm": "B12_auto_posthoc",
+  "seed": 1,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B12_auto_posthoc_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "B12_auto_posthoc_s2": {
+  "arm": "B12_auto_posthoc",
+  "seed": 2,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B12_auto_posthoc_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g7_s0": {
+  "arm": "B2_g7",
+  "seed": 0,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g7_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g7_s1": {
+  "arm": "B2_g7",
+  "seed": 1,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g7_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g7_s2": {
+  "arm": "B2_g7",
+  "seed": 2,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g7_s2/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g2_s0": {
+  "arm": "B2_g2",
+  "seed": 0,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g2_s0/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g2_s1": {
+  "arm": "B2_g2",
+  "seed": 1,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g2_s1/final.pt",
+  "trainer": "student_v5"
+ },
+ "B2_g2_s2": {
+  "arm": "B2_g2",
+  "seed": 2,
+  "role": "posthoc",
+  "ckpt": "${CRACKCF_DATA}/students_v5_posthoc/B2_g2_s2/final.pt",
+  "trainer": "student_v5"
+ }
+}

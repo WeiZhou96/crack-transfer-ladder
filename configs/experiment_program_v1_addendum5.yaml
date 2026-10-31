@@ -1,0 +1,45 @@
+# experiment_program_v1 addendum 5 — POST HOC (written 2026-10-28 ~21:40, after the complete addendum-2 held-out probe
+# and the primary addendum-4 sweep were seen; before any scene-novel probe was rendered or evaluated, and before any
+# E4-ablation, addendum-1 or addendum-3 output existed). Exploratory; labelled post hoc in any report.
+version: "program-1-addendum-5"
+seen_before_writing: [P5 report, strata_report.json, SDNET confirmation leg (primary arms),
+  addendum-2 held-out probe (primary arms, complete; P7 true), addendum-4 sweep curves (primary arms)]
+not_seen: [scene-novel probe (not rendered), E4 ablations, addendum-1 arms, addendum-3 arms]
+
+part_A_scene_novel_probe:
+  trigger: "P7 held: on the held-out probe B11 x01 FP/Mpx is 0.13-0.35 x B0 for every operator. But 777/900 held-out
+    groups reuse a training background crop; the joint operator is restricted to rgb_concrete, whose 286 crops are all
+    in the training draws, so the novel-background subset has 0 joint and 9 shadow groups. P7 therefore cannot separate
+    operator-level learning from scene memorisation, and that separation decides how the synthetic-to-real failure
+    (suppression on synthetic confusers, more false alarms on real ones) is explained."
+  backgrounds: "SDNET2018 P/UP images in ed1_inputs_sdnet_20261028/sdnet_staged_negative.csv (122 images, 65 specimen
+    groups; double-annotator clean negatives from return packs P01-P03). SDNET was never in any training set. 256x256
+    images cut into four 128x128 crops (the rgb_concrete tier of background_pool_v3), same crop QC as
+    background_pool_v3 (near-saturation > 1%, gray std < 2, bright structure > 2%); domain rgb_photo, material concrete."
+  overlap_disclosure: "the same images form the sdnet_staged_negative evaluation leg; the probe is a diagnostic, no
+    threshold or model choice depends on it."
+  renderer: "render/tools/render_quadruplets_v1.py render, unchanged code and operators.yaml (operators-0.4); data root
+    = probe_root_sdnet_v1 (registry = original registry + one entry per SDNET background image; mask_library symlinked);
+    --seed 20261030 --n 300. With only rgb_concrete in the pool all three operators render on concrete (empty strata
+    are dropped by the sampler)."
+  evaluation: "train/eval_strata_v4.py quads --quad-dir quadruplets/sdnet_scene_novel_s20261030, sealed thresholds,
+    every primary, ablation/post-hoc and addendum-3 model; native_r95 primary, fixed_0.5 reported."
+  estimands: "per arm and operator: x01 FP/Mpx, x00 FP/Mpx, operator-induced FP/Mpx = x01 - x00 (arm mean of seeds);
+    B11/B0 ratio with a paired cluster bootstrap over SDNET specimen groups (10000, seed 0)."
+  predictions:
+    P14_scene_novel_suppression: "at native_r95 on the scene-novel probe, B11 x01 FP/Mpx <= 0.5 x B0 x01 FP/Mpx for each
+      of shadow, joint and repair_boundary"
+  interpretation_rule: "P14 true -> suppression transfers to unseen scenes, so the real-confuser failure is attributed
+    to the appearance gap between rendered and real confusers. P14 false with B11 x01 >= B0 x01 on joint -> the
+    suppression measured on v4/held-out probes is scene-bound. Intermediate -> reported as partial."
+
+part_B_sweep_overlap:
+  trigger: "addendum-4 grid (t 0.02-0.95) moves recall by only 0.05-0.13 per model; several seeds never reach 0.75 or
+    0.80 (e.g. B0_s1 max 0.784, B10_s0 min 0.799, B11_s1 min 0.779), so P12/P13 are not evaluable as registered."
+  registered_outcome: "P12 and P13 are reported as 'not evaluable (target recall not bracketed)', exactly as the
+    addendum-4 rule states. No re-scoring."
+  descriptive_analysis: "train/analyze_sweep_overlap_v1.py: arm curve = seed-mean recall and seed-mean A3 at each grid
+    threshold (native_r95 excluded); for arm X vs B0 the common recall interval of the two arm curves is sampled at 21
+    points; report mean log ratio of A3 (log(A3+0.01)) per leg, the interval, and per-seed-pair dominance (fraction of
+    the 9 seed pairs whose common-interval mean log ratio > 0, pairs with no common interval counted separately).
+    Descriptive, no prediction, no bootstrap."

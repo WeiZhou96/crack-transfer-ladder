@@ -1,0 +1,77 @@
+# D2 θ sampling domains for three operators (Phase 0.5 first round: shadow / joint / repair_boundary, all label-preserving)
+# source: v6 = given explicitly in the v6 §3.1 operator table or appendix 0.5-4 Step 5; poc_default = default chosen by the POC where v6 gives no value,
+#         to be re-checked before the D4 audit / four sentinels; changes are recorded in this file's version number. Pixel quantities are taken in pixels on images without a reliable GSD (appendix 0.5-1 convention).
+version: "operators-0.4"   # 0.2 (2026-09-28): + acquisition, visibility_paired, quadruplet; 0.3: + quadruplet.contrast_alpha; 0.4: shadow.domains (laser excluded), laser crack polarity bright (render/quadruplet.POLARITY)
+
+shadow:                       # slot L^light (applied after the brush); multiplicative illumination + penumbra, near-linear domain
+  slot: L_light
+  materials: [asphalt, concrete]
+  domains: [rgb_photo]        # 0.4 (2026-09-28) typed precondition: laser line scan is actively illuminated imaging with no cast shadows; used only for passively illuminated photos
+  kind: {values: [cast, linear], probs: [0.6, 0.4], source: poc_default}
+  transmittance_k: {range: [0.35, 0.75], source: v6}
+  penumbra_px: {range: [2, 40], source: v6}              # 10%-90% transition width; distance-dependent: this value at the far end, 1/4 of it at the near end
+  coverage: {range: [0.10, 0.60], source: poc_default}    # cast: area fraction of the shadow core (the v6 column "coverage" gives no range)
+  line_width_px: {range: [2, 15], source: v6}             # linear: line width of linear shadows
+  sky_blue_shift: {range: [0.00, 0.08], source: poc_default}   # v6 "additional blue-white balance shift" gives no magnitude
+  cast_blob_scale_frac: {range: [0.08, 0.25], source: poc_default}  # low-frequency noise scale of canopy blobs / short image side
+
+joint:                        # slot S_pre (before the brush); photometric rendering of a concrete-slab joint groove, not a black line
+  slot: S_pre
+  materials: [concrete]       # typed precondition: PCC joints are placed only on concrete backgrounds
+  period_m: {range: [4.0, 6.0], source: v6}               # used to set the number and spacing of joints only when the GSD is known
+  n_joints_without_gsd: {values: [1, 2], probs: [0.7, 0.3], source: poc_default}
+  width_px: {range: [2, 10], source: v6}
+  groove_darkness: {range: [0.15, 0.55], source: poc_default}   # v6 "groove darkness" gives no range; multiplicative darkening ratio at the groove bottom
+  lip_contrast: {range: [0.03, 0.12], source: poc_default}      # amplitude of the lip highlight on the lit side / shadow on the unlit side
+  edge_jitter_px: {range: [0.0, 1.5], source: poc_default}      # along-line undulation of sawn/formed joint edges
+
+repair_boundary:              # slot S_pre (POC limited to old repairs that predate the crack, label-preserving; appendix 0.5-1)
+  slot: S_pre
+  materials: [asphalt, concrete]
+  area_frac: {range: [0.05, 0.35], source: poc_default}         # θ_p "repair area" (column name in appendix 0.5-4 Step 5; no range given)
+  aspect: {range: [0.5, 2.0], source: poc_default}
+  brightness_delta: {range: [-0.20, 0.12], source: poc_default} # θ_p "inside/outside brightness difference" (multiplicative, linear domain)
+  texture_smooth: {range: [0.0, 0.8], source: poc_default}      # repair material is newer and more uniform: blend ratio of the interior with its blurred version
+  seam_width_px: {range: [1.0, 3.0], source: poc_default}
+  seam_darkness: {range: [0.05, 0.30], source: poc_default}
+  step_shadow_px: {range: [1.0, 6.0], source: poc_default}      # θ_p "boundary shadow width" (height-step shadow)
+  edge_jitter_px: {range: [0.0, 4.0], source: poc_default}      # edge irregularity (low-frequency displacement)
+
+relation:                     # r = (d, Δφ, n), only for linear distractors (joint, linear shadow) × crack-bearing layer; defined in v6 §3.1
+  d_bins: {overlap: "distractor band intersects crack mask", near: "0 < d < 2", excluded: "2 <= d <= 10", far: "d > 10"}
+  d_unit: "nearest skeleton distance / median crack width"
+  dphi_bins_deg: [15, 60]
+  n_bins: ["0", ">=1"]
+
+visibility:                   # V(p)=1[C_w ≥ τ_c], local Weber contrast in a 15×15 window on the centerline (v6 Eq. 3)
+  window_px: 15
+  tau_c: 0.02
+
+# ---- 2026-09-28 D3 addition (operators-0.2): acquisition operator A_ν, paired visibility, quadruplet assembly ----
+acquisition:                  # slot A_nu, applied last; weak augmentation in the first round (v6 §3.1 table); each component enabled with a probability
+  slot: A_nu
+  exposure: {prob: 0.5, ev: {range: [-1.5, 1.5], source: v6}}
+  motion: {prob: 0.15, len_px: {range: [5, 25], source: v6}}          # linear PSF length
+  defocus: {prob: 0.15, radius_px: {range: [1.0, 4.0], source: poc_default}}   # v6 "defocus blur circle" gives no range
+  noise: {prob: 0.5, shot_gain: {range: [0.0005, 0.01], source: poc_default}, read_sigma: {range: [0.001, 0.01], source: poc_default}}
+  jpeg: {prob: 0.5, quality: {range: [30, 90], source: v6}}
+  prob_source: poc_default    # v6 does not give the enable probabilities of the components
+
+visibility_paired:            # paired definition V = 1[ΔC ≥ τ_Δ] adopted 2026-09-27 (visibility.visibility_mask_paired)
+  window_px: 15
+  tau_delta: null             # pending human visibility calibration (reading package v4); until finalised, quadruplets store only ΔC, not V
+  tau_delta_status: pending
+
+quadruplet:                   # D3 assembly (appendix Step 6)
+  n_per_operator: 1000
+  stratum_weights:            # background-stratum weights; joint restricted to concrete by typed precondition
+    shadow: {laser_asphalt: 0.4, rgb_asphalt: 0.4, rgb_concrete: 0.2}
+    repair_boundary: {laser_asphalt: 0.4, rgb_asphalt: 0.4, rgb_concrete: 0.2}
+    joint: {rgb_concrete: 1.0}
+  stratum_weights_source: poc_default
+  r_targets: [overlap, near, far]   # d bins assigned uniformly; the 2–10× exclusion band is not sampled; Δφ and n are only recorded (poc_default, re-checked in D4)
+  max_r_tries: 400
+  contrast_alpha:             # crack contrast attenuation R^α (added 2026-09-28, operators-0.3); half of the groups keep the source image's original contrast
+    natural_prob: 0.5
+    log_uniform: [0.02, 1.0]  # roughly ΔC 0.03–0.6; after τ_Δ is finalised, switch to stratification around τ_Δ
+    source: poc_default

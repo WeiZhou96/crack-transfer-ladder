@@ -1,0 +1,48 @@
+version: 2
+updated: "2026-09-04"
+policy: >-
+  Any image inspected during pre-freeze model or pipeline QA makes its entire group ineligible for
+  train/val/test. s03 assigns the group to development_exposed so it cannot enter formal evaluation.
+  Data-hygiene duplicate adjudication is carved out only when reviewers inspect source images,
+  never inspect model outputs, and decide only whether a pair is duplicate; that review does not
+  count as development exposure. Any model-output inspection remains an exposure.
+
+model_observations:
+  - id: c1_smoke_deepcrack_pavedistress_2026_08_31
+    model: deepcrack_cracktree260
+    dataset: pavedistress
+    observation: "Sampled Background lane-marking texture and edges produced responses up to 0.94."
+    status: "pre-freeze exploratory observation; no performance claim"
+    source: "models_public.yaml and C1 smoke QA"
+
+exposures:
+  - {image_id: "cfd/repo/image/001.jpg", reason: "model visual QA"}
+  - {image_id: "cfd/repo/image/002.jpg", reason: "model visual QA"}
+  - {image_id: "cfd/repo/image/003.jpg", reason: "model visual QA"}
+  - {image_id: "cfd/repo/image/004.jpg", reason: "model visual QA"}
+  - {image_id: "cfd/repo/image/005.jpg", reason: "model visual QA"}
+  - {image_id: "cfd/repo/image/006.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/468.4420304.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/468.4461608.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/468.4482260.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0797340.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0817992.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0879948.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0900600.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0921252.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0962556.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.0983208.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.1003860.jpg", reason: "model visual QA"}
+  - {image_id: "pavedistress/Background/470.1024512.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f10.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f100.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1000.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1001.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1002.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1003.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1004.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1005.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1006.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1007.jpg", reason: "model visual QA"}
+  - {image_id: "bcl/Noise images/Image/f1008.jpg", reason: "model visual QA"}

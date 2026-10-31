@@ -1,0 +1,65 @@
+{
+ "method": "Addendum 5 part B (descriptive, post hoc): recall-matched false alarms over the common recall interval.\n\nInput: sweep_report.json from analyze_sweep_v1.py (per-model curves; native_r95 excluded here).\nArm curve = seed-mean recall and seed-mean A3 at each grid threshold. For arm X vs B0 the common recall interval of the\ntwo arm curves is sampled at 21 points; A3(r) is interpolated linearly in log(A3+0.01) against recall. Reported per leg:\ninterval, mean log ratio log((A3_X+0.01)/(A3_B0+0.01)) and its exp; per-seed-pair dominance over the 9 seed pairs\n(fraction with mean log ratio > 0 among pairs with a common interval). No prediction, no bootstrap.\nusage: python analyze_sweep_overlap_v1.py <sweep_report.json> <models.json>[,<models.json>...] <out.json>\n",
+ "thresholds": [
+  "t0.02",
+  "t0.05",
+  "t0.1",
+  "t0.2",
+  "t0.3",
+  "t0.5",
+  "t0.7",
+  "t0.85",
+  "t0.95"
+ ],
+ "vs_B0": {
+  "B11": {
+   "arm_curve": null,
+   "seed_pairs": {
+    "with_common_interval": 4,
+    "without": 5,
+    "bcl_noise": {
+     "frac_X_above_B0": 1.0
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 1.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 1.0
+    }
+   }
+  },
+  "B2": {
+   "arm_curve": {
+    "interval": [
+     0.7476747674767475,
+     0.8238823882388239
+    ],
+    "bcl_noise": {
+     "mean_log_ratio": -0.017673605859175292,
+     "ratio": 0.9824816562866482
+    },
+    "pavedistress_background_test": {
+     "mean_log_ratio": -5.457322408148438,
+     "ratio": 0.0042649602925659315
+    },
+    "uav1388_background": {
+     "mean_log_ratio": 0.6089759088032975,
+     "ratio": 1.838547593946623
+    }
+   },
+   "seed_pairs": {
+    "with_common_interval": 9,
+    "without": 0,
+    "bcl_noise": {
+     "frac_X_above_B0": 0.2222222222222222
+    },
+    "pavedistress_background_test": {
+     "frac_X_above_B0": 0.0
+    },
+    "uav1388_background": {
+     "frac_X_above_B0": 1.0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1723 @@
+{
+ "operating_point": "native_r95",
+ "H2_public": {
+  "verdict": "pass",
+  "classes": {
+   "joint": {
+    "per_arm": {
+     "B0": {
+      "beta_syn": 0.6446519049613287,
+      "beta_syn_ci": [
+       0.6122932874702578,
+       0.6774281981168545
+      ],
+      "beta_real": 1.688000551418814,
+      "beta_real_ci": [
+       1.6106959244597754,
+       1.7660108571546689
+      ],
+      "per_model": {
+       "B0_s0": {
+        "beta_syn": 0.6354332202485768,
+        "beta_real": 1.6118786715288842
+       },
+       "B0_s1": {
+        "beta_syn": 0.6864802111510757,
+        "beta_real": 1.6517069901327361
+       },
+       "B0_s2": {
+        "beta_syn": 0.6120422834843336,
+        "beta_real": 1.8004159925948213
+       }
+      }
+     },
+     "B1": {
+      "beta_syn": 0.4846311192542612,
+      "beta_syn_ci": [
+       0.4520009241091544,
+       0.5177464863427552
+      ],
+      "beta_real": 1.657403738046419,
+      "beta_real_ci": [
+       1.5601324237607241,
+       1.7561799702168566
+      ],
+      "per_model": {
+       "B1_s0": {
+        "beta_syn": 0.44973984179947946,
+        "beta_real": 1.7094734654086576
+       },
+       "B1_s1": {
+        "beta_syn": 0.48246587452033474,
+        "beta_real": 1.6419030548208795
+       },
+       "B1_s2": {
+        "beta_syn": 0.5216876414429696,
+        "beta_real": 1.6208346939097198
+       }
+      }
+     },
+     "B2": {
+      "beta_syn": 0.6722307155137267,
+      "beta_syn_ci": [
+       0.640279769537378,
+       0.7050049625239376
+      ],
+      "beta_real": 1.7304285693120567,
+      "beta_real_ci": [
+       1.6503769694404997,
+       1.813051633208331
+      ],
+      "per_model": {
+       "B2_s0": {
+        "beta_syn": 0.6553907915989517,
+        "beta_real": 1.8001037171319303
+       },
+       "B2_s1": {
+        "beta_syn": 0.7251346227136811,
+        "beta_real": 1.660059427918775
+       },
+       "B2_s2": {
+        "beta_syn": 0.636166732228547,
+        "beta_real": 1.7311225628854643
+       }
+      }
+     },
+     "B3_auto": {
+      "beta_syn": 0.6310060648426049,
+      "beta_syn_ci": [
+       0.598834173582881,
+       0.6636498772889307
+      ],
+      "beta_real": 1.6671856611401605,
+      "beta_real_ci": [
+       1.5915665118518616,
+       1.74427450862014
+      ],
+      "per_model": {
+       "B3_auto_s0": {
+        "beta_syn": 0.7003283063211314,
+        "beta_real": 1.5747746048279088
+       },
+       "B3_auto_s1": {
+        "beta_syn": 0.5870452201702309,
+        "beta_real": 1.7411869509257338
+       },
+       "B3_auto_s2": {
+        "beta_syn": 0.6056446680364527,
+        "beta_real": 1.6855954276668395
+       }
+      }
+     },
+     "B10": {
+      "beta_syn": 0.04240271412069744,
+      "beta_syn_ci": [
+       0.03254085720306317,
+       0.053218561799456554
+      ],
+      "beta_real": 1.4650003018291773,
+      "beta_real_ci": [
+       1.3964349410086758,
+       1.533298804485561
+      ],
+      "per_model": {
+       "B10_s0": {
+        "beta_syn": 0.020285846819791967,
+        "beta_real": 1.4030185035425502
+       },
+       "B10_s1": {
+        "beta_syn": 0.06246697837181,
+        "beta_real": 1.5893413159250855
+       },
+       "B10_s2": {
+        "beta_syn": 0.04445531717049038,
+        "beta_real": 1.4026410860198957
+       }
+      }
+     },
+     "B11": {
+      "beta_syn": 0.043051350837049224,
+      "beta_syn_ci": [
+       0.03335976912733694,
+       0.05353214625952098
+      ],
+      "beta_real": 1.5392408431274636,
+      "beta_real_ci": [
+       1.4690229469398657,
+       1.6095961595342807
+      ],
+      "per_model": {
+       "B11_s0": {
+        "beta_syn": 0.05460233896398846,
+        "beta_real": 1.50336671686952
+       },
+       "B11_s1": {
+        "beta_syn": 0.046575580706690475,
+        "beta_real": 1.3626132510158688
+       },
+       "B11_s2": {
+        "beta_syn": 0.027976132840468737,
+        "beta_real": 1.7517425614970021
+       }
+      }
+     }
+    },
+    "h2_models": [
+     "B0",
+     "B1",
+     "B2",
+     "B3_auto"
+    ],
+    "beta_syn_pooled": 0.6081299511429805,
+    "beta_syn_pooled_ci": [
+     0.5799140924331828,
+     0.6368142685060507
+    ],
+    "beta_real_pooled": 1.6857546299793624,
+    "beta_real_pooled_ci": [
+     1.6111628428694518,
+     1.7625646317472277
+    ],
+    "sign_agree": true
+   },
+   "repair": {
+    "per_arm": {
+     "B0": {
+      "beta_syn": 0.0,
+      "beta_syn_ci": [
+       0.0,
+       0.0
+      ],
+      "beta_real": -0.08928349907075372,
+      "beta_real_ci": [
+       -0.29975112283562805,
+       0.1379268214109287
+      ],
+      "per_model": {
+       "B0_s0": {
+        "beta_syn": 0.0,
+        "beta_real": -0.10468885627078277
+       },
+       "B0_s1": {
+        "beta_syn": 0.0,
+        "beta_real": -0.10218923784234905
+       },
+       "B0_s2": {
+        "beta_syn": 0.0,
+        "beta_real": -0.06097240309912937
+       }
+      }
+     },
+     "B1": {
+      "beta_syn": 0.010704528662421638,
+      "beta_syn_ci": [
+       0.0022050762012971806,
+       0.02054586603245703
+      ],
+      "beta_real": 0.2671345713279964,
+      "beta_real_ci": [
+       -0.005208753546998624,
+       0.6326997591961189
+      ],
+      "per_model": {
+       "B1_s0": {
+        "beta_syn": 0.0,
+        "beta_real": -0.3370980863864168
+       },
+       "B1_s1": {
+        "beta_syn": 0.011834289357659284,
+        "beta_real": 0.39149869132776005
+       },
+       "B1_s2": {
+        "beta_syn": 0.020279296629605634,
+        "beta_real": 0.747003109042646
+       }
+      }
+     },
+     "B2": {
+      "beta_syn": 0.0,
+      "beta_syn_ci": [
+       0.0,
+       0.0
+      ],
+      "beta_real": 6.182094915543139,
+      "beta_real_ci": [
+       4.5235167210814655,
+       7.021674716758952
+      ],
+      "per_model": {
+       "B2_s0": {
+        "beta_syn": 0.0,
+        "beta_real": 6.68215216568857
+       },
+       "B2_s1": {
+        "beta_syn": 0.0,
+        "beta_real": 4.341897120164748
+       },
+       "B2_s2": {
+        "beta_syn": 0.0,
+        "beta_real": 7.522235460776098
+       }
+      }
+     },
+     "B3_auto": {
+      "beta_syn": 0.0010014005610520264,
+      "beta_syn_ci": [
+       0.0,
+       0.0028726445810653427
+      ],
+      "beta_real": 3.0868750152857047,
+      "beta_real_ci": [
+       2.127221913820112,
+       4.013593284910135
+      ],
+      "per_model": {
+       "B3_auto_s0": {
+        "beta_syn": 0.0032064767623492065,
+        "beta_real": 3.3633138454830815
+       },
+       "B3_auto_s1": {
+        "beta_syn": -0.0007992214646584629,
+        "beta_real": 3.2772626724613407
+       },
+       "B3_auto_s2": {
+        "beta_syn": 0.0005969463854653353,
+        "beta_real": 2.620048527912692
+       }
+      }
+     },
+     "B10": {
+      "beta_syn": -0.002815002423982117,
+      "beta_syn_ci": [
+       -0.011054537648830224,
+       0.005013588706669496
+      ],
+      "beta_real": 0.21387853905070972,
+      "beta_real_ci": [
+       0.046402594299616434,
+       0.41406936213994633
+      ],
+      "per_model": {
+       "B10_s0": {
+        "beta_syn": 0.001213362526760073,
+        "beta_real": 0.42617766584214356
+       },
+       "B10_s1": {
+        "beta_syn": 0.0027923357002475964,
+        "beta_real": -0.06314128414895105
+       },
+       "B10_s2": {
+        "beta_syn": -0.01245070549895402,
+        "beta_real": 0.27859923545893656
+       }
+      }
+     },
+     "B11": {
+      "beta_syn": -0.007896016157049324,
+      "beta_syn_ci": [
+       -0.016257421597473246,
+       -0.00040445417558669145
+      ],
+      "beta_real": 0.18175682913772095,
+      "beta_real_ci": [
+       0.006449801598559434,
+       0.4173952692079264
+      ],
+      "per_model": {
+       "B11_s0": {
+        "beta_syn": -0.009224758980775412,
+        "beta_real": 0.17525079365573348
+       },
+       "B11_s1": {
+        "beta_syn": -0.009841175122070151,
+        "beta_real": 0.22164080710188638
+       },
+       "B11_s2": {
+        "beta_syn": -0.004622114368302407,
+        "beta_real": 0.14837888665554305
+       }
+      }
+     }
+    },
+    "h2_models": [
+     "B0",
+     "B1",
+     "B2",
+     "B3_auto"
+    ],
+    "beta_syn_pooled": 0.0029264823058684163,
+    "beta_syn_pooled_ci": [
+     0.0007181611452663359,
+     0.0054200462063323076
+    ],
+    "beta_real_pooled": 2.3617052507715215,
+    "beta_real_pooled_ci": [
+     1.7341784193539196,
+     2.796083693782886
+    ],
+    "sign_agree": true
+   }
+  },
+  "not_testable": "shadow (no labelled real counterpart); standardized-effect correlation (2 classes)"
+ },
+ "dacl10k_per_class": {
+  "native_r95": {
+   "B0": {
+    "Bearing": {
+     "lambda_per_class_mpx": 24.185642482536014,
+     "rho_per_image_mpx": 0.36708951779964116,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 9.278572587663096,
+     "rho_per_image_mpx": 0.037294936837469136,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 29.855103489760964,
+     "rho_per_image_mpx": 0.4002770827387106,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 33.54784624861828,
+     "rho_per_image_mpx": 0.5056448631723238,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 14.514664496089543,
+     "rho_per_image_mpx": 0.27486532744090686,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 93.33521863985864,
+     "rho_per_image_mpx": 0.23631079655459516,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 25.09554641677914,
+     "rho_per_image_mpx": 0.5693365100768416,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 12.418051553187903,
+     "rho_per_image_mpx": 0.32355137567660447,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 64.74166956865723,
+     "rho_per_image_mpx": 0.33012317071404396,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 20.075623713654355,
+     "rho_per_image_mpx": 1.038946030460539,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 62.153544532869375,
+     "rho_per_image_mpx": 0.2811632976851197,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 23.031999254421766,
+     "rho_per_image_mpx": 0.07431604888171162,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 35.28547838626237,
+     "rho_per_image_mpx": 1.0590995352420198,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 31.275079520621023,
+     "rho_per_image_mpx": 0.9547722890226679,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 12.9202622376493,
+     "rho_per_image_mpx": 0.06998961714873062,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 11.885501039509961,
+     "rho_per_image_mpx": 1.4885663409386911,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 13.073381650302727,
+     "rho_per_image_mpx": 0.33105417501101453,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 40.93227247160074,
+     "rho_per_image_mpx": 0.816655063319148,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 7.556268561969606,
+    "_all_fp_per_mpx": 10.906003394548133
+   },
+   "B1": {
+    "Bearing": {
+     "lambda_per_class_mpx": 7.616871741106,
+     "rho_per_image_mpx": 0.11560882770028977,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 3.7468538349593996,
+     "rho_per_image_mpx": 0.01506036362746551,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 13.365152362634817,
+     "rho_per_image_mpx": 0.1791909446875169,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 10.119219300595898,
+     "rho_per_image_mpx": 0.1525204098272416,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 5.621938190953989,
+     "rho_per_image_mpx": 0.10646307960651982,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 40.427236069037264,
+     "rho_per_image_mpx": 0.10235570770812014,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 16.323209394984662,
+     "rho_per_image_mpx": 0.3703206503597155,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 7.030870420686109,
+     "rho_per_image_mpx": 0.18318878666862592,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 30.663149737643728,
+     "rho_per_image_mpx": 0.15635395693241463,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 5.012821123376769,
+     "rho_per_image_mpx": 0.25942160910292406,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 24.92679162313558,
+     "rho_per_image_mpx": 0.11276104985073267,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 10.285476454074864,
+     "rho_per_image_mpx": 0.03318756493906945,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 13.235475475151105,
+     "rho_per_image_mpx": 0.39726501001321746,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 14.719056296127997,
+     "rho_per_image_mpx": 0.44934648568492547,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 6.126509323955771,
+     "rho_per_image_mpx": 0.03318756493906945,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 4.137908698608689,
+     "rho_per_image_mpx": 0.5182408036607495,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 4.740587688579582,
+     "rho_per_image_mpx": 0.12004478935056143,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 15.00648696366961,
+     "rho_per_image_mpx": 0.2994000289140143,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 2.8633237593172054,
+    "_all_fp_per_mpx": 4.270681005080056
+   },
+   "B2": {
+    "Bearing": {
+     "lambda_per_class_mpx": 15.360029844570462,
+     "rho_per_image_mpx": 0.23313442895316608,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 7.970579976186359,
+     "rho_per_image_mpx": 0.032037500807517535,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 24.283566869151585,
+     "rho_per_image_mpx": 0.32557767914648167,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 24.911083491879882,
+     "rho_per_image_mpx": 0.3754685564723765,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 11.4665560324756,
+     "rho_per_image_mpx": 0.21714306102873,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 93.40010986950395,
+     "rho_per_image_mpx": 0.23647509143053114,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 22.469156026104294,
+     "rho_per_image_mpx": 0.5097522350707234,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 11.802193546233934,
+     "rho_per_image_mpx": 0.30750524279352304,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 57.29874040291744,
+     "rho_per_image_mpx": 0.29217105437283086,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 14.981319114132345,
+     "rho_per_image_mpx": 0.7753075195419245,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 49.720414374073734,
+     "rho_per_image_mpx": 0.2249196851563667,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 20.214525506275844,
+     "rho_per_image_mpx": 0.06522506574658699,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 30.83716170464969,
+     "rho_per_image_mpx": 0.9255825660647076,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 29.030894337628197,
+     "rho_per_image_mpx": 0.8862613257573612,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 11.484677544577156,
+     "rho_per_image_mpx": 0.062212993021093885,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 9.736744477641302,
+     "rho_per_image_mpx": 1.2194513341555435,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 10.923680846266183,
+     "rho_per_image_mpx": 0.27661780611755743,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 32.70848704208654,
+     "rho_per_image_mpx": 0.6525792472177419,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 5.883423033562269,
+    "_all_fp_per_mpx": 8.752371395820566
+   },
+   "B3_auto": {
+    "Bearing": {
+     "lambda_per_class_mpx": 18.434200722553555,
+     "rho_per_image_mpx": 0.2797941737189865,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 8.256703359946895,
+     "rho_per_image_mpx": 0.03318756493906945,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 24.540903237992048,
+     "rho_per_image_mpx": 0.3290278715411374,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 27.134768307666125,
+     "rho_per_image_mpx": 0.4089847111633179,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 12.441140996648178,
+     "rho_per_image_mpx": 0.23559885209220588,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 89.20381035243963,
+     "rho_per_image_mpx": 0.2258506894533373,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 23.970640238420245,
+     "rho_per_image_mpx": 0.5438160393481182,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 11.56047453326565,
+     "rho_per_image_mpx": 0.3012072725493102,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 57.94314985449664,
+     "rho_per_image_mpx": 0.29545695189155063,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 19.09358909205975,
+     "rho_per_image_mpx": 0.9881241488376733,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 51.83901006812362,
+     "rho_per_image_mpx": 0.2345035529192993,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 19.02643416669624,
+     "rho_per_image_mpx": 0.06139151864141395,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 31.216673546231082,
+     "rho_per_image_mpx": 0.936973677462936,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 27.943783049943423,
+     "rho_per_image_mpx": 0.8530737608182917,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 11.272372766024233,
+     "rho_per_image_mpx": 0.06106292888954198,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 10.208561394665374,
+     "rho_per_image_mpx": 1.2785427245338536,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 11.533555722260454,
+     "rho_per_image_mpx": 0.29206152445554023,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 34.56130919326213,
+     "rho_per_image_mpx": 0.689545594303339,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 6.493242108085728,
+    "_all_fp_per_mpx": 9.534195945441283
+   },
+   "B10": {
+    "Bearing": {
+     "lambda_per_class_mpx": 35.342140551460574,
+     "rho_per_image_mpx": 0.5364227699309988,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 9.183198126409582,
+     "rho_per_image_mpx": 0.03691158212695183,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 39.42148088379847,
+     "rho_per_image_mpx": 0.5285366158860714,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 40.34607221321969,
+     "rho_per_image_mpx": 0.6081101007977346,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 16.981492313416574,
+     "rho_per_image_mpx": 0.3215798371653726,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 95.54152044779967,
+     "rho_per_image_mpx": 0.24189682233641874,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 28.849256947569017,
+     "rho_per_image_mpx": 0.6544960207703283,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 13.120087643026215,
+     "rho_per_image_mpx": 0.34184287186414436,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 67.9422365115006,
+     "rho_per_image_mpx": 0.346443128390352,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 24.186835464618838,
+     "rho_per_image_mpx": 1.2517078947976426,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 66.2696733098806,
+     "rho_per_image_mpx": 0.29978338362453166,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 23.69393585790183,
+     "rho_per_image_mpx": 0.07645188226887946,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 40.855909407166195,
+     "rho_per_image_mpx": 1.2262969539862096,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 32.372954286401686,
+     "rho_per_image_mpx": 0.9882884437136094,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 12.606859945499748,
+     "rho_per_image_mpx": 0.06829190343072541,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 15.487313778645515,
+     "rho_per_image_mpx": 1.9396653053002668,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 18.988302876701063,
+     "rho_per_image_mpx": 0.4808363369059897,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 46.907967024355216,
+     "rho_per_image_mpx": 0.9358783782900294,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 10.901877708901873,
+    "_all_fp_per_mpx": 14.40937256404848
+   },
+   "B11": {
+    "Bearing": {
+     "lambda_per_class_mpx": 35.190596916630426,
+     "rho_per_image_mpx": 0.5341226416678949,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 9.08782366515607,
+     "rho_per_image_mpx": 0.03652822741643453,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 37.42406049708441,
+     "rho_per_image_mpx": 0.5017565511085055,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 40.30973749400749,
+     "rho_per_image_mpx": 0.6075624512112813,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 16.50721357714268,
+     "rho_per_image_mpx": 0.31259838394753864,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 89.72294018960224,
+     "rho_per_image_mpx": 0.22716504846082522,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 29.044787849815947,
+     "rho_per_image_mpx": 0.6589319824206,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 11.917798291566589,
+     "rho_per_image_mpx": 0.3105173155190161,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 69.16661446950108,
+     "rho_per_image_mpx": 0.3526863336759195,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 25.990054209443414,
+     "rho_per_image_mpx": 1.3450273843292833,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 68.40037526503934,
+     "rho_per_image_mpx": 0.30942201634610955,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 21.60628964692624,
+     "rho_per_image_mpx": 0.06971579235550397,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 38.65547055645869,
+     "rho_per_image_mpx": 1.1602504138599428,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 31.495730821586744,
+     "rho_per_image_mpx": 0.9615083789360434,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 12.9202622376493,
+     "rho_per_image_mpx": 0.06998961714873062,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 14.463221823436646,
+     "rho_per_image_mpx": 1.8114057721529062,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 17.796667923960484,
+     "rho_per_image_mpx": 0.45066084469241335,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 47.25382715924133,
+     "rho_per_image_mpx": 0.9427787630793408,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 10.278625413663592,
+    "_all_fp_per_mpx": 13.866542293955979
+   }
+  },
+  "fixed_0.5": {
+   "B0": {
+    "Bearing": {
+     "lambda_per_class_mpx": 23.17174340188666,
+     "rho_per_image_mpx": 0.3517005644203036,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 8.965199357830128,
+     "rho_per_image_mpx": 0.036035342788626565,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 28.82984271866642,
+     "rho_per_image_mpx": 0.38653107811873294,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 32.77028325747734,
+     "rho_per_image_mpx": 0.4939251620222234,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 14.130036008745469,
+     "rho_per_image_mpx": 0.2675815879410781,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 93.09728413115911,
+     "rho_per_image_mpx": 0.23570838200949656,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 24.243417916863496,
+     "rho_per_image_mpx": 0.5500044796750404,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 12.016587801214495,
+     "rho_per_image_mpx": 0.31309126857534664,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 63.03398452197234,
+     "rho_per_image_mpx": 0.32141554228943664,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 19.26290540612779,
+     "rho_per_image_mpx": 0.9968865422209261,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 60.325499105432044,
+     "rho_per_image_mpx": 0.27289378892967503,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 22.624653652280188,
+     "rho_per_image_mpx": 0.07300168987422372,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 34.51915639845379,
+     "rho_per_image_mpx": 1.0360982526109817,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 30.634652573915634,
+     "rho_per_image_mpx": 0.9352211987862854,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 12.627079448219073,
+     "rho_per_image_mpx": 0.06840143334801607,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 11.448665914294905,
+     "rho_per_image_mpx": 1.4338561472520073,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 12.727353351866261,
+     "rho_per_image_mpx": 0.3222917816277619,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 39.94959050105131,
+     "rho_per_image_mpx": 0.7970492081241201,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 7.184070056310157,
+    "_all_fp_per_mpx": 10.467390840757691
+   },
+   "B1": {
+    "Bearing": {
+     "lambda_per_class_mpx": 8.980764454577374,
+     "rho_per_image_mpx": 0.13630998206822417,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 4.3191006024804715,
+     "rho_per_image_mpx": 0.017360491890569332,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 14.99086466102377,
+     "rho_per_image_mpx": 0.20098739822835787,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 11.565341125241199,
+     "rho_per_image_mpx": 0.1743168633680826,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 6.449034035919442,
+     "rho_per_image_mpx": 0.12212585777908395,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 42.8931027955596,
+     "rho_per_image_mpx": 0.10859891299368765,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 17.477083114417177,
+     "rho_per_image_mpx": 0.3964983005921829,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 7.955708383347361,
+     "rho_per_image_mpx": 0.20728536847257076,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 33.41263006438166,
+     "rho_per_image_mpx": 0.1703737863456189,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 5.835063473569665,
+     "rho_per_image_mpx": 0.3019739819703448,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 27.929144378131994,
+     "rho_per_image_mpx": 0.12634275959477428,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 11.202004058893417,
+     "rho_per_image_mpx": 0.03614487270591722,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 14.800961821674354,
+     "rho_per_image_mpx": 0.44425334453090987,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 16.234912794632343,
+     "rho_per_image_mpx": 0.49562287574022856,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 6.581448135140605,
+     "rho_per_image_mpx": 0.03565198807810926,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 4.6674455721176304,
+     "rho_per_image_mpx": 0.5845611685802431,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 5.462921761565705,
+     "rho_per_image_mpx": 0.13833628553810137,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 16.771471620270958,
+     "rho_per_image_mpx": 0.334613897322961,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 3.3012139906674296,
+    "_all_fp_per_mpx": 4.843139117799681
+   },
+   "B2": {
+    "Bearing": {
+     "lambda_per_class_mpx": 13.624494407587049,
+     "rho_per_image_mpx": 0.2067924838447628,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 7.343833516520423,
+     "rho_per_image_mpx": 0.029518312709832396,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 22.208537101358647,
+     "rho_per_image_mpx": 0.2977570801546544,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 23.39592570073141,
+     "rho_per_image_mpx": 0.35263156871727425,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 10.376293327748412,
+     "rho_per_image_mpx": 0.1964966716194409,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 90.17717879711951,
+     "rho_per_image_mpx": 0.22831511259237713,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 20.904908808128834,
+     "rho_per_image_mpx": 0.47426454186855016,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 10.627228952762023,
+     "rho_per_image_mpx": 0.27689163091078406,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 53.40006322086326,
+     "rho_per_image_mpx": 0.2722913743845764,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 13.143178879531238,
+     "rho_per_image_mpx": 0.6801807863749877,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 46.34276752470276,
+     "rho_per_image_mpx": 0.20964026169431987,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 18.737897698512622,
+     "rho_per_image_mpx": 0.060460514344443356,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 28.86844402644621,
+     "rho_per_image_mpx": 0.8664911756863974,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 27.441487405468614,
+     "rho_per_image_mpx": 0.8377395723975996,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 10.716336441242767,
+     "rho_per_image_mpx": 0.05805085616404887,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 8.892808750248852,
+     "rho_per_image_mpx": 1.1137549639700584,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 10.039146008387966,
+     "rho_per_image_mpx": 0.25421893803161777,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 30.61411178083175,
+     "rho_per_image_mpx": 0.6107935837713557,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 5.177523666974871,
+    "_all_fp_per_mpx": 7.864905240973005
+   },
+   "B3_auto": {
+    "Bearing": {
+     "lambda_per_class_mpx": 15.793011658370897,
+     "rho_per_image_mpx": 0.23970622399060557,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 7.6435818233171755,
+     "rho_per_image_mpx": 0.03072314180002964,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 22.331078229377916,
+     "rho_per_image_mpx": 0.2994000289140143,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 25.36890095395352,
+     "rho_per_image_mpx": 0.38236894126168797,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 11.2670119300189,
+     "rho_per_image_mpx": 0.21336427888220227,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 88.05739862870557,
+     "rho_per_image_mpx": 0.22294814664513488,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 22.03947083351227,
+     "rho_per_image_mpx": 0.500004072431855,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 10.98875651998415,
+     "rho_per_image_mpx": 0.2863112037977807,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 54.54926007617951,
+     "rho_per_image_mpx": 0.27815122495962663,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 16.424740691562345,
+     "rho_per_image_mpx": 0.8500069231341534,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 47.734987552221256,
+     "rho_per_image_mpx": 0.21593823193853273,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 17.82137009369407,
+     "rho_per_image_mpx": 0.05750320657759558,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 29.680380418291016,
+     "rho_per_image_mpx": 0.8908615822835688,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 26.738273503203875,
+     "rho_per_image_mpx": 0.8162717086086305,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 10.665787684444453,
+     "rho_per_image_mpx": 0.05777703137082223,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 9.248311209507952,
+     "rho_per_image_mpx": 1.158278875348711,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 10.443566582185586,
+     "rho_per_image_mpx": 0.26445998529829434,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 32.38184135913854,
+     "rho_per_image_mpx": 0.6460622171389477,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 5.777923105021474,
+    "_all_fp_per_mpx": 8.584954917241793
+   },
+   "B10": {
+    "Bearing": {
+     "lambda_per_class_mpx": 33.85556965741241,
+     "rho_per_image_mpx": 0.5138596069691231,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 8.774450435323102,
+     "rho_per_image_mpx": 0.03526863336759196,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 38.245086054813505,
+     "rho_per_image_mpx": 0.5127643077962166,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 39.695680739321425,
+     "rho_per_image_mpx": 0.5983071732002206,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 16.429131102268318,
+     "rho_per_image_mpx": 0.31111973006411475,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 95.49825962803612,
+     "rho_per_image_mpx": 0.24178729241912808,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 28.040579759263803,
+     "rho_per_image_mpx": 0.6361497596241431,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 12.682891515222716,
+     "rho_per_image_mpx": 0.3304517604659159,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 67.31930737497404,
+     "rho_per_image_mpx": 0.343266760788923,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 23.25453751028172,
+     "rho_per_image_mpx": 1.2034599662311074,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 65.25274737673665,
+     "rho_per_image_mpx": 0.295183127098324,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 23.0659447212669,
+     "rho_per_image_mpx": 0.07442557879900227,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 39.7283213393907,
+     "rho_per_image_mpx": 1.1924522095433963,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 31.786344730175742,
+     "rho_per_image_mpx": 0.9703803022365867,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 12.445103923745139,
+     "rho_per_image_mpx": 0.06741566409240014,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 15.085897717637085,
+     "rho_per_image_mpx": 1.8893910732638548,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 18.540628765598886,
+     "rho_per_image_mpx": 0.46949999046640656,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 46.21899167628845,
+     "rho_per_image_mpx": 0.9221323736700519,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 10.513051497113711,
+    "_all_fp_per_mpx": 13.94628007374358
+   },
+   "B11": {
+    "Bearing": {
+     "lambda_per_class_mpx": 34.82256237490005,
+     "rho_per_image_mpx": 0.5285366158860714,
+     "images_with_class": 651
+    },
+    "Cavity": {
+     "lambda_per_class_mpx": 9.115073511228504,
+     "rho_per_image_mpx": 0.036637757333725186,
+     "images_with_class": 711
+    },
+    "Drainage": {
+     "lambda_per_class_mpx": 37.289265256263214,
+     "rho_per_image_mpx": 0.4999493074732096,
+     "images_with_class": 981
+    },
+    "EJoint": {
+     "lambda_per_class_mpx": 39.96455766149166,
+     "rho_per_image_mpx": 0.602359780139975,
+     "images_with_class": 403
+    },
+    "Efflorescence": {
+     "lambda_per_class_mpx": 16.599755769586366,
+     "rho_per_image_mpx": 0.31435086262418915,
+     "images_with_class": 1100
+    },
+    "ExposedRebars": {
+     "lambda_per_class_mpx": 89.98250510818353,
+     "rho_per_image_mpx": 0.22782222796456916,
+     "images_with_class": 686
+    },
+    "Graffiti": {
+     "lambda_per_class_mpx": 28.890294297423313,
+     "rho_per_image_mpx": 0.655427025067299,
+     "images_with_class": 730
+    },
+    "Hollowareas": {
+     "lambda_per_class_mpx": 11.959836380778464,
+     "rho_per_image_mpx": 0.31161261469192275,
+     "images_with_class": 850
+    },
+    "JTape": {
+     "lambda_per_class_mpx": 69.2740160447643,
+     "rho_per_image_mpx": 0.3532339832623729,
+     "images_with_class": 668
+    },
+    "PEquipment": {
+     "lambda_per_class_mpx": 26.0482566924043,
+     "rho_per_image_mpx": 1.3480394570547765,
+     "images_with_class": 1216
+    },
+    "Restformwork": {
+     "lambda_per_class_mpx": 67.4076618541131,
+     "rho_per_image_mpx": 0.3049312897371926,
+     "images_with_class": 618
+    },
+    "Rockpocket": {
+     "lambda_per_class_mpx": 21.36867137901032,
+     "rho_per_image_mpx": 0.06894908293446937,
+     "images_with_class": 248
+    },
+    "Rust": {
+     "lambda_per_class_mpx": 38.58248751000073,
+     "rho_per_image_mpx": 1.1580598155141297,
+     "images_with_class": 2983
+    },
+    "Spalling": {
+     "lambda_per_class_mpx": 31.59618995048171,
+     "rho_per_image_mpx": 0.9645752166201819,
+     "images_with_class": 2560
+    },
+    "WConccor": {
+     "lambda_per_class_mpx": 13.001140248526603,
+     "rho_per_image_mpx": 0.07042773681789326,
+     "images_with_class": 217
+    },
+    "Weathering": {
+     "lambda_per_class_mpx": 14.400691870578031,
+     "rho_per_image_mpx": 1.803574383066624,
+     "images_with_class": 2169
+    },
+    "Wetspot": {
+     "lambda_per_class_mpx": 17.671232665777264,
+     "rho_per_image_mpx": 0.44748447709098427,
+     "images_with_class": 764
+    },
+    "joint": {
+     "lambda_per_class_mpx": 46.990314675518576,
+     "rho_per_image_mpx": 0.9375213270493892,
+     "images_with_class": 1006
+    },
+    "_unassociated_per_classfree_mpx": 10.198599458551515,
+    "_all_fp_per_mpx": 13.792390539950205
+   }
+  }
+ },
+ "dacl10k_images": 5665,
+ "hard_proxy": {
+  "native_r95": {
+   "B0": {
+    "Patch": {
+     "fp_per_mpx": 2.1545641131297306,
+     "tile_far": 0.38375118259224217
+    },
+    "Pothole": {
+     "fp_per_mpx": 1.486784182720303,
+     "tile_far": 0.3636991028295376
+    },
+    "background_test_fp_per_mpx": 2.3597286427436797
+   },
+   "B1": {
+    "Patch": {
+     "fp_per_mpx": 1.460210414610989,
+     "tile_far": 0.6759697256385998
+    },
+    "Pothole": {
+     "fp_per_mpx": 0.9056286124051072,
+     "tile_far": 0.7131642512077295
+    },
+    "background_test_fp_per_mpx": 1.2079771697012756
+   },
+   "B2": {
+    "Patch": {
+     "fp_per_mpx": 0.284207577736962,
+     "tile_far": 0.04868338063702302
+    },
+    "Pothole": {
+     "fp_per_mpx": 0.13591010789364436,
+     "tile_far": 0.04218426501035197
+    },
+    "background_test_fp_per_mpx": 0.0015446619961228538
+   },
+   "B3_auto": {
+    "Patch": {
+     "fp_per_mpx": 0.5375884076241477,
+     "tile_far": 0.10895616524755597
+    },
+    "Pothole": {
+     "fp_per_mpx": 0.2514172455950225,
+     "tile_far": 0.12042788129744653
+    },
+    "background_test_fp_per_mpx": 0.027031584932149938
+   },
+   "B10": {
+    "Patch": {
+     "fp_per_mpx": 3.9386057545431257,
+     "tile_far": 0.6444930621255125
+    },
+    "Pothole": {
+     "fp_per_mpx": 3.089733663470767,
+     "tile_far": 0.6558833678398895
+    },
+    "background_test_fp_per_mpx": 3.3052677393036825
+   },
+   "B11": {
+    "Patch": {
+     "fp_per_mpx": 4.255369385497047,
+     "tile_far": 0.6118732261116367
+    },
+    "Pothole": {
+     "fp_per_mpx": 3.2164295267614524,
+     "tile_far": 0.6348343685300207
+    },
+    "background_test_fp_per_mpx": 3.5365036401232737
+   }
+  },
+  "fixed_0.5": {
+   "B0": {
+    "Patch": {
+     "fp_per_mpx": 2.208097392322513,
+     "tile_far": 0.33286029643645537
+    },
+    "Pothole": {
+     "fp_per_mpx": 1.503567271104264,
+     "tile_far": 0.27639751552795033
+    },
+    "background_test_fp_per_mpx": 2.3445909551816757
+   },
+   "B1": {
+    "Patch": {
+     "fp_per_mpx": 1.737425583689343,
+     "tile_far": 0.7145616524755597
+    },
+    "Pothole": {
+     "fp_per_mpx": 1.080699259861327,
+     "tile_far": 0.7590579710144928
+    },
+    "background_test_fp_per_mpx": 1.579983267100863
+   },
+   "B2": {
+    "Patch": {
+     "fp_per_mpx": 0.25315526831755314,
+     "tile_far": 0.02913118889940082
+    },
+    "Pothole": {
+     "fp_per_mpx": 0.10464749227646224,
+     "tile_far": 0.017943409247757072
+    },
+    "background_test_fp_per_mpx": 0.000411909865632761
+   },
+   "B3_auto": {
+    "Patch": {
+     "fp_per_mpx": 0.48631074412769043,
+     "tile_far": 0.08063308104698834
+    },
+    "Pothole": {
+     "fp_per_mpx": 0.2069914234021847,
+     "tile_far": 0.08195307108350587
+    },
+    "background_test_fp_per_mpx": 0.02409672713951652
+   },
+   "B10": {
+    "Patch": {
+     "fp_per_mpx": 3.952289823100832,
+     "tile_far": 0.6240342163355408
+    },
+    "Pothole": {
+     "fp_per_mpx": 2.984098930701131,
+     "tile_far": 0.6356107660455487
+    },
+    "background_test_fp_per_mpx": 3.1424603649123335
+   },
+   "B11": {
+    "Patch": {
+     "fp_per_mpx": 4.373939583933869,
+     "tile_far": 0.6124053926206244
+    },
+    "Pothole": {
+     "fp_per_mpx": 3.3085719727910416,
+     "tile_far": 0.637336093857833
+    },
+    "background_test_fp_per_mpx": 3.5682721885102002
+   }
+  }
+ },
+ "synthetic_x01_x00": {
+  "B0": {
+   "shadow": {
+    "fp_per_mpx_x01": 3.76965542688465,
+    "fp_per_mpx_x00": 0.13304666212534058
+   },
+   "joint": {
+    "fp_per_mpx_x01": 37.65869140624999,
+    "fp_per_mpx_x00": 0.0
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 1.7614084912224366,
+    "fp_per_mpx_x00": 0.1097613599871548
+   }
+  },
+  "B1": {
+   "shadow": {
+    "fp_per_mpx_x01": 1.2972049557220708,
+    "fp_per_mpx_x00": 0.08869777475022705
+   },
+   "joint": {
+    "fp_per_mpx_x01": 28.32031249999999,
+    "fp_per_mpx_x00": 0.06103515624999998
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 1.4033773884071936,
+    "fp_per_mpx_x00": 0.0888544342753158
+   }
+  },
+  "B2": {
+   "shadow": {
+    "fp_per_mpx_x01": 5.166645379200726,
+    "fp_per_mpx_x00": 0.1884827713442325
+   },
+   "joint": {
+    "fp_per_mpx_x01": 39.08284505208332,
+    "fp_per_mpx_x00": 0.0
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 1.8633297540676519,
+    "fp_per_mpx_x00": 0.028747022853778642
+   }
+  },
+  "B3_auto": {
+   "shadow": {
+    "fp_per_mpx_x01": 4.4238015156675745,
+    "fp_per_mpx_x00": 0.19956999318801086
+   },
+   "joint": {
+    "fp_per_mpx_x01": 36.49902343749999,
+    "fp_per_mpx_x00": 0.04069010416666666
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 1.8398094626418329,
+    "fp_per_mpx_x00": 0.06010741142153716
+   }
+  },
+  "B10": {
+   "shadow": {
+    "fp_per_mpx_x01": 0.5321866485013623,
+    "fp_per_mpx_x00": 0.09978499659400543
+   },
+   "joint": {
+    "fp_per_mpx_x01": 2.421061197916666,
+    "fp_per_mpx_x00": 0.0
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 0.1855489656925712,
+    "fp_per_mpx_x00": 0.12805491998501395
+   }
+  },
+  "B11": {
+   "shadow": {
+    "fp_per_mpx_x01": 0.4767505392824704,
+    "fp_per_mpx_x00": 0.07761055290644868
+   },
+   "joint": {
+    "fp_per_mpx_x01": 2.5024414062499996,
+    "fp_per_mpx_x00": 0.02034505208333333
+   },
+   "repair_boundary": {
+    "fp_per_mpx_x01": 0.21168262283236997,
+    "fp_per_mpx_x00": 0.18032223426461147
+   }
+  }
+ },
+ "notes": "B10/B11 were trained on these quadruplets: their synthetic rows are in-sample diagnostics"
+}

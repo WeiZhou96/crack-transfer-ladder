@@ -1,0 +1,33 @@
+# Negative-pool screening committee declaration (consumed by s05).
+# Rules (prereg.yaml negpool_three_state):
+#   - role screen = admission-screening member; the B3-auto crack-exclusion committee is declared separately in committee_b3auto.yaml,
+#     with at least half of its members different from this file and spanning architecture families (0.5-6② pool separation).
+#   - threshold is the member's published operating point, or 0.5 by default; changes only before the freeze.
+# weights: public weight path or retraining description; each member's own inference script exports predictions to
+#   <PRED_ROOT>/<name>/<flat_image_id>.png
+members:
+  - name: unet_r34
+    arch_family: cnn_unet
+    threshold: 0.5
+    role: screen
+    weights: "TODO: retrained on the training pool (real positives only); not updated after the freeze"
+  - name: deeplabv3p_r50
+    arch_family: cnn_deeplab
+    threshold: 0.5
+    role: screen
+    weights: "TODO"
+  - name: segformer_b2
+    arch_family: transformer
+    threshold: 0.5
+    role: screen
+    weights: "TODO"
+  - name: third_party_public
+    arch_family: third_party
+    threshold: 0.5
+    role: screen
+    weights: "TODO: public weights from an architecture family different from the student backbone (main text §3.3 teacher-ensemble rule)"
+  - name: b0_student
+    arch_family: student
+    threshold: 0.5
+    role: baseline    # baseline fires and is not supported by the screen members -> hard_negative
+    weights: "TODO: B0 real-only student model"

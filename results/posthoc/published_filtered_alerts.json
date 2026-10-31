@@ -1,0 +1,134 @@
+{
+ "bcl_noise": {
+  "deepcrack_cracktree260": {
+   "threshold": 0.009232,
+   "n_images": 3183,
+   "alert_unfiltered": 0.9189443920829407,
+   "alert_filtered": 0.602890355010996
+  },
+  "crackformer2_crack537": {
+   "threshold": 0.040925,
+   "n_images": 3183,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "ct_crackseg_deepcrack": {
+   "threshold": 0.000305,
+   "n_images": 3183,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9940307885642475
+  },
+  "scsegamba_tut": {
+   "threshold": 0.004211,
+   "n_images": 3183,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9956016336789193
+  },
+  "crackmamba_crackseg9k": {
+   "threshold": 7.6e-05,
+   "n_images": 3183,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9896324222431668
+  },
+  "deepcrackliu_deepcrack537": {
+   "threshold": 0.016068,
+   "n_images": 3183,
+   "alert_unfiltered": 0.9974866478165253,
+   "alert_filtered": 0.9692114357524348
+  },
+  "cracksam_adapter_khanhha": {
+   "threshold": 0.016434,
+   "n_images": 3183,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  }
+ },
+ "pavedistress_test": {
+  "deepcrack_cracktree260": {
+   "threshold": 0.009232,
+   "n_images": 24696,
+   "alert_unfiltered": 0.9138321995464853,
+   "alert_filtered": 0.6494574020084224
+  },
+  "crackformer2_crack537": {
+   "threshold": 0.040925,
+   "n_images": 24696,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "ct_crackseg_deepcrack": {
+   "threshold": 0.000305,
+   "n_images": 24696,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9247651441528992
+  },
+  "scsegamba_tut": {
+   "threshold": 0.004211,
+   "n_images": 24696,
+   "alert_unfiltered": 0.9999595076125688,
+   "alert_filtered": 0.9728296080336897
+  },
+  "crackmamba_crackseg9k": {
+   "threshold": 7.6e-05,
+   "n_images": 24696,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "deepcrackliu_deepcrack537": {
+   "threshold": 0.016068,
+   "n_images": 24696,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9850178166504697
+  },
+  "cracksam_adapter_khanhha": {
+   "threshold": 0.016434,
+   "n_images": 24696,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  }
+ },
+ "uav1388_background": {
+  "deepcrack_cracktree260": {
+   "threshold": 0.009232,
+   "n_images": 103,
+   "alert_unfiltered": 0.970873786407767,
+   "alert_filtered": 0.883495145631068
+  },
+  "crackformer2_crack537": {
+   "threshold": 0.040925,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "ct_crackseg_deepcrack": {
+   "threshold": 0.000305,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "scsegamba_tut": {
+   "threshold": 0.004211,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "crackmamba_crackseg9k": {
+   "threshold": 7.6e-05,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  },
+  "deepcrackliu_deepcrack537": {
+   "threshold": 0.016068,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 0.9805825242718447
+  },
+  "cracksam_adapter_khanhha": {
+   "threshold": 0.016434,
+   "n_images": 103,
+   "alert_unfiltered": 1.0,
+   "alert_filtered": 1.0
+  }
+ }
+}

@@ -1,0 +1,11 @@
+# experiment_program_v1 (2026-10-28): ablation / sensitivity arms for student_v5. Recipe and loss constants are read
+# from configs/e1_arms.yaml unchanged; only the fields below differ. Registered before any of these arms is trained.
+version: "e1-ablation-0.1"
+arms:
+  B11:              {real_pos: true, synth: {paired: true}}                                   # tau / quadruplet-version sensitivity
+  A_x01only:        {real_pos: true, synth: {paired: false, layers: [x01]}}                   # v6 E-A4 (i): confuser-only negatives
+  A_x1only:         {real_pos: true, synth: {paired: false, layers: [x10, x11]}}              # v6 E-A4 (ii): crack-bearing layers only
+  A_paired_noaux:   {real_pos: true, synth: {paired: true, alpha_pair: 0.0, beta_marg: 0.0}}  # v6 E-A4 (iv): paired batches, no L_pair/L_marg
+  A_paired_pair:    {real_pos: true, synth: {paired: true, beta_marg: 0.0}}                   # L_pair only
+  A_paired_marg:    {real_pos: true, synth: {paired: true, alpha_pair: 0.0}}                  # L_marg only
+  B12_auto:         {real_pos: true, real_neg: b3auto_mined, synth: {paired: true}}           # prereg conditional arm

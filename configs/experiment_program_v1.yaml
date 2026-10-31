@@ -1,0 +1,56 @@
+# experiment_program_v1 — every experiment run before writing, fixed before any student test-leg or new-stratum
+# inference (2026-10-28). H1-public criteria stay exactly as in prereg_v6; nothing here can relax them.
+# Program prepared for the AEI submission (2026-10-28).
+version: "program-1"
+prereg: configs/prereg_v6.yaml
+evaluator: train/eval_students_v1.py      # one inference / scoring path for every student model
+operating_points: [native_r95, fixed_0.5] # native_r95 primary (R21); thresholds sealed before any test pass
+seeds_primary: [0, 1, 2]
+
+E0_motivation:            # existing E-D1-public (Sept 2026) is reused unchanged; no new inference
+  source: ed1_v3_results   # E-D1-public v3 results
+E1_main_H1_public:        # prereg_v6 go_no_go.H1_public verbatim
+  arms: [B0, B1, B2, B3_auto, B10, B11]
+  arm_checkpoints: train/eval_models_v1.json   # B1 = v6-complete strong augmentation; legacy B1 and E17 paired B2/B3 secondary
+  legs: [bcl_noise, pavedistress_background_test, uav1388_background]
+  positive_axis: cracksc_nha12d
+  statistics: "arm = mean of 3 seeds; paired cluster bootstrap over bootstrap_group_1km, 10000, seed 0"
+  significance_for_B12_condition: "B11 vs B3_auto is 'not significant' if the 95% bootstrap interval of the relative drop includes 0 on either primary leg"
+E2_real_confuser_strata:  # real per-type false alarms (v6 E-A2 public counterpart); one pass, no tuning
+  dacl10k:
+    images: "dacl10k train+validation images whose polygons contain neither Crack nor ACrack (label-negative concrete)"
+    association: "a filtered FP component is associated with class z if it overlaps dilate(polygon_z, 8 px)"
+    classes_reported: all dacl10k classes present; joint = EJoint ∪ JTape
+    accounts: "rho_z = associated FP components per Mpx of image; lambda_z = associated FP components per Mpx of dilated class area; unassociated FP per Mpx of class-free area"
+  pavedistress_hard_proxy:
+    images: "742 proxy_test frames, image-level Patch (604) / Pothole (138); same laser sensor as the background-test leg"
+    accounts: "FP components per Mpx and image FAR; image-level only (cracks may co-occur, reported as hard proxy)"
+E3_H2_public:             # prereg_v6 go_no_go.H2_public, operationalised here before any data is scored
+  models: "B0, B1, B2, B3_auto (12 models never trained on quadruplets)"
+  classes:
+    joint:  {synthetic: "operator joint, stratum rgb_concrete, quadruplets/v4", real: "dacl10k joint (EJoint ∪ JTape) vs class-free area of the same label-negative images"}
+    repair: {synthetic: "operator repair_boundary, stratum laser_asphalt, quadruplets/v4", real: "PaveDistress Patch frames vs pavedistress_background_test tiles (same sensor)"}
+  beta_syn: "log((FP_x01 + 0.5) / (FP_x00 + 0.5)) per group at the model's native_r95 threshold, mean over groups"
+  beta_real: "log rate ratio of FP components per Mpx, confuser condition vs reference condition, at native_r95"
+  criterion: "H2-public passes if sign(mean beta_syn) == sign(mean beta_real) for both classes (arm-pooled over the 12 models); 95% intervals by bootstrap over quadruplet groups / image groups reported"
+  not_testable: "shadow has no labelled real counterpart in the available public data; standardized-effect correlation needs >= 3 classes and is not estimable (2 classes)"
+  secondary: "strength direction: Spearman(operator intensity scalar, per-group FP difference) synthetic; real joint: Spearman(polygon boundary contrast, association) — descriptive only"
+E4_ablations:             # student_v5 + configs/e1_arms_ablation_v1.yaml, recipe unchanged, evaluated by E1 legs and E2 strata
+  three_seed: [A_x01only, A_x1only, A_paired_noaux]          # v6 E-A4 five-arm attribution with B10 (iii) and B11 (v)
+  one_seed:
+    - {arm: A_paired_pair, seed: 0}
+    - {arm: A_paired_marg, seed: 0}
+    - {arm: B11, seed: 0, tau_level: ci_low}
+    - {arm: B11, seed: 0, tau_level: ci_high}
+    - {arm: B11, seed: 0, quad_dir: quadruplets/v3}         # alpha-stratification (R20) effect
+  reporting: "one-seed rows are sensitivity only; no claim rests on them"
+E5_conditional:
+  B12_auto: "3 seeds, only if E1 significance_for_B12_condition holds"
+  second_backbone: "only if H1-public passes: B3_auto and B11 x 3 seeds on a heterogeneous backbone chosen by weight availability, fixed before training"
+E6_engineering:
+  source: pavedistress_background_test per-image accounts
+  scale: "PaveDistress frame 3854 x 2065 px ~ 3.9 x 2.1 m (v6 note g) -> 1.012 mm/px"
+  outputs: "FP components per 100 m2, PhantomLen m per 100 m2, alerts per lane-km at 3.75 m lane width (assumption stated)"
+E7_human_audit:           # descriptive, from the locked analysis of the P01-P03 returns; no gate
+  source: locked_analysis_v2_1/analysis.json   # locked analysis v2.1 of the three-domain P01-P03 reading returns (archived 2026-10-28)
+human_tasks: none

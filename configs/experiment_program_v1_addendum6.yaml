@@ -1,0 +1,29 @@
+# experiment_program_v1 addendum 6 — POST HOC (written 2026-10-29 ~16:40, before any E4-ablation or addendum-1 model
+# output exists: students_eval_ablation_v1_20261028 holds no dev/test/strata/sdnet result at registration).
+# Exploratory; labelled post hoc in any report.
+version: "program-1-addendum-6"
+seen_before_writing: [P5 report, strata/H2 report, SDNET primary, held-out probe (P7), sweep P12/P13 + overlap,
+  scene-novel probe (P14), addendum-3 results (P8-P11, add3 probes and sweep)]
+not_seen: [any E4 ablation arm output (P1, P2), any addendum-1 arm output (P3-P5)]
+motivation: "If P1 holds (confuser-only x01 negatives do not raise real false alarms while the crack-bearing synthetic
+  layers do), the deployable recipe is x01 negatives added to the strongest cross-domain baseline (B1 generic strong
+  augmentation). Whether the two stack is untested; B1 was also trained by a different trainer
+  (strong_baseline_recovery_v1). Both arms are trained now with student_v5 so the contrast stays inside one trainer.
+  Trained and reported whatever P1 turns out to be."
+trainer: "train/student_v5.py (unchanged), --arms-config configs/e1_arms_addendum6.yaml"
+new_arms:                      # 80k iters, recipe/loss/data unchanged, seeds 0-2
+  B1_v5:          {real_pos: true, strong_aug: true}
+  A_x01only_B1:   {real_pos: true, strong_aug: true, synth: {paired: false, layers: [x01]}, quad_dir: quadruplets/v4,
+                   tau: prereg_v6 point}
+scheduler: "train/run_add6_20261029.py: same idle rule as addendum 3 (memory < 2500 MiB and utilization < 10% on two
+  checks 60 s apart); seed-major order, A_x01only_B1 before B1_v5 within a seed."
+evaluation: "separate eval dir students_eval_add6_v1; eval_students_v2 dev (native-val R95) -> seal -> test legs;
+  eval_strata_v4 quads, quads(held-out), hardproxy, dacl10k; eval_sdnet_v2; scene-novel probe; threshold sweep.
+  Same metrics and bootstrap as P5. Scored by train/analyze_add6_v1.py from an analyze_program_v2 report over the
+  primary, addendum-3 and addendum-6 eval dirs."
+predictions:               # native_r95, arm mean of 3 seeds
+  P15_stack_false_alarms: "A_x01only_B1 A3 <= B1_v5 A3 on bcl_noise, pavedistress_background_test and uav1388_background"
+  P16_stack_recall: "A_x01only_B1 positive-axis recall >= B1_v5 recall - 2 pp"
+  P17_B1_trainer_equivalence: "B1_v5 A3 within +-15% of B1 on the three legs and positive-axis recall within +-2 pp"
+use_in_paper: "Recipe claim ('add x01 counterfactual negatives to strong augmentation') only if P1, P15 and P16 all
+  hold. Otherwise the arms are reported as a negative or partial result in the supplement."

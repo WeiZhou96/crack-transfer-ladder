@@ -1,0 +1,24 @@
+# experiment_program_v1 addendum 7 — POST HOC (written 2026-10-30, after all reported results incl. addenda 1-6 were
+# seen, before either arm below is trained). Exploratory; labelled post hoc in any report.
+version: "program-1-addendum-7"
+trigger: "Independent review of the manuscript: (i) CF-NegOnly differs from RandNeg in background domain (mostly RGB
+  quadruplet backgrounds vs laser PaveDistress crops) and in the acquisition operator, so the rise of real false alarms
+  under CF-NegOnly may come from rendered backgrounds/acquisition rather than from the distractors; (ii) the deployment
+  guidance implies combining real negatives with strong augmentation, which was never trained."
+trainer: "train/student_v5.py (unchanged), --arms-config configs/e1_arms_addendum7.yaml"
+new_arms:                      # 80k iters, recipe/loss/data unchanged, seeds 0-2
+  A_x00only: {real_pos: true, synth: {paired: false, layers: [x00]}, quad_dir: quadruplets/v4, tau: prereg_v6 point}
+  B2_B1:     {real_pos: true, strong_aug: true, real_neg: negpool_accept, neg_list: negpool_r20/admitted.csv}
+scheduler: "train/run_add7_20261030.py: same idle rule as addendum 6; seed-major order, A_x00only before B2_B1."
+evaluation: "eval dir students_eval_add7_v1; same chain as addendum 6 (dev -> seal -> test legs -> strata v4 incl.
+  held-out and scene-novel probes, hardproxy, dacl10k -> SDNET v2 -> threshold sweep); analysed together with the
+  primary, ablation, addendum-3 and addendum-6 eval dirs by the same estimators."
+predictions:               # native_r95, arm mean of 3 seeds; scored as worded
+  P18_background_control: "A_x00only changes A3 relative to B0 on bcl_noise and uav1388_background by less than half of
+    the A_x01only change on each of these legs (A_x01only vs B0: +15.6% BCL, +45.5% UAV)."
+  P19_stack_in_domain: "B2_B1 A3 on pavedistress_background_test <= 0.2 x B1_v5 A3."
+  P20_stack_cross_domain: "B2_B1 A3 on bcl_noise and uav1388_background <= 1.15 x B1_v5 A3."
+  P21_stack_recall: "B2_B1 positive-axis recall >= B1_v5 recall - 2 pp."
+interpretation: "If P18 fails (x00-only raises real false alarms as much as x01-only), the CF-NegOnly increase is
+  attributed to rendered backgrounds / acquisition, not to the distractors, and the paper says so. P19-P21 decide whether
+  'real negatives + strong augmentation' is reported as a combined recommendation."

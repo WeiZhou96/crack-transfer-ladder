@@ -7,21 +7,26 @@ authors:
     family-names: Zhou
     email: weizhou@njust.edu.cn
     orcid: "https://orcid.org/0000-0003-3225-0576"
-    affiliation: Nanjing University of Science and Technology
+    affiliation: School of Automation, Nanjing University of Science and Technology
   - given-names: Jian
     family-names: Chang
-    affiliation: Nanjing University of Science and Technology
+    email: vergilnb@njust.edu.cn
+    orcid: "https://orcid.org/0009-0002-4341-1689"
+    affiliation: School of Automation, Nanjing University of Science and Technology
   - given-names: Yiming
     family-names: Chen
+    email: yimingchen@njust.edu.cn
     orcid: "https://orcid.org/0009-0000-9285-7252"
-    affiliation: Nanjing University of Science and Technology
+    affiliation: School of Automation, Nanjing University of Science and Technology
   - given-names: Wangta
     family-names: Ma
+    email: wangta@njust.edu.cn
     orcid: "https://orcid.org/0009-0004-4520-0353"
-    affiliation: Nanjing University of Science and Technology
+    affiliation: School of Automation, Nanjing University of Science and Technology
   - given-names: Li
     family-names: Yang
+    email: yangli945@njust.edu.cn
     orcid: "https://orcid.org/0000-0002-8152-7642"
-    affiliation: Nanjing University of Science and Technology
+    affiliation: School of Automation, Nanjing University of Science and Technology
 repository-code: "https://github.com/WeiZhou96/crack-transfer-ladder"
 license: MIT

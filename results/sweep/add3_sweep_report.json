@@ -1,0 +1,2667 @@
+{
+ "curves": {
+  "B0_s0": {
+   "native_r95": {
+    "recall": 0.7992799279927992,
+    "bcl_noise": 16.370959675914513,
+    "pavedistress_background_test": 2.5060596225093077,
+    "uav1388_background": 2.346594356796118
+   },
+   "t0.02": {
+    "recall": 0.8154815481548154,
+    "bcl_noise": 16.749672945137718,
+    "pavedistress_background_test": 2.442574014468669,
+    "uav1388_background": 2.559921116504856
+   },
+   "t0.05": {
+    "recall": 0.8073807380738074,
+    "bcl_noise": 16.471630291783974,
+    "pavedistress_background_test": 2.47547531498608,
+    "uav1388_background": 2.4888121966019434
+   },
+   "t0.1": {
+    "recall": 0.8010801080108011,
+    "bcl_noise": 16.34699048165988,
+    "pavedistress_background_test": 2.5014256365209397,
+    "uav1388_background": 2.2991884101941764
+   },
+   "t0.2": {
+    "recall": 0.7947794779477948,
+    "bcl_noise": 16.2607013823432,
+    "pavedistress_background_test": 2.508994480301941,
+    "uav1388_background": 2.2991884101941764
+   },
+   "t0.3": {
+    "recall": 0.7920792079207921,
+    "bcl_noise": 16.030597117498722,
+    "pavedistress_background_test": 2.530001883449208,
+    "uav1388_background": 2.109564623786409
+   },
+   "t0.5": {
+    "recall": 0.7848784878487849,
+    "bcl_noise": 16.05936015060428,
+    "pavedistress_background_test": 2.5553343401856186,
+    "uav1388_background": 2.109564623786409
+   },
+   "t0.7": {
+    "recall": 0.7785778577857786,
+    "bcl_noise": 15.824462046908875,
+    "pavedistress_background_test": 2.576959608131335,
+    "uav1388_background": 1.943643810679613
+   },
+   "t0.85": {
+    "recall": 0.7713771377137714,
+    "bcl_noise": 15.651883848275515,
+    "pavedistress_background_test": 2.5987393422766636,
+    "uav1388_background": 1.8251289441747585
+   },
+   "t0.95": {
+    "recall": 0.7488748874887489,
+    "bcl_noise": 15.56080091010791,
+    "pavedistress_background_test": 2.6361201625828308,
+    "uav1388_background": 1.5406932645631077
+   }
+  },
+  "B1_s0": {
+   "native_r95": {
+    "recall": 0.8145814581458146,
+    "bcl_noise": 16.52915635799509,
+    "pavedistress_background_test": 1.903486977821881,
+    "uav1388_background": 0.9007129854368938
+   },
+   "t0.02": {
+    "recall": 0.8937893789378938,
+    "bcl_noise": 19.477367251314984,
+    "pavedistress_background_test": 2.7255560921583295,
+    "uav1388_background": 1.730317050970875
+   },
+   "t0.05": {
+    "recall": 0.8838883888388839,
+    "bcl_noise": 18.916488105756564,
+    "pavedistress_background_test": 2.7756031408327018,
+    "uav1388_background": 1.730317050970875
+   },
+   "t0.1": {
+    "recall": 0.8712871287128713,
+    "bcl_noise": 18.576125547340773,
+    "pavedistress_background_test": 2.801398996167949,
+    "uav1388_background": 1.5406932645631077
+   },
+   "t0.2": {
+    "recall": 0.8667866786678667,
+    "bcl_noise": 18.173443083862935,
+    "pavedistress_background_test": 2.864884604208588,
+    "uav1388_background": 1.3747724514563116
+   },
+   "t0.3": {
+    "recall": 0.8640864086408641,
+    "bcl_noise": 17.967308013273087,
+    "pavedistress_background_test": 2.8794044269721404,
+    "uav1388_background": 1.3510694781553407
+   },
+   "t0.5": {
+    "recall": 0.8604860486048604,
+    "bcl_noise": 17.674883843366562,
+    "pavedistress_background_test": 2.8237965951117268,
+    "uav1388_background": 1.3510694781553407
+   },
+   "t0.7": {
+    "recall": 0.8505850585058505,
+    "bcl_noise": 17.468748772776717,
+    "pavedistress_background_test": 2.667167868704895,
+    "uav1388_background": 1.2325546116504862
+   },
+   "t0.85": {
+    "recall": 0.8406840684068407,
+    "bcl_noise": 17.066066309298876,
+    "pavedistress_background_test": 2.3437156467168223,
+    "uav1388_background": 0.9955248786407773
+   },
+   "t0.95": {
+    "recall": 0.8145814581458146,
+    "bcl_noise": 16.524362519144166,
+    "pavedistress_background_test": 1.9044137750195547,
+    "uav1388_background": 0.9007129854368938
+   }
+  },
+  "B2_s0": {
+   "native_r95": {
+    "recall": 0.7614761476147615,
+    "bcl_noise": 16.553125552249725,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 1.7066140776699041
+   },
+   "t0.02": {
+    "recall": 0.8073807380738074,
+    "bcl_noise": 17.40642886771467,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 2.4888121966019434
+   },
+   "t0.05": {
+    "recall": 0.7938793879387939,
+    "bcl_noise": 17.080447825851657,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 2.4651092233009724
+   },
+   "t0.1": {
+    "recall": 0.783078307830783,
+    "bcl_noise": 16.85034356100718,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 2.156970570388351
+   },
+   "t0.2": {
+    "recall": 0.7704770477047704,
+    "bcl_noise": 16.711322234330304,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 1.8251289441747585
+   },
+   "t0.3": {
+    "recall": 0.7632763276327633,
+    "bcl_noise": 16.577094746504358,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 1.7540200242718458
+   },
+   "t0.5": {
+    "recall": 0.7542754275427542,
+    "bcl_noise": 16.452454936380267,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 1.469584344660195
+   },
+   "t0.7": {
+    "recall": 0.7461746174617462,
+    "bcl_noise": 16.342196642808954,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 1.2088516383495154
+   },
+   "t0.85": {
+    "recall": 0.7227722772277227,
+    "bcl_noise": 16.179206121877446,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 0.9718219053398065
+   },
+   "t0.95": {
+    "recall": 0.6966696669666966,
+    "bcl_noise": 16.155236927622813,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 0.9244159587378646
+   }
+  },
+  "B3_auto_s0": {
+   "native_r95": {
+    "recall": 0.6687668766876688,
+    "bcl_noise": 17.655708487962855,
+    "pavedistress_background_test": 0.01899934255230799,
+    "uav1388_background": 2.156970570388351
+   },
+   "t0.02": {
+    "recall": 0.6318631863186318,
+    "bcl_noise": 17.06127247044795,
+    "pavedistress_background_test": 0.013438559366266627,
+    "uav1388_background": 1.8251289441747585
+   },
+   "t0.05": {
+    "recall": 0.6147614761476148,
+    "bcl_noise": 16.907869627218297,
+    "pavedistress_background_test": 0.012357295968980808,
+    "uav1388_background": 1.7066140776699041
+   },
+   "t0.1": {
+    "recall": 0.5922592259225923,
+    "bcl_noise": 16.73049758973401,
+    "pavedistress_background_test": 0.010812633972858206,
+    "uav1388_background": 1.6118021844660204
+   },
+   "t0.2": {
+    "recall": 0.5787578757875788,
+    "bcl_noise": 16.59147626305714,
+    "pavedistress_background_test": 0.009576904375960127,
+    "uav1388_background": 1.4458813713592242
+   },
+   "t0.3": {
+    "recall": 0.5715571557155715,
+    "bcl_noise": 16.385341192467294,
+    "pavedistress_background_test": 0.008959039577511086,
+    "uav1388_background": 1.279960558252428
+   },
+   "t0.5": {
+    "recall": 0.5544554455445545,
+    "bcl_noise": 16.236732188088567,
+    "pavedistress_background_test": 0.007877776180225265,
+    "uav1388_background": 1.279960558252428
+   },
+   "t0.7": {
+    "recall": 0.5337533753375338,
+    "bcl_noise": 16.212762993833934,
+    "pavedistress_background_test": 0.006950978982551704,
+    "uav1388_background": 1.2562575849514572
+   },
+   "t0.85": {
+    "recall": 0.5031503150315032,
+    "bcl_noise": 16.107298539113547,
+    "pavedistress_background_test": 0.005869715585265884,
+    "uav1388_background": 1.1140397451456319
+   },
+   "t0.95": {
+    "recall": 0.46264626462646263,
+    "bcl_noise": 15.992246406691308,
+    "pavedistress_background_test": 0.005251850786816843,
+    "uav1388_background": 1.1377427184466027
+   }
+  },
+  "B10_s0": {
+   "native_r95": {
+    "recall": 0.81998199819982,
+    "bcl_noise": 18.993189527371392,
+    "pavedistress_background_test": 2.368893637253621,
+    "uav1388_background": 2.346594356796118
+   },
+   "t0.02": {
+    "recall": 0.8622862286228623,
+    "bcl_noise": 20.546393315071626,
+    "pavedistress_background_test": 2.6490953233502608,
+    "uav1388_background": 3.3421192354368956
+   },
+   "t0.05": {
+    "recall": 0.8550855085508551,
+    "bcl_noise": 20.19644307895398,
+    "pavedistress_background_test": 2.5729434869414165,
+    "uav1388_background": 3.176198422330099
+   },
+   "t0.1": {
+    "recall": 0.8514851485148515,
+    "bcl_noise": 19.918400425600236,
+    "pavedistress_background_test": 2.5213517762709214,
+    "uav1388_background": 3.033980582524274
+   },
+   "t0.2": {
+    "recall": 0.8442844284428442,
+    "bcl_noise": 19.64994544994834,
+    "pavedistress_background_test": 2.4751663825868557,
+    "uav1388_background": 2.773247876213594
+   },
+   "t0.3": {
+    "recall": 0.8397839783978398,
+    "bcl_noise": 19.630770094544637,
+    "pavedistress_background_test": 2.4501428582496696,
+    "uav1388_background": 2.7258419296116525
+   },
+   "t0.5": {
+    "recall": 0.8298829882988299,
+    "bcl_noise": 19.391078151998304,
+    "pavedistress_background_test": 2.4126075717438904,
+    "uav1388_background": 2.536218143203885
+   },
+   "t0.7": {
+    "recall": 0.819081908190819,
+    "bcl_noise": 18.993189527371392,
+    "pavedistress_background_test": 2.365340914662539,
+    "uav1388_background": 2.322891383495147
+   },
+   "t0.85": {
+    "recall": 0.8145814581458146,
+    "bcl_noise": 18.686383840912086,
+    "pavedistress_background_test": 2.321472513972657,
+    "uav1388_background": 2.0858616504854384
+   },
+   "t0.95": {
+    "recall": 0.7992799279927992,
+    "bcl_noise": 18.17823692271386,
+    "pavedistress_background_test": 2.3325940803447396,
+    "uav1388_background": 1.730317050970875
+   }
+  },
+  "B11_s0": {
+   "native_r95": {
+    "recall": 0.7848784878487849,
+    "bcl_noise": 20.31149521137622,
+    "pavedistress_background_test": 3.2442535904562986,
+    "uav1388_background": 5.025030339805829
+   },
+   "t0.02": {
+    "recall": 0.8262826282628263,
+    "bcl_noise": 21.668151606188463,
+    "pavedistress_background_test": 3.281171012163629,
+    "uav1388_background": 5.33316899271845
+   },
+   "t0.05": {
+    "recall": 0.8091809180918091,
+    "bcl_noise": 21.121653977182824,
+    "pavedistress_background_test": 3.2745289655803016,
+    "uav1388_background": 5.2146541262135955
+   },
+   "t0.1": {
+    "recall": 0.7947794779477948,
+    "bcl_noise": 20.79567293531981,
+    "pavedistress_background_test": 3.2734477021830157,
+    "uav1388_background": 5.096139259708742
+   },
+   "t0.2": {
+    "recall": 0.7875787578757876,
+    "bcl_noise": 20.321082889078074,
+    "pavedistress_background_test": 3.2493509750435035,
+    "uav1388_background": 4.953921419902916
+   },
+   "t0.3": {
+    "recall": 0.7758775877587759,
+    "bcl_noise": 20.047834074575253,
+    "pavedistress_background_test": 3.198068196772233,
+    "uav1388_background": 5.001327366504857
+   },
+   "t0.5": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 19.707471516159462,
+    "pavedistress_background_test": 3.094884775431243,
+    "uav1388_background": 5.07243628640777
+   },
+   "t0.7": {
+    "recall": 0.7479747974797479,
+    "bcl_noise": 19.117829337495483,
+    "pavedistress_background_test": 2.920337969869389,
+    "uav1388_background": 4.788000606796119
+   },
+   "t0.85": {
+    "recall": 0.7308730873087309,
+    "bcl_noise": 18.528187158831507,
+    "pavedistress_background_test": 2.7505796164955156,
+    "uav1388_background": 4.550970873786411
+   },
+   "t0.95": {
+    "recall": 0.6948694869486949,
+    "bcl_noise": 17.895400430509188,
+    "pavedistress_background_test": 2.6195922792243187,
+    "uav1388_background": 3.626554915048546
+   }
+  },
+  "B0_s1": {
+   "native_r95": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 17.090035503553512,
+    "pavedistress_background_test": 2.5242866340635546,
+    "uav1388_background": 2.820653822815536
+   },
+   "t0.02": {
+    "recall": 0.783978397839784,
+    "bcl_noise": 17.27699521873965,
+    "pavedistress_background_test": 2.6013652676700723,
+    "uav1388_background": 3.223604368932041
+   },
+   "t0.05": {
+    "recall": 0.7776777677767777,
+    "bcl_noise": 17.137973892062778,
+    "pavedistress_background_test": 2.5676916361545996,
+    "uav1388_background": 2.986574635922332
+   },
+   "t0.1": {
+    "recall": 0.7650765076507651,
+    "bcl_noise": 17.085241664702583,
+    "pavedistress_background_test": 2.528920620051922,
+    "uav1388_background": 2.820653822815536
+   },
+   "t0.2": {
+    "recall": 0.7560756075607561,
+    "bcl_noise": 16.984571048833125,
+    "pavedistress_background_test": 2.497409515331021,
+    "uav1388_background": 2.631030036407769
+   },
+   "t0.3": {
+    "recall": 0.7515751575157515,
+    "bcl_noise": 16.85034356100718,
+    "pavedistress_background_test": 2.473621720590733,
+    "uav1388_background": 2.346594356796118
+   },
+   "t0.5": {
+    "recall": 0.7398739873987399,
+    "bcl_noise": 16.701734556628452,
+    "pavedistress_background_test": 2.4476713990558734,
+    "uav1388_background": 2.2043765169902927
+   },
+   "t0.7": {
+    "recall": 0.7272727272727273,
+    "bcl_noise": 16.711322234330304,
+    "pavedistress_background_test": 2.414770098538462,
+    "uav1388_background": 1.9910497572815546
+   },
+   "t0.85": {
+    "recall": 0.7137713771377138,
+    "bcl_noise": 16.581888585355287,
+    "pavedistress_background_test": 2.389283175602439,
+    "uav1388_background": 1.8014259708737876
+   },
+   "t0.95": {
+    "recall": 0.6858685868586859,
+    "bcl_noise": 16.457248775231193,
+    "pavedistress_background_test": 2.377234812032683,
+    "uav1388_background": 1.682911104368933
+   }
+  },
+  "B1_s1": {
+   "native_r95": {
+    "recall": 0.8514851485148515,
+    "bcl_noise": 16.907869627218297,
+    "pavedistress_background_test": 0.9651048151774011,
+    "uav1388_background": 2.536218143203885
+   },
+   "t0.02": {
+    "recall": 0.8973897389738974,
+    "bcl_noise": 19.10824165979363,
+    "pavedistress_background_test": 2.246093008561874,
+    "uav1388_background": 3.3421192354368956
+   },
+   "t0.05": {
+    "recall": 0.8838883888388839,
+    "bcl_noise": 18.326845927092588,
+    "pavedistress_background_test": 1.8962270664401049,
+    "uav1388_background": 3.247307342233012
+   },
+   "t0.1": {
+    "recall": 0.8766876687668766,
+    "bcl_noise": 17.94813265786938,
+    "pavedistress_background_test": 1.648617748461652,
+    "uav1388_background": 3.057683555825245
+   },
+   "t0.2": {
+    "recall": 0.8667866786678667,
+    "bcl_noise": 17.593388582900808,
+    "pavedistress_background_test": 1.3871064725180957,
+    "uav1388_background": 2.844356796116507
+   },
+   "t0.3": {
+    "recall": 0.8622862286228623,
+    "bcl_noise": 17.34890280150355,
+    "pavedistress_background_test": 1.2287786179155291,
+    "uav1388_background": 2.6784359830097104
+   },
+   "t0.5": {
+    "recall": 0.8523852385238524,
+    "bcl_noise": 16.97498337113127,
+    "pavedistress_background_test": 1.0132982694564263,
+    "uav1388_background": 2.559921116504856
+   },
+   "t0.7": {
+    "recall": 0.8406840684068407,
+    "bcl_noise": 16.716116073181233,
+    "pavedistress_background_test": 0.8101752169663042,
+    "uav1388_background": 2.2517824635922343
+   },
+   "t0.85": {
+    "recall": 0.8235823582358236,
+    "bcl_noise": 16.39972270902007,
+    "pavedistress_background_test": 0.6309944254160825,
+    "uav1388_background": 1.730317050970875
+   },
+   "t0.95": {
+    "recall": 0.783978397839784,
+    "bcl_noise": 15.92992650162926,
+    "pavedistress_background_test": 0.440074202695329,
+    "uav1388_background": 1.32736650485437
+   }
+  },
+  "B2_s1": {
+   "native_r95": {
+    "recall": 0.8073807380738074,
+    "bcl_noise": 18.09194782339718,
+    "pavedistress_background_test": 0.004170587389531023,
+    "uav1388_background": 4.408753033980585
+   },
+   "t0.02": {
+    "recall": 0.8145814581458146,
+    "bcl_noise": 18.4371042206639,
+    "pavedistress_background_test": 0.006333114184102664,
+    "uav1388_background": 4.740594660194178
+   },
+   "t0.05": {
+    "recall": 0.8064806480648065,
+    "bcl_noise": 18.0775663068444,
+    "pavedistress_background_test": 0.004170587389531023,
+    "uav1388_background": 4.385050060679615
+   },
+   "t0.1": {
+    "recall": 0.7929792979297929,
+    "bcl_noise": 17.976895690974942,
+    "pavedistress_background_test": 0.003243790191857462,
+    "uav1388_background": 4.00580248786408
+   },
+   "t0.2": {
+    "recall": 0.7812781278127813,
+    "bcl_noise": 17.871431236254555,
+    "pavedistress_background_test": 0.0018535943953471212,
+    "uav1388_background": 3.8161787014563133
+   },
+   "t0.3": {
+    "recall": 0.774977497749775,
+    "bcl_noise": 17.761172942683242,
+    "pavedistress_background_test": 0.0013901957965103409,
+    "uav1388_background": 3.626554915048546
+   },
+   "t0.5": {
+    "recall": 0.7641764176417641,
+    "bcl_noise": 17.70844071532305,
+    "pavedistress_background_test": 0.0009267971976735606,
+    "uav1388_background": 3.271010315533983
+   },
+   "t0.7": {
+    "recall": 0.7488748874887489,
+    "bcl_noise": 17.531068677838764,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 2.844356796116507
+   },
+   "t0.85": {
+    "recall": 0.7308730873087309,
+    "bcl_noise": 17.463954933925788,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 2.559921116504856
+   },
+   "t0.95": {
+    "recall": 0.7065706570657065,
+    "bcl_noise": 17.32013976839799,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 2.0384557038834963
+   }
+  },
+  "B3_auto_s1": {
+   "native_r95": {
+    "recall": 0.7857785778577858,
+    "bcl_noise": 17.540656355540616,
+    "pavedistress_background_test": 0.01652788335851183,
+    "uav1388_background": 2.9154657160194195
+   },
+   "t0.02": {
+    "recall": 0.828982898289829,
+    "bcl_noise": 18.09194782339718,
+    "pavedistress_background_test": 0.025486922936022914,
+    "uav1388_background": 4.148020327669905
+   },
+   "t0.05": {
+    "recall": 0.8253825382538253,
+    "bcl_noise": 17.78034829808695,
+    "pavedistress_background_test": 0.023169929941839015,
+    "uav1388_background": 4.00580248786408
+   },
+   "t0.1": {
+    "recall": 0.8136813681368137,
+    "bcl_noise": 17.73720374842861,
+    "pavedistress_background_test": 0.021007403147267373,
+    "uav1388_background": 3.7450697815534006
+   },
+   "t0.2": {
+    "recall": 0.8028802880288028,
+    "bcl_noise": 17.636533132559148,
+    "pavedistress_background_test": 0.019153808751920253,
+    "uav1388_background": 3.46063410194175
+   },
+   "t0.3": {
+    "recall": 0.7965796579657966,
+    "bcl_noise": 17.62215161600637,
+    "pavedistress_background_test": 0.01899934255230799,
+    "uav1388_background": 3.247307342233012
+   },
+   "t0.5": {
+    "recall": 0.7857785778577858,
+    "bcl_noise": 17.531068677838764,
+    "pavedistress_background_test": 0.01652788335851183,
+    "uav1388_background": 2.93916868932039
+   },
+   "t0.7": {
+    "recall": 0.7722772277227723,
+    "bcl_noise": 17.473542611627643,
+    "pavedistress_background_test": 0.015446619961226008,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.85": {
+    "recall": 0.7641764176417641,
+    "bcl_noise": 17.26261370218687,
+    "pavedistress_background_test": 0.013901957965103408,
+    "uav1388_background": 1.9673467839805838
+   },
+   "t0.95": {
+    "recall": 0.7497749774977498,
+    "bcl_noise": 17.157149247466485,
+    "pavedistress_background_test": 0.012511762168593068,
+    "uav1388_background": 1.6118021844660204
+   }
+  },
+  "B10_s1": {
+   "native_r95": {
+    "recall": 0.7938793879387939,
+    "bcl_noise": 21.21273691535043,
+    "pavedistress_background_test": 4.663025633894907,
+    "uav1388_background": 3.3421192354368956
+   },
+   "t0.02": {
+    "recall": 0.8334833483348335,
+    "bcl_noise": 22.20026771864132,
+    "pavedistress_background_test": 4.342199337300244,
+    "uav1388_background": 4.171723300970877
+   },
+   "t0.05": {
+    "recall": 0.8217821782178217,
+    "bcl_noise": 21.903049709883867,
+    "pavedistress_background_test": 4.516437210462873,
+    "uav1388_background": 3.9109905946601966
+   },
+   "t0.1": {
+    "recall": 0.8163816381638164,
+    "bcl_noise": 21.67294544503939,
+    "pavedistress_background_test": 4.630124333377497,
+    "uav1388_background": 3.6028519417475753
+   },
+   "t0.2": {
+    "recall": 0.8064806480648065,
+    "bcl_noise": 21.47160421330047,
+    "pavedistress_background_test": 4.671521274873582,
+    "uav1388_background": 3.555445995145633
+   },
+   "t0.3": {
+    "recall": 0.7965796579657966,
+    "bcl_noise": 21.337376725474524,
+    "pavedistress_background_test": 4.6704400114762965,
+    "uav1388_background": 3.3895251820388372
+   },
+   "t0.5": {
+    "recall": 0.7884788478847885,
+    "bcl_noise": 20.96825113395317,
+    "pavedistress_background_test": 4.599540025854269,
+    "uav1388_background": 3.1287924757281576
+   },
+   "t0.7": {
+    "recall": 0.7776777677767777,
+    "bcl_noise": 20.50804260426421,
+    "pavedistress_background_test": 4.493730679119871,
+    "uav1388_background": 2.8680597694174774
+   },
+   "t0.85": {
+    "recall": 0.7587758775877588,
+    "bcl_noise": 20.138917012742862,
+    "pavedistress_background_test": 4.3873034675870235,
+    "uav1388_background": 2.844356796116507
+   },
+   "t0.95": {
+    "recall": 0.7335733573357336,
+    "bcl_noise": 19.793760615476142,
+    "pavedistress_background_test": 4.324590190544446,
+    "uav1388_background": 2.6073270631067977
+   }
+  },
+  "B11_s1": {
+   "native_r95": {
+    "recall": 0.8262826282628263,
+    "bcl_noise": 20.603919381282747,
+    "pavedistress_background_test": 4.049949287633847,
+    "uav1388_background": 4.930218446601945
+   },
+   "t0.02": {
+    "recall": 0.8712871287128713,
+    "bcl_noise": 23.542542596900784,
+    "pavedistress_background_test": 4.461756175800133,
+    "uav1388_background": 6.542020631067966
+   },
+   "t0.05": {
+    "recall": 0.8622862286228623,
+    "bcl_noise": 23.005632645596997,
+    "pavedistress_background_test": 4.575443298714756,
+    "uav1388_background": 6.281287924757286
+   },
+   "t0.1": {
+    "recall": 0.8541854185418541,
+    "bcl_noise": 22.483104210845994,
+    "pavedistress_background_test": 4.567102123935694,
+    "uav1388_background": 5.949446298543693
+   },
+   "t0.2": {
+    "recall": 0.8406840684068407,
+    "bcl_noise": 22.06124639196445,
+    "pavedistress_background_test": 4.41989583570521,
+    "uav1388_background": 5.617604672330101
+   },
+   "t0.3": {
+    "recall": 0.8325832583258326,
+    "bcl_noise": 21.318201370070817,
+    "pavedistress_background_test": 4.285510242042544,
+    "uav1388_background": 5.262060072815538
+   },
+   "t0.5": {
+    "recall": 0.8253825382538253,
+    "bcl_noise": 20.565568670475333,
+    "pavedistress_background_test": 4.001292434755985,
+    "uav1388_background": 4.8828125000000036
+   },
+   "t0.7": {
+    "recall": 0.8154815481548154,
+    "bcl_noise": 19.880049714792822,
+    "pavedistress_background_test": 3.7422526180062254,
+    "uav1388_background": 4.432456007281556
+   },
+   "t0.85": {
+    "recall": 0.7983798379837984,
+    "bcl_noise": 19.170561564855678,
+    "pavedistress_background_test": 3.5701772716381677,
+    "uav1388_background": 3.673960861650488
+   },
+   "t0.95": {
+    "recall": 0.7785778577857786,
+    "bcl_noise": 18.16385540616108,
+    "pavedistress_background_test": 3.5209025539618564,
+    "uav1388_background": 3.1287924757281576
+   }
+  },
+  "B0_s2": {
+   "native_r95": {
+    "recall": 0.7722772277227723,
+    "bcl_noise": 16.615445457311772,
+    "pavedistress_background_test": 2.048839671657018,
+    "uav1388_background": 2.4414062500000018
+   },
+   "t0.02": {
+    "recall": 0.7992799279927992,
+    "bcl_noise": 17.32972744609984,
+    "pavedistress_background_test": 1.9612573364768664,
+    "uav1388_background": 2.986574635922332
+   },
+   "t0.05": {
+    "recall": 0.7929792979297929,
+    "bcl_noise": 17.099623181255364,
+    "pavedistress_background_test": 1.9637287956706626,
+    "uav1388_background": 2.8680597694174774
+   },
+   "t0.1": {
+    "recall": 0.7902790279027903,
+    "bcl_noise": 17.013334081938684,
+    "pavedistress_background_test": 1.9770128888373169,
+    "uav1388_background": 2.773247876213594
+   },
+   "t0.2": {
+    "recall": 0.7848784878487849,
+    "bcl_noise": 16.797611333646984,
+    "pavedistress_background_test": 1.9902969820039713,
+    "uav1388_background": 2.631030036407769
+   },
+   "t0.3": {
+    "recall": 0.7821782178217822,
+    "bcl_noise": 16.68735304007567,
+    "pavedistress_background_test": 2.007133797761708,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.5": {
+    "recall": 0.7767776777677767,
+    "bcl_noise": 16.60585777960992,
+    "pavedistress_background_test": 2.0307671263023837,
+    "uav1388_background": 2.4414062500000018
+   },
+   "t0.7": {
+    "recall": 0.7695769576957696,
+    "bcl_noise": 16.538744035696947,
+    "pavedistress_background_test": 2.055945116839182,
+    "uav1388_background": 2.370297330097089
+   },
+   "t0.85": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 16.452454936380267,
+    "pavedistress_background_test": 2.07973291157947,
+    "uav1388_background": 2.13326759708738
+   },
+   "t0.95": {
+    "recall": 0.7479747974797479,
+    "bcl_noise": 16.2607013823432,
+    "pavedistress_background_test": 2.123755778468964,
+    "uav1388_background": 1.9673467839805838
+   }
+  },
+  "B1_s2": {
+   "native_r95": {
+    "recall": 0.8217821782178217,
+    "bcl_noise": 16.927044982622004,
+    "pavedistress_background_test": 0.7553397161039519,
+    "uav1388_background": 1.5643962378640788
+   },
+   "t0.02": {
+    "recall": 0.9063906390639064,
+    "bcl_noise": 19.712265355010388,
+    "pavedistress_background_test": 2.089773214554267,
+    "uav1388_background": 2.4414062500000018
+   },
+   "t0.05": {
+    "recall": 0.8946894689468947,
+    "bcl_noise": 19.079478626688072,
+    "pavedistress_background_test": 1.7298669694577007,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.1": {
+    "recall": 0.8847884788478848,
+    "bcl_noise": 18.51859948112965,
+    "pavedistress_background_test": 1.4706726865083284,
+    "uav1388_background": 2.2280794902912637
+   },
+   "t0.2": {
+    "recall": 0.8685868586858686,
+    "bcl_noise": 18.149473889608302,
+    "pavedistress_background_test": 1.2399001842876118,
+    "uav1388_background": 1.943643810679613
+   },
+   "t0.3": {
+    "recall": 0.8586858685868587,
+    "bcl_noise": 17.785142136937875,
+    "pavedistress_background_test": 1.0982546792431693,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.5": {
+    "recall": 0.8388838883888389,
+    "bcl_noise": 17.310552090696138,
+    "pavedistress_background_test": 0.9028549367336602,
+    "uav1388_background": 1.7540200242718458
+   },
+   "t0.7": {
+    "recall": 0.819081908190819,
+    "bcl_noise": 16.93663266032386,
+    "pavedistress_background_test": 0.7334055157590109,
+    "uav1388_background": 1.516990291262137
+   },
+   "t0.85": {
+    "recall": 0.7983798379837984,
+    "bcl_noise": 16.481217969485826,
+    "pavedistress_background_test": 0.6155478054548564,
+    "uav1388_background": 1.3510694781553407
+   },
+   "t0.95": {
+    "recall": 0.7533753375337534,
+    "bcl_noise": 15.915544985076481,
+    "pavedistress_background_test": 0.49212931196466064,
+    "uav1388_background": 0.8770100121359229
+   }
+  },
+  "B2_s2": {
+   "native_r95": {
+    "recall": 0.7848784878487849,
+    "bcl_noise": 16.998952565385903,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.536218143203885
+   },
+   "t0.02": {
+    "recall": 0.8154815481548154,
+    "bcl_noise": 17.487924128180424,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.8917627427184485
+   },
+   "t0.05": {
+    "recall": 0.8064806480648065,
+    "bcl_noise": 17.2865828964415,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.773247876213594
+   },
+   "t0.1": {
+    "recall": 0.7956795679567957,
+    "bcl_noise": 17.181118441721118,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.6073270631067977
+   },
+   "t0.2": {
+    "recall": 0.7866786678667866,
+    "bcl_noise": 17.013334081938684,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.3": {
+    "recall": 0.7812781278127813,
+    "bcl_noise": 16.912663466069226,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.322891383495147
+   },
+   "t0.5": {
+    "recall": 0.7695769576957696,
+    "bcl_noise": 16.68735304007567,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 1.9910497572815546
+   },
+   "t0.7": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 16.50518716374046,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 1.8251289441747585
+   },
+   "t0.85": {
+    "recall": 0.7470747074707471,
+    "bcl_noise": 16.222350671535786,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 1.469584344660195
+   },
+   "t0.95": {
+    "recall": 0.720972097209721,
+    "bcl_noise": 16.207969154983008,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 1.2088516383495154
+   }
+  },
+  "B3_auto_s2": {
+   "native_r95": {
+    "recall": 0.7875787578757876,
+    "bcl_noise": 15.685440720232002,
+    "pavedistress_background_test": 0.04556752888561673,
+    "uav1388_background": 2.156970570388351
+   },
+   "t0.02": {
+    "recall": 0.8253825382538253,
+    "bcl_noise": 16.768848300541425,
+    "pavedistress_background_test": 0.09453331416270318,
+    "uav1388_background": 2.8917627427184485
+   },
+   "t0.05": {
+    "recall": 0.81998199819982,
+    "bcl_noise": 16.428485742125634,
+    "pavedistress_background_test": 0.08032242379837524,
+    "uav1388_background": 2.749544902912623
+   },
+   "t0.1": {
+    "recall": 0.8136813681368137,
+    "bcl_noise": 16.21755683268486,
+    "pavedistress_background_test": 0.0673472630309454,
+    "uav1388_background": 2.7258419296116525
+   },
+   "t0.2": {
+    "recall": 0.8073807380738074,
+    "bcl_noise": 16.049772472902426,
+    "pavedistress_background_test": 0.060859682647230476,
+    "uav1388_background": 2.4414062500000018
+   },
+   "t0.3": {
+    "recall": 0.8046804680468047,
+    "bcl_noise": 15.872400435418141,
+    "pavedistress_background_test": 0.05560783186041363,
+    "uav1388_background": 2.2517824635922343
+   },
+   "t0.5": {
+    "recall": 0.7920792079207921,
+    "bcl_noise": 15.723791431039414,
+    "pavedistress_background_test": 0.04788452187980063,
+    "uav1388_background": 2.2043765169902927
+   },
+   "t0.7": {
+    "recall": 0.7821782178217822,
+    "bcl_noise": 15.532037877002349,
+    "pavedistress_background_test": 0.04155140769569796,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.85": {
+    "recall": 0.7722772277227723,
+    "bcl_noise": 15.464924133089376,
+    "pavedistress_background_test": 0.03429149631392174,
+    "uav1388_background": 1.7066140776699041
+   },
+   "t0.95": {
+    "recall": 0.7542754275427542,
+    "bcl_noise": 15.27317057905231,
+    "pavedistress_background_test": 0.027031584932145518,
+    "uav1388_background": 1.4458813713592242
+   }
+  },
+  "B10_s2": {
+   "native_r95": {
+    "recall": 0.8451845184518452,
+    "bcl_noise": 20.690208480599427,
+    "pavedistress_background_test": 2.883883946760896,
+    "uav1388_background": 5.33316899271845
+   },
+   "t0.02": {
+    "recall": 0.8622862286228623,
+    "bcl_noise": 21.874286676778308,
+    "pavedistress_background_test": 3.2300427000919707,
+    "uav1388_background": 5.451683859223305
+   },
+   "t0.05": {
+    "recall": 0.8550855085508551,
+    "bcl_noise": 21.198355398797652,
+    "pavedistress_background_test": 3.0984374980223253,
+    "uav1388_background": 5.356871966019421
+   },
+   "t0.1": {
+    "recall": 0.8487848784878488,
+    "bcl_noise": 20.843611323829077,
+    "pavedistress_background_test": 2.929760408045737,
+    "uav1388_background": 5.096139259708742
+   },
+   "t0.2": {
+    "recall": 0.8415841584158416,
+    "bcl_noise": 20.445722699202165,
+    "pavedistress_background_test": 2.7596931222726386,
+    "uav1388_background": 5.143545206310683
+   },
+   "t0.3": {
+    "recall": 0.8325832583258326,
+    "bcl_noise": 20.134123173891933,
+    "pavedistress_background_test": 2.635656763983994,
+    "uav1388_background": 5.0487333131067995
+   },
+   "t0.5": {
+    "recall": 0.8208820882088209,
+    "bcl_noise": 19.669120805352048,
+    "pavedistress_background_test": 2.4152334971372986,
+    "uav1388_background": 4.953921419902916
+   },
+   "t0.7": {
+    "recall": 0.8091809180918091,
+    "bcl_noise": 19.285613697277917,
+    "pavedistress_background_test": 2.2630842905192226,
+    "uav1388_background": 5.096139259708742
+   },
+   "t0.85": {
+    "recall": 0.7965796579657966,
+    "bcl_noise": 18.777466779079692,
+    "pavedistress_background_test": 2.195428095089053,
+    "uav1388_background": 5.380574939320392
+   },
+   "t0.95": {
+    "recall": 0.7767776777677767,
+    "bcl_noise": 18.288495216285174,
+    "pavedistress_background_test": 2.197899554282849,
+    "uav1388_background": 5.285763046116508
+   }
+  },
+  "B11_s2": {
+   "native_r95": {
+    "recall": 0.7776777677767777,
+    "bcl_noise": 18.49463028687502,
+    "pavedistress_background_test": 3.3153080422779384,
+    "uav1388_background": 3.673960861650488
+   },
+   "t0.02": {
+    "recall": 0.8352835283528353,
+    "bcl_noise": 21.955781937244062,
+    "pavedistress_background_test": 4.502226320098545,
+    "uav1388_background": 4.716891686893207
+   },
+   "t0.05": {
+    "recall": 0.8271827182718272,
+    "bcl_noise": 21.28464449811433,
+    "pavedistress_background_test": 4.274234209470849,
+    "uav1388_background": 4.693188713592236
+   },
+   "t0.1": {
+    "recall": 0.8217821782178217,
+    "bcl_noise": 20.790879096468885,
+    "pavedistress_background_test": 4.09798827571326,
+    "uav1388_background": 4.432456007281556
+   },
+   "t0.2": {
+    "recall": 0.8127812781278128,
+    "bcl_noise": 20.28273217827066,
+    "pavedistress_background_test": 3.9154092277715686,
+    "uav1388_background": 4.361347087378643
+   },
+   "t0.3": {
+    "recall": 0.8091809180918091,
+    "bcl_noise": 19.918400425600236,
+    "pavedistress_background_test": 3.803884631651517,
+    "uav1388_background": 4.52726790048544
+   },
+   "t0.5": {
+    "recall": 0.7992799279927992,
+    "bcl_noise": 19.314376730383476,
+    "pavedistress_background_test": 3.6086393553416203,
+    "uav1388_background": 4.503564927184469
+   },
+   "t0.7": {
+    "recall": 0.7893789378937894,
+    "bcl_noise": 18.89251891150193,
+    "pavedistress_background_test": 3.4229709834076836,
+    "uav1388_background": 4.290238167475731
+   },
+   "t0.85": {
+    "recall": 0.774077407740774,
+    "bcl_noise": 18.38916583215463,
+    "pavedistress_background_test": 3.281016545964017,
+    "uav1388_background": 3.7213668082524296
+   },
+   "t0.95": {
+    "recall": 0.7506750675067507,
+    "bcl_noise": 17.90978194706197,
+    "pavedistress_background_test": 3.2002307235668046,
+    "uav1388_background": 3.0813865291262155
+   }
+  },
+  "B0_v6_s0": {
+   "native_r95": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 16.788023655945132,
+    "pavedistress_background_test": 2.0219625529244847,
+    "uav1388_background": 1.7777229975728166
+   },
+   "t0.02": {
+    "recall": 0.7956795679567957,
+    "bcl_noise": 17.583800905198956,
+    "pavedistress_background_test": 1.8332048569983028,
+    "uav1388_background": 2.1806735436893216
+   },
+   "t0.05": {
+    "recall": 0.7875787578757876,
+    "bcl_noise": 17.387253512310963,
+    "pavedistress_background_test": 1.8682686843102858,
+    "uav1388_background": 2.109564623786409
+   },
+   "t0.1": {
+    "recall": 0.7794779477947795,
+    "bcl_noise": 17.200293797124825,
+    "pavedistress_background_test": 1.9065763018141264,
+    "uav1388_background": 1.9910497572815546
+   },
+   "t0.2": {
+    "recall": 0.7722772277227723,
+    "bcl_noise": 16.955808015727563,
+    "pavedistress_background_test": 1.943802655920681,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.3": {
+    "recall": 0.7677767776777678,
+    "bcl_noise": 16.89348811066552,
+    "pavedistress_background_test": 1.9767039564380924,
+    "uav1388_background": 1.8962378640776711
+   },
+   "t0.5": {
+    "recall": 0.7623762376237624,
+    "bcl_noise": 16.778435978243277,
+    "pavedistress_background_test": 2.0261331403140157,
+    "uav1388_background": 1.7777229975728166
+   },
+   "t0.7": {
+    "recall": 0.7551755175517552,
+    "bcl_noise": 16.629826973864553,
+    "pavedistress_background_test": 2.075098925591102,
+    "uav1388_background": 1.516990291262137
+   },
+   "t0.85": {
+    "recall": 0.7488748874887489,
+    "bcl_noise": 16.56271322995158,
+    "pavedistress_background_test": 2.1322514194476385,
+    "uav1388_background": 1.4458813713592242
+   },
+   "t0.95": {
+    "recall": 0.7362736273627363,
+    "bcl_noise": 16.46204261408212,
+    "pavedistress_background_test": 2.2133461742440748,
+    "uav1388_background": 1.3747724514563116
+   }
+  },
+  "R50_B0_s0": {
+   "native_r95": {
+    "recall": 0.7479747974797479,
+    "bcl_noise": 17.602976260602663,
+    "pavedistress_background_test": 1.763849533372398,
+    "uav1388_background": 1.279960558252428
+   },
+   "t0.02": {
+    "recall": 0.8226822682268227,
+    "bcl_noise": 19.688296160755755,
+    "pavedistress_background_test": 2.323326108368004,
+    "uav1388_background": 2.4651092233009724
+   },
+   "t0.05": {
+    "recall": 0.8118811881188119,
+    "bcl_noise": 19.26643834187421,
+    "pavedistress_background_test": 2.184460994916582,
+    "uav1388_background": 2.4414062500000018
+   },
+   "t0.1": {
+    "recall": 0.8028802880288028,
+    "bcl_noise": 18.916488105756564,
+    "pavedistress_background_test": 2.0990411865310024,
+    "uav1388_background": 2.2043765169902927
+   },
+   "t0.2": {
+    "recall": 0.7902790279027903,
+    "bcl_noise": 18.648033130104672,
+    "pavedistress_background_test": 2.005589135765585,
+    "uav1388_background": 2.13326759708738
+   },
+   "t0.3": {
+    "recall": 0.783078307830783,
+    "bcl_noise": 18.374784315601854,
+    "pavedistress_background_test": 1.9430303249226197,
+    "uav1388_background": 2.13326759708738
+   },
+   "t0.5": {
+    "recall": 0.7686768676867687,
+    "bcl_noise": 18.115917017651814,
+    "pavedistress_background_test": 1.853594395347121,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.7": {
+    "recall": 0.7596759675967597,
+    "bcl_noise": 17.90498810821104,
+    "pavedistress_background_test": 1.8146689130448315,
+    "uav1388_background": 1.5643962378640788
+   },
+   "t0.85": {
+    "recall": 0.7470747074707471,
+    "bcl_noise": 17.555037872093397,
+    "pavedistress_background_test": 1.75782535158752,
+    "uav1388_background": 1.279960558252428
+   },
+   "t0.95": {
+    "recall": 0.72997299729973,
+    "bcl_noise": 17.094829342404438,
+    "pavedistress_background_test": 1.716891808690271,
+    "uav1388_background": 1.2562575849514572
+   }
+  },
+  "R50_B11_s0": {
+   "native_r95": {
+    "recall": 0.6696669666966697,
+    "bcl_noise": 20.36902127758734,
+    "pavedistress_background_test": 4.035892863469131,
+    "uav1388_background": 2.631030036407769
+   },
+   "t0.02": {
+    "recall": 0.7461746174617462,
+    "bcl_noise": 22.44475350003858,
+    "pavedistress_background_test": 4.189895664482555,
+    "uav1388_background": 4.4561589805825275
+   },
+   "t0.05": {
+    "recall": 0.7335733573357336,
+    "bcl_noise": 21.936606581840355,
+    "pavedistress_background_test": 4.188505468686045,
+    "uav1388_background": 4.029505461165051
+   },
+   "t0.1": {
+    "recall": 0.7137713771377138,
+    "bcl_noise": 21.48598572985325,
+    "pavedistress_background_test": 4.176766037515513,
+    "uav1388_background": 3.7213668082524296
+   },
+   "t0.2": {
+    "recall": 0.6984698469846985,
+    "bcl_noise": 20.91072506774205,
+    "pavedistress_background_test": 4.1474174595891835,
+    "uav1388_background": 3.2947132888349535
+   },
+   "t0.3": {
+    "recall": 0.6858685868586859,
+    "bcl_noise": 20.50804260426421,
+    "pavedistress_background_test": 4.08563097974428,
+    "uav1388_background": 2.820653822815536
+   },
+   "t0.5": {
+    "recall": 0.6534653465346535,
+    "bcl_noise": 20.076597107680815,
+    "pavedistress_background_test": 3.9869270781920454,
+    "uav1388_background": 2.2754854368932054
+   },
+   "t0.7": {
+    "recall": 0.6291629162916291,
+    "bcl_noise": 19.66432696650112,
+    "pavedistress_background_test": 3.86489878049836,
+    "uav1388_background": 2.0384557038834963
+   },
+   "t0.85": {
+    "recall": 0.6111611161116112,
+    "bcl_noise": 19.23767530876865,
+    "pavedistress_background_test": 3.7402445574112657,
+    "uav1388_background": 1.7540200242718458
+   },
+   "t0.95": {
+    "recall": 0.5913591359135913,
+    "bcl_noise": 18.456279576067605,
+    "pavedistress_background_test": 3.640150460062521,
+    "uav1388_background": 1.4458813713592242
+   }
+  },
+  "R50_B2_s0": {
+   "native_r95": {
+    "recall": 0.7650765076507651,
+    "bcl_noise": 17.463954933925788,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.2517824635922343
+   },
+   "t0.02": {
+    "recall": 0.8325832583258326,
+    "bcl_noise": 19.57803786718444,
+    "pavedistress_background_test": 0.0021625267945716412,
+    "uav1388_background": 3.7450697815534006
+   },
+   "t0.05": {
+    "recall": 0.8244824482448245,
+    "bcl_noise": 19.357521280041816,
+    "pavedistress_background_test": 0.0009267971976735606,
+    "uav1388_background": 3.365822208737866
+   },
+   "t0.1": {
+    "recall": 0.8136813681368137,
+    "bcl_noise": 19.05550943243344,
+    "pavedistress_background_test": 0.0006178647984490404,
+    "uav1388_background": 3.2947132888349535
+   },
+   "t0.2": {
+    "recall": 0.8046804680468047,
+    "bcl_noise": 18.7966421344834,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 3.1287924757281576
+   },
+   "t0.3": {
+    "recall": 0.7965796579657966,
+    "bcl_noise": 18.600094741595406,
+    "pavedistress_background_test": 0.0003089323992245202,
+    "uav1388_background": 2.986574635922332
+   },
+   "t0.5": {
+    "recall": 0.7920792079207921,
+    "bcl_noise": 18.274113699732393,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.8680597694174774
+   },
+   "t0.7": {
+    "recall": 0.7848784878487849,
+    "bcl_noise": 18.029627918335134,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.65473300970874
+   },
+   "t0.85": {
+    "recall": 0.7776777677767777,
+    "bcl_noise": 17.74679142613046,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.536218143203885
+   },
+   "t0.95": {
+    "recall": 0.7614761476147615,
+    "bcl_noise": 17.444779578522084,
+    "pavedistress_background_test": 0.0001544661996122601,
+    "uav1388_background": 2.156970570388351
+   }
+  },
+  "B0_v6_s1": {
+   "native_r95": {
+    "recall": 0.8541854185418541,
+    "bcl_noise": 16.136061572219106,
+    "pavedistress_background_test": 2.121284319275168,
+    "uav1388_background": 3.46063410194175
+   },
+   "t0.02": {
+    "recall": 0.8532853285328533,
+    "bcl_noise": 16.078535506007988,
+    "pavedistress_background_test": 2.116032468488351,
+    "uav1388_background": 3.3895251820388372
+   },
+   "t0.05": {
+    "recall": 0.8478847884788479,
+    "bcl_noise": 15.9730710512876,
+    "pavedistress_background_test": 2.0800418439786945,
+    "uav1388_background": 3.3184162621359246
+   },
+   "t0.1": {
+    "recall": 0.8424842484248425,
+    "bcl_noise": 15.896369629672774,
+    "pavedistress_background_test": 2.042197625073691,
+    "uav1388_background": 3.1287924757281576
+   },
+   "t0.2": {
+    "recall": 0.8316831683168316,
+    "bcl_noise": 15.9011634685237,
+    "pavedistress_background_test": 2.031848389699669,
+    "uav1388_background": 3.223604368932041
+   },
+   "t0.3": {
+    "recall": 0.8271827182718272,
+    "bcl_noise": 15.92992650162926,
+    "pavedistress_background_test": 2.017637499335341,
+    "uav1388_background": 3.057683555825245
+   },
+   "t0.5": {
+    "recall": 0.8208820882088209,
+    "bcl_noise": 15.80049285265424,
+    "pavedistress_background_test": 2.013930310544647,
+    "uav1388_background": 2.93916868932039
+   },
+   "t0.7": {
+    "recall": 0.8127812781278128,
+    "bcl_noise": 15.742966786443121,
+    "pavedistress_background_test": 2.014548175343096,
+    "uav1388_background": 2.7021389563106815
+   },
+   "t0.85": {
+    "recall": 0.8082808280828083,
+    "bcl_noise": 15.637502331722736,
+    "pavedistress_background_test": 2.0261331403140157,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.95": {
+    "recall": 0.7920792079207921,
+    "bcl_noise": 15.512862521598642,
+    "pavedistress_background_test": 2.059961238029101,
+    "uav1388_background": 2.2754854368932054
+   }
+  },
+  "R50_B0_s1": {
+   "native_r95": {
+    "recall": 0.7614761476147615,
+    "bcl_noise": 17.339315123801697,
+    "pavedistress_background_test": 1.674722536196124,
+    "uav1388_background": 1.4458813713592242
+   },
+   "t0.02": {
+    "recall": 0.8424842484248425,
+    "bcl_noise": 19.05550943243344,
+    "pavedistress_background_test": 2.6495587219490973,
+    "uav1388_background": 2.6073270631067977
+   },
+   "t0.05": {
+    "recall": 0.8334833483348335,
+    "bcl_noise": 18.820611328738032,
+    "pavedistress_background_test": 2.4785646389783254,
+    "uav1388_background": 2.4177032766990307
+   },
+   "t0.1": {
+    "recall": 0.8262826282628263,
+    "bcl_noise": 18.556950191937066,
+    "pavedistress_background_test": 2.37569015003656,
+    "uav1388_background": 2.4177032766990307
+   },
+   "t0.2": {
+    "recall": 0.8226822682268227,
+    "bcl_noise": 18.27890753858332,
+    "pavedistress_background_test": 2.2629298243196105,
+    "uav1388_background": 2.2991884101941764
+   },
+   "t0.3": {
+    "recall": 0.819081908190819,
+    "bcl_noise": 18.202206116968494,
+    "pavedistress_background_test": 2.1883226499068886,
+    "uav1388_background": 2.1806735436893216
+   },
+   "t0.5": {
+    "recall": 0.8073807380738074,
+    "bcl_noise": 17.871431236254555,
+    "pavedistress_background_test": 2.044823550467099,
+    "uav1388_background": 2.0621586771844673
+   },
+   "t0.7": {
+    "recall": 0.7929792979297929,
+    "bcl_noise": 17.775554459236023,
+    "pavedistress_background_test": 1.9308274951532511,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.85": {
+    "recall": 0.783078307830783,
+    "bcl_noise": 17.674883843366562,
+    "pavedistress_background_test": 1.8165225074401787,
+    "uav1388_background": 1.7066140776699041
+   },
+   "t0.95": {
+    "recall": 0.7650765076507651,
+    "bcl_noise": 17.49271796703135,
+    "pavedistress_background_test": 1.697274601339514,
+    "uav1388_background": 1.4458813713592242
+   }
+  },
+  "R50_B11_s1": {
+   "native_r95": {
+    "recall": 0.6885688568856886,
+    "bcl_noise": 20.07180326882989,
+    "pavedistress_background_test": 3.6461746418473995,
+    "uav1388_background": 2.7258419296116525
+   },
+   "t0.02": {
+    "recall": 0.738973897389739,
+    "bcl_noise": 22.420784305783947,
+    "pavedistress_background_test": 3.8213393122077024,
+    "uav1388_background": 3.5791489684466042
+   },
+   "t0.05": {
+    "recall": 0.7281728172817282,
+    "bcl_noise": 21.553099473766224,
+    "pavedistress_background_test": 3.768820804339534,
+    "uav1388_background": 3.626554915048546
+   },
+   "t0.1": {
+    "recall": 0.7182718271827183,
+    "bcl_noise": 21.188767721095797,
+    "pavedistress_background_test": 3.7277327952426726,
+    "uav1388_background": 3.46063410194175
+   },
+   "t0.2": {
+    "recall": 0.7074707470747075,
+    "bcl_noise": 20.66623928634479,
+    "pavedistress_background_test": 3.6883439143415466,
+    "uav1388_background": 3.1287924757281576
+   },
+   "t0.3": {
+    "recall": 0.6975697569756976,
+    "bcl_noise": 20.249175306314175,
+    "pavedistress_background_test": 3.6438576488532157,
+    "uav1388_background": 2.93916868932039
+   },
+   "t0.5": {
+    "recall": 0.6804680468046804,
+    "bcl_noise": 19.870462037090967,
+    "pavedistress_background_test": 3.609875084938518,
+    "uav1388_background": 2.559921116504856
+   },
+   "t0.7": {
+    "recall": 0.6624662466246625,
+    "bcl_noise": 19.314376730383476,
+    "pavedistress_background_test": 3.5474707402951653,
+    "uav1388_background": 2.2280794902912637
+   },
+   "t0.85": {
+    "recall": 0.63996399639964,
+    "bcl_noise": 18.930869622309345,
+    "pavedistress_background_test": 3.516268567973489,
+    "uav1388_background": 1.919940837378642
+   },
+   "t0.95": {
+    "recall": 0.6093609360936093,
+    "bcl_noise": 18.398753509856487,
+    "pavedistress_background_test": 3.453555290930911,
+    "uav1388_background": 1.730317050970875
+   }
+  },
+  "R50_B2_s1": {
+   "native_r95": {
+    "recall": 0.7758775877587759,
+    "bcl_noise": 16.783229817094206,
+    "pavedistress_background_test": 0.0010812633972858206,
+    "uav1388_background": 3.839881674757284
+   },
+   "t0.02": {
+    "recall": 0.8226822682268227,
+    "bcl_noise": 18.197412278117568,
+    "pavedistress_background_test": 0.0024714591937961615,
+    "uav1388_background": 3.7687727548543712
+   },
+   "t0.05": {
+    "recall": 0.8172817281728173,
+    "bcl_noise": 17.94813265786938,
+    "pavedistress_background_test": 0.002008060594959381,
+    "uav1388_background": 3.6028519417475753
+   },
+   "t0.1": {
+    "recall": 0.810981098109811,
+    "bcl_noise": 17.69405919877027,
+    "pavedistress_background_test": 0.001699128195734861,
+    "uav1388_background": 3.4132281553398083
+   },
+   "t0.2": {
+    "recall": 0.8055805580558055,
+    "bcl_noise": 17.42081038426745,
+    "pavedistress_background_test": 0.0013901957965103409,
+    "uav1388_background": 3.436931128640779
+   },
+   "t0.3": {
+    "recall": 0.8001800180018002,
+    "bcl_noise": 17.37766583460911,
+    "pavedistress_background_test": 0.0012357295968980807,
+    "uav1388_background": 3.5080400485436916
+   },
+   "t0.5": {
+    "recall": 0.7893789378937894,
+    "bcl_noise": 17.109210858957216,
+    "pavedistress_background_test": 0.0012357295968980807,
+    "uav1388_background": 3.5317430218446626
+   },
+   "t0.7": {
+    "recall": 0.7785778577857786,
+    "bcl_noise": 16.941426499174785,
+    "pavedistress_background_test": 0.0010812633972858206,
+    "uav1388_background": 3.7213668082524296
+   },
+   "t0.85": {
+    "recall": 0.7713771377137714,
+    "bcl_noise": 16.735291428584937,
+    "pavedistress_background_test": 0.0009267971976735606,
+    "uav1388_background": 4.029505461165051
+   },
+   "t0.95": {
+    "recall": 0.7497749774977498,
+    "bcl_noise": 16.52915635799509,
+    "pavedistress_background_test": 0.0009267971976735606,
+    "uav1388_background": 3.9583965412621387
+   }
+  },
+  "B0_v6_s2": {
+   "native_r95": {
+    "recall": 0.7578757875787578,
+    "bcl_noise": 16.35657815936173,
+    "pavedistress_background_test": 2.221532882823525,
+    "uav1388_background": 2.631030036407769
+   },
+   "t0.02": {
+    "recall": 0.7911791179117912,
+    "bcl_noise": 17.070860148149805,
+    "pavedistress_background_test": 2.0701560072035097,
+    "uav1388_background": 4.00580248786408
+   },
+   "t0.05": {
+    "recall": 0.7857785778577858,
+    "bcl_noise": 16.869518916410886,
+    "pavedistress_background_test": 2.090391079352716,
+    "uav1388_background": 4.00580248786408
+   },
+   "t0.1": {
+    "recall": 0.7821782178217822,
+    "bcl_noise": 16.768848300541425,
+    "pavedistress_background_test": 2.1061466317131665,
+    "uav1388_background": 3.8161787014563133
+   },
+   "t0.2": {
+    "recall": 0.7758775877587759,
+    "bcl_noise": 16.581888585355287,
+    "pavedistress_background_test": 2.1239102446685765,
+    "uav1388_background": 3.7213668082524296
+   },
+   "t0.3": {
+    "recall": 0.7704770477047704,
+    "bcl_noise": 16.538744035696947,
+    "pavedistress_background_test": 2.142137256222823,
+    "uav1388_background": 3.5080400485436916
+   },
+   "t0.5": {
+    "recall": 0.7632763276327633,
+    "bcl_noise": 16.4764241306349,
+    "pavedistress_background_test": 2.171176901749928,
+    "uav1388_background": 3.271010315533983
+   },
+   "t0.7": {
+    "recall": 0.7587758775877588,
+    "bcl_noise": 16.423691903274705,
+    "pavedistress_background_test": 2.205313931864237,
+    "uav1388_background": 2.820653822815536
+   },
+   "t0.85": {
+    "recall": 0.7533753375337534,
+    "bcl_noise": 16.31822744855432,
+    "pavedistress_background_test": 2.2332723139940565,
+    "uav1388_background": 2.536218143203885
+   },
+   "t0.95": {
+    "recall": 0.738073807380738,
+    "bcl_noise": 16.241526026939493,
+    "pavedistress_background_test": 2.3069526912091045,
+    "uav1388_background": 1.8014259708737876
+   }
+  },
+  "R50_B0_s2": {
+   "native_r95": {
+    "recall": 0.7452745274527453,
+    "bcl_noise": 17.157149247466485,
+    "pavedistress_background_test": 3.487846787244833,
+    "uav1388_background": 1.469584344660195
+   },
+   "t0.02": {
+    "recall": 0.8208820882088209,
+    "bcl_noise": 18.51859948112965,
+    "pavedistress_background_test": 3.7606340957600843,
+    "uav1388_background": 2.5125151699029145
+   },
+   "t0.05": {
+    "recall": 0.8136813681368137,
+    "bcl_noise": 18.27890753858332,
+    "pavedistress_background_test": 3.743642813802736,
+    "uav1388_background": 2.2754854368932054
+   },
+   "t0.1": {
+    "recall": 0.8046804680468047,
+    "bcl_noise": 18.226175311223127,
+    "pavedistress_background_test": 3.7187737556651617,
+    "uav1388_background": 2.0384557038834963
+   },
+   "t0.2": {
+    "recall": 0.7965796579657966,
+    "bcl_noise": 18.029627918335134,
+    "pavedistress_background_test": 3.657914073017931,
+    "uav1388_background": 1.9673467839805838
+   },
+   "t0.3": {
+    "recall": 0.7929792979297929,
+    "bcl_noise": 17.847462041999922,
+    "pavedistress_background_test": 3.6242404415024585,
+    "uav1388_background": 1.8251289441747585
+   },
+   "t0.5": {
+    "recall": 0.7812781278127813,
+    "bcl_noise": 17.555037872093397,
+    "pavedistress_background_test": 3.5582833742680235,
+    "uav1388_background": 1.6118021844660204
+   },
+   "t0.7": {
+    "recall": 0.7686768676867687,
+    "bcl_noise": 17.26261370218687,
+    "pavedistress_background_test": 3.5338777147292864,
+    "uav1388_background": 1.5643962378640788
+   },
+   "t0.85": {
+    "recall": 0.7461746174617462,
+    "bcl_noise": 17.16194308631741,
+    "pavedistress_background_test": 3.4940254352293234,
+    "uav1388_background": 1.493287317961166
+   },
+   "t0.95": {
+    "recall": 0.7326732673267327,
+    "bcl_noise": 16.927044982622004,
+    "pavedistress_background_test": 3.405516302851498,
+    "uav1388_background": 1.493287317961166
+   }
+  },
+  "R50_B11_s2": {
+   "native_r95": {
+    "recall": 0.6543654365436543,
+    "bcl_noise": 19.496542606718688,
+    "pavedistress_background_test": 4.911098350472197,
+    "uav1388_background": 3.1999013956310702
+   },
+   "t0.02": {
+    "recall": 0.7047704770477048,
+    "bcl_noise": 21.121653977182824,
+    "pavedistress_background_test": 4.849311870627293,
+    "uav1388_background": 2.820653822815536
+   },
+   "t0.05": {
+    "recall": 0.6876687668766877,
+    "bcl_noise": 20.58474402587904,
+    "pavedistress_background_test": 4.876188989359827,
+    "uav1388_background": 2.8680597694174774
+   },
+   "t0.1": {
+    "recall": 0.6741674167416741,
+    "bcl_noise": 20.172473884699347,
+    "pavedistress_background_test": 4.86614868638503,
+    "uav1388_background": 2.773247876213594
+   },
+   "t0.2": {
+    "recall": 0.6579657965796579,
+    "bcl_noise": 19.64994544994834,
+    "pavedistress_background_test": 4.884066765540052,
+    "uav1388_background": 3.152495449029128
+   },
+   "t0.3": {
+    "recall": 0.6471647164716472,
+    "bcl_noise": 19.40545966855108,
+    "pavedistress_background_test": 4.901058047497401,
+    "uav1388_background": 3.1287924757281576
+   },
+   "t0.5": {
+    "recall": 0.6282628262826283,
+    "bcl_noise": 19.103447820942705,
+    "pavedistress_background_test": 4.922065450644668,
+    "uav1388_background": 3.3421192354368956
+   },
+   "t0.7": {
+    "recall": 0.6174617461746175,
+    "bcl_noise": 18.83978668414174,
+    "pavedistress_background_test": 4.928398564828771,
+    "uav1388_background": 3.3895251820388372
+   },
+   "t0.85": {
+    "recall": 0.6021602160216022,
+    "bcl_noise": 18.42272270411112,
+    "pavedistress_background_test": 4.939056732602016,
+    "uav1388_background": 3.3184162621359246
+   },
+   "t0.95": {
+    "recall": 0.5724572457245725,
+    "bcl_noise": 17.852255880850848,
+    "pavedistress_background_test": 4.8891641501272565,
+    "uav1388_background": 2.559921116504856
+   }
+  },
+  "R50_B2_s2": {
+   "native_r95": {
+    "recall": 0.7668766876687669,
+    "bcl_noise": 17.229056830230384,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 3.5317430218446626
+   },
+   "t0.02": {
+    "recall": 0.8163816381638164,
+    "bcl_noise": 18.53777483653336,
+    "pavedistress_background_test": 0.001544661996122601,
+    "uav1388_background": 5.736119538834955
+   },
+   "t0.05": {
+    "recall": 0.8055805580558055,
+    "bcl_noise": 18.106329339949962,
+    "pavedistress_background_test": 0.0009267971976735606,
+    "uav1388_background": 5.4279808859223335
+   },
+   "t0.1": {
+    "recall": 0.8001800180018002,
+    "bcl_noise": 17.914575785912895,
+    "pavedistress_background_test": 0.0006178647984490404,
+    "uav1388_background": 5.167248179611654
+   },
+   "t0.2": {
+    "recall": 0.7938793879387939,
+    "bcl_noise": 17.655708487962855,
+    "pavedistress_background_test": 0.0006178647984490404,
+    "uav1388_background": 4.598376820388353
+   },
+   "t0.3": {
+    "recall": 0.7884788478847885,
+    "bcl_noise": 17.531068677838764,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 4.4561589805825275
+   },
+   "t0.5": {
+    "recall": 0.7695769576957696,
+    "bcl_noise": 17.382459673460037,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 3.6976638349514586
+   },
+   "t0.7": {
+    "recall": 0.7533753375337534,
+    "bcl_noise": 17.027715598491465,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 2.986574635922332
+   },
+   "t0.85": {
+    "recall": 0.7461746174617462,
+    "bcl_noise": 16.73049758973401,
+    "pavedistress_background_test": 0.0004633985988367803,
+    "uav1388_background": 2.4177032766990307
+   },
+   "t0.95": {
+    "recall": 0.7317731773177317,
+    "bcl_noise": 16.28946441544876,
+    "pavedistress_background_test": 0.0006178647984490404,
+    "uav1388_background": 1.8725348907767003
+   }
+  }
+ },
+ "matched_recall_A3": {
+  "B0": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     16.520255345848767,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": 16.227711800424682,
+    "seeds": [
+     15.565342450955278,
+     16.83026178664035,
+     16.287531163678416
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": null,
+    "seeds": [
+     16.332165631339716,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     2.383329144491792,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": 2.4072868146130237,
+    "seeds": [
+     2.634238463629233,
+     2.47011251135765,
+     2.1175094688521887
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": null,
+    "seeds": [
+     2.5027215355415056,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     1.7419308561558393,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": 1.9568719179613916,
+    "seeds": [
+     1.5538062148443625,
+     2.3269301214862685,
+     1.9898794175535435
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": null,
+    "seeds": [
+     2.2991884101941764,
+     null,
+     null
+    ]
+   }
+  },
+  "B0_v6": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     16.57467794256287,
+     null,
+     16.301276957461415
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     15.573673006427622,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     2.1219319425081142,
+     null,
+     2.2493212638254274
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     2.0433534126222286,
+     null
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     1.4583319692372612,
+     null,
+     2.3519794732220585
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     2.388446039895205,
+     null
+    ]
+   }
+  },
+  "B1": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     16.118338369576527,
+     16.516413373668318
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     0.5092903110376517,
+     0.6240556142818681
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     1.4777210737990643,
+     1.3633773908712412
+    ]
+   }
+  },
+  "B10": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     20.018051255530086,
+     null
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": 19.499847467880194,
+    "seeds": [
+     18.201837070513744,
+     21.383651130852513,
+     18.914054202274322
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     4.365363506819338,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": 3.0721577627391565,
+    "seeds": [
+     2.3320695249518386,
+     4.670813510594516,
+     2.2135902526711164
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     2.7594778727877056,
+     null
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": 3.497800034889148,
+    "seeds": [
+     1.7456083324440888,
+     3.4459516005501496,
+     5.301840171673207
+    ]
+   }
+  },
+  "B11": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     17.98423539033674,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     19.199669987195552,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": 19.835871378005507,
+    "seeds": [
+     20.913255910173156,
+     19.236676614981437,
+     19.357681608861927
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     2.6378712010299914,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     2.944277629506878,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": 3.4941567410179566,
+    "seeds": [
+     3.273839619029385,
+     3.5861349605181427,
+     3.622495643506343
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     3.7458433378015528,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     4.82701641317857,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": 4.461318682548211,
+    "seeds": [
+     5.138787022986005,
+     3.7398844279750887,
+     4.5052845966835395
+    ]
+   }
+  },
+  "B2": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     16.158293090052542,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": 16.738088687816603,
+    "seeds": [
+     16.394170732698953,
+     17.54405004222711,
+     16.276045288523743
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": 17.493288020673877,
+    "seeds": [
+     17.227462938921647,
+     18.029174287147423,
+     17.223226835952556
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     0.00030893239922451764,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": 0.00031015998923223054,
+    "seeds": [
+     0.00015446619961225969,
+     0.0004967922472022736,
+     0.0002792215208821582
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": 0.001393765683123701,
+    "seeds": [
+     0.00030893239922451764,
+     0.003717898450534326,
+     0.00015446619961225969
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     0.9303345423871523,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": 1.9104027915354826,
+    "seeds": [
+     1.3256931735202357,
+     2.8737442385166023,
+     1.53177096256961
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": 3.1156796676875995,
+    "seeds": [
+     2.475826582346963,
+     4.198738230648766,
+     2.6724741900670685
+    ]
+   }
+  },
+  "B3_auto": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     17.158792167027883,
+     null
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     17.62995727007068,
+     15.817039654864026
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     0.012532849535675265,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     0.019083093804642397,
+     0.05262568426744852
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     1.6168329444097473,
+     null
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     3.361432757665402,
+     2.23405721393434
+    ]
+   }
+  },
+  "R50_B0": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     17.635662118989845,
+     null,
+     17.179015601955907
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": 18.263124432574248,
+    "seeds": [
+     18.85478842174855,
+     17.8222299978004,
+     18.1123548781738
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     1.7708612950606997,
+     null,
+     3.5007685659395698
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": 2.582127364770444,
+    "seeds": [
+     2.077305789077166,
+     1.9855880303166504,
+     3.683488274917516
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     1.341031640138123,
+     null,
+     1.5051451574464756
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": 2.057663856531082,
+    "seeds": [
+     2.187917826398615,
+     1.9880093427018528,
+     1.9970644004927773
+    ]
+   }
+  },
+  "R50_B11": {
+   "bcl_noise@0.70": {
+    "arm": 20.762934494283048,
+    "seeds": [
+     20.96755147640389,
+     20.350759916357088,
+     20.970492090088165
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": 4.220621502494511,
+    "seeds": [
+     4.150343035695513,
+     3.6547272026580897,
+     4.8567942691299315
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": 3.0511693903990906,
+    "seeds": [
+     3.3350853442646566,
+     2.9846243248228204,
+     2.833798502109795
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   }
+  },
+  "R50_B2": {
+   "bcl_noise@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "bcl_noise@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     16.531290465122034,
+     16.88774326579246
+    ]
+   },
+   "bcl_noise@0.80": {
+    "arm": 17.987704695476896,
+    "seeds": [
+     18.682829618840046,
+     17.373157270114586,
+     17.90712719747605
+    ]
+   },
+   "pavedistress_background_test@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "pavedistress_background_test@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     0.0009267971976735564,
+     0.0004633985988367773
+    ]
+   },
+   "pavedistress_background_test@0.80": {
+    "arm": 0.0007208422648572141,
+    "seeds": [
+     0.00030893239922451764,
+     0.0012357295968980792,
+     0.0006178647984490457
+    ]
+   },
+   "uav1388_background@0.70": {
+    "arm": null,
+    "seeds": [
+     null,
+     null,
+     null
+    ]
+   },
+   "uav1388_background@0.75": {
+    "arm": null,
+    "seeds": [
+     null,
+     3.959130768929841,
+     2.704985556638683
+    ]
+   },
+   "uav1388_background@0.80": {
+    "arm": 3.9014372133229873,
+    "seeds": [
+     3.045818816143995,
+     3.508433795246008,
+     5.1500590285789585
+    ]
+   }
+  }
+ },
+ "predictions": {
+  "P12_matched_recall_B11": {
+   "values": {
+    "bcl_noise@0.75": [
+     null,
+     16.227711800424682
+    ],
+    "bcl_noise@0.80": [
+     19.835871378005507,
+     null
+    ],
+    "pavedistress_background_test@0.75": [
+     null,
+     2.4072868146130237
+    ],
+    "pavedistress_background_test@0.80": [
+     3.4941567410179566,
+     null
+    ],
+    "uav1388_background@0.75": [
+     null,
+     1.9568719179613916
+    ],
+    "uav1388_background@0.80": [
+     4.461318682548211,
+     null
+    ]
+   },
+   "verdict": null
+  },
+  "P13_matched_recall_B10": {
+   "values": {
+    "bcl_noise@0.75": [
+     null,
+     16.227711800424682
+    ],
+    "bcl_noise@0.80": [
+     19.499847467880194,
+     null
+    ],
+    "pavedistress_background_test@0.75": [
+     null,
+     2.4072868146130237
+    ],
+    "pavedistress_background_test@0.80": [
+     3.0721577627391565,
+     null
+    ],
+    "uav1388_background@0.75": [
+     null,
+     1.9568719179613916
+    ],
+    "uav1388_background@0.80": [
+     3.497800034889148,
+     null
+    ]
+   },
+   "verdict": null
+  }
+ },
+ "method": "Addendum 4: false-alarm / recall frontier from eval_sweep_v1 outputs; matched-recall comparison (P12, P13).\n\nPer model and threshold: positive-axis component recall R(t) (CrackSC+NHA12D) and A3_leg(t) on the three test legs.\nMatched recall: for target r*, A3 is interpolated linearly in log(A3 + 0.01) against R between the two grid points\nthat bracket r* (R decreases with t); a model whose curve does not bracket r* is reported as not evaluable.\nArm value = mean over its seeds; per-seed values reported. Descriptive: no bootstrap.\nusage: python analyze_sweep_v1.py <report_dir> <eval_dir>=<models.json> [...]\n"
+}

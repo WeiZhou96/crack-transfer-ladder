@@ -21,10 +21,10 @@ Counterfactual synthetic data render the same pavement background with and witho
 
 ## Key findings
 
-- **Silence on rendered distractors does not transfer to real ones.** Joint-specific false alarms of the counterfactual model were 0.07, 0.12 and 0.29 of the Real-only level on training, resampled and unseen-scene probes, and 1.11 on real bridge joints.
-- **Counterfactual supervision raised real false alarms.** Relative to training on real positives only, false alarms rose on all five real crack-free legs (for example +18.6% on BCL and +79.1% on UAV-1388), on two backbones and at matched recall.
+- **Silence on rendered distractors does not transfer to real ones.** Joint-specific false alarms of the counterfactual model were 0.07, 0.12 and 0.29 of the Real-only level on training, resampled and unseen-scene probes, and 1.11 on real bridge joints. Read against a model trained on the same renderings without distractors (CF-BgOnly), the real-joint ratio is 1.07.
+- **Counterfactual supervision raised real false alarms.** Relative to training on real positives only, false alarms rose on all five real crack-free legs (for example +18.6% on BCL and +79.1% on UAV-1388), on two backbones and, on the primary legs, at matched recall.
 - **The rise comes with the rendered images.** Renderings without any distractor raised real false alarms on BCL as much as distractor negatives did (+15.4% against +15.6%).
-- **What does help.** Real crack-free crops removed in-domain false alarms almost entirely (−99.9%) but transferred unpredictably to other sensors. Strong photometric augmentation lowered cross-domain false alarms at matched recall.
+- **What does help.** Real crack-free crops removed in-domain false alarms almost entirely (−99.9%) but transferred unpredictably to other sensors, and random crops also cost in-domain crack recall. Strong photometric augmentation lowered false alarms on two cross-sensor legs (PaveDistress and UAV-1388) at matched recall.
 
 ## Method at a glance
 
@@ -53,7 +53,7 @@ The scripts are the ones used for the study. They are released for transparency 
 | `render/` | Distractor operators (`operators/`: joint, patch boundary, shadow, acquisition, visibility), quadruplet construction with the texture-transfer crack brush (`quadruplet.py`) and the rendering and calibration tools (`tools/`) |
 | `train/` | Students (`student_v1/v4/v5/v6.py`), schedulers (`run_*.py`), evaluators (`eval_students_v2.py`, `eval_strata_v4.py`, `eval_sdnet_v2.py`, `eval_sweep_v1.py`), threshold sealing, evaluation chains (`*_chain_*.sh`) and analysis (`analyze_*.py`) |
 | `baselines/strongaug/` | Trainer and sealed protocol of the StrongAug arm (photometric and degradation augmentation, `augment.py`) |
-| `posthoc/` | Post hoc analyses: distractor-specific ladder, alternative accounts and two-level bootstrap (`review_reanalysis_v1.py`), in-domain recall on annotated PaveDistress frames (`anchor_recall_v1.py`), 100 m route clusters (`cluster100m_v1.py`), filtered alerts of published models (`ed1_filtered_alerts_v1.py`) |
+| `posthoc/` | Post hoc analyses: distractor-specific ladder, alternative accounts and two-level bootstrap (`review_reanalysis_v1.py`), in-domain recall on annotated PaveDistress frames (`anchor_recall_v1.py`) and at every sweep threshold (`anchor_recall_sweep_v1.py`, run by `anchor_sweep_chain_v1.sh`), PaveDistress false alarms at matched in-domain recall (`analyze_indomain_matched_v1.py`), supplementary tables of the in-domain comparison and of the joint ladder read against CF-BgOnly (`make_supp_tables_v1.py`), 100 m route clusters (`cluster100m_v1.py`), filtered alerts of published models (`ed1_filtered_alerts_v1.py`) |
 | `configs/` | Data sources (`datasets.yaml`), operators (`operators.yaml`), training arms (`e1_arms*.yaml`), pre-registration snapshots (`prereg.yaml`, `prereg_v6.yaml`) and the experiment programme with its addenda (`experiment_program_v1*.yaml`) |
 | `results/` | Analysis reports from which the numbers in the paper and its supplementary material are taken (see below) |
 | `tests/` | Unit tests for the operators and the quadruplet construction |
@@ -136,7 +136,7 @@ Confidence intervals are paired cluster-bootstrap intervals (10,000 replicates, 
 | `program/add6_*.json`, `program/add7_verdicts.json` | Addenda 6 and 7 |
 | `ladder/` | Scene-novel probe reports and the distractor-specific ladder (`review_reanalysis_*.json`) |
 | `sweep/` | Threshold sweeps and matched-recall windows |
-| `posthoc/` | In-domain recall, 100 m route clusters and filtered alerts of the published models |
+| `posthoc/` | In-domain recall at the operating point (`anchor_recall_summary.json`) and over the threshold sweep (`anchor_recall_sweep.json`), PaveDistress false alarms at matched in-domain recall (`indomain_matched.json`), 100 m route clusters and filtered alerts of the published models |
 
 ## Notes
 

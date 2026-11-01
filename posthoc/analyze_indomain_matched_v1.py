@@ -22,10 +22,10 @@ SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else C / "results/posthoc/anchor_re
 LEG = "pavedistress_background_test"
 TS = ["t0.02", "t0.05", "t0.1", "t0.2", "t0.3", "t0.5", "t0.7", "t0.85", "t0.95"]
 NAMES = {"B0": "Real-only", "B1": "StrongAug", "B2": "RandNeg", "B3_auto": "MinedNeg", "B10": "CF-Unpaired",
-         "B11": "CF-Paired", "B0_v6": "Real-only, retrained", "B1_v5": "StrongAug, retrained",
+         "B11": "CF-Paired", "B0_v6": "Real-only, retrained", "B1_v5": "PhotoAug",
          "A_x01only": "CF-NegOnly", "A_x1only": "CF-CrackLayers", "A_paired_noaux": "CF-Paired w/o pair losses",
          "B12_auto_posthoc": "MinedNeg + CF", "B2_g7": "RandNeg, 7 groups", "A_x00only": "CF-BgOnly",
-         "B2_B1": "RandNeg + StrongAug", "A_x01only_B1": "StrongAug + CF-NegOnly",
+         "B2_B1": "RandNeg + PhotoAug", "A_x01only_B1": "PhotoAug + CF-NegOnly",
          "R50_B0": "Real-only (R50)", "R50_B2": "RandNeg (R50)", "R50_B11": "CF-Paired (R50)"}
 
 fa, ext = {}, {}

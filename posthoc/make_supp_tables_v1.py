@@ -23,7 +23,7 @@ res = json.load(open(C / "results/posthoc/indomain_matched.json", encoding="utf-
 
 ORDER = ["B0", "B0_v6", "B1", "B1_v5", "B2", "B2_g7", "B3_auto", "A_x00only", "A_x01only", "A_x1only", "A_paired_noaux",
          "B10", "B11", "B12_auto_posthoc", "A_x01only_B1", "B2_B1", "R50_B0", "R50_B2", "R50_B11"]
-TEX = {"B12_auto_posthoc": r"MinedNeg\,+\,CF", "A_x01only_B1": r"StrongAug\,+\,CF-NegOnly", "B2_B1": r"RandNeg\,+\,StrongAug"}
+TEX = {"B12_auto_posthoc": r"MinedNeg\,+\,CF", "A_x01only_B1": r"PhotoAug\,+\,CF-NegOnly", "B2_B1": r"RandNeg\,+\,PhotoAug"}
 rows = []
 for a in ORDER:
     r = res[a]
@@ -75,7 +75,7 @@ bg = [ex3(BG) / ex3("B0"), r4[BG]["excess"]["ratio"], r4[BG]["relative_risk"]["r
 t2 = r"""\begin{table}[!htbp]
 \centering\footnotesize
 \renewcommand{\arraystretch}{1.1}
-\caption{Joint ladder of the synthetic arms read against Real-only and against CF-BgOnly (post hoc; ConvNeXt-T, point estimates). Rung 3: distractor-specific ratio on rendered joints in unseen scenes. Rung 4: ratio of the joint-specific excess and of the relative share of joints over the class-free area on dacl10k.}\label{tab:ladder-bgonly}
+\caption{Joint ladder of the synthetic arms read against Real-only and against CF-BgOnly (post hoc; ConvNeXt-T, point estimates; rung-4 intervals in Table~\ref{tab:rung4-variants}). Rung 3: distractor-specific ratio on rendered joints in unseen scenes. Rung 4: ratio of the joint-specific excess and of the relative share of joints over the class-free area of all dacl10k images.}\label{tab:ladder-bgonly}
 \begin{tabularx}{\textwidth}{@{}l *{6}{>{\centering\arraybackslash}X}@{}}
 \toprule
  & \multicolumn{2}{c}{Rung 3} & \multicolumn{2}{c}{Rung 4, excess} & \multicolumn{2}{c}{Rung 4, relative share} \\
